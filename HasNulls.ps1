@@ -7,6 +7,9 @@
 	
 .OUTPUTS
 	Boolean result
+	
+.EXAMPLE
+	ls -rec | ? {[IO.FileInfo].IsAssignableFrom($_.GetType()) -and (-not (HasNulls $_ ))} | ss -list '\bEDTab\b' | ogv
 #>
 function HasNulls(
 	# File to check
