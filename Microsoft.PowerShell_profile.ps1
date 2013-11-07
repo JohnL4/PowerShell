@@ -1,15 +1,6 @@
 $ProfileParent = split-path -parent $Profile
 
-foreach ($d in "H:\PowerShell",($env:USERPROFILE + "\Bin"),$ProfileParent)
-{
-   if (Test-Path $d)
-   {
-      $ScriptDir = $d
-      break
-   }
-}
-
-. $ScriptDir\profile_common.ps1
+. $ProfileParent\profile_common.ps1
 
 function prompt
 {

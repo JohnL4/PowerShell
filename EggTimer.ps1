@@ -43,29 +43,38 @@ function EggTimer( [String] $MinutesSeconds, [String] $Message)
 	$caption = "EggTimer: $Message"
 	$caption = $NOT_IN_CAPTION_RE.Replace( $caption, " ")
 	[Threading.Thread]::Sleep( $time * 1000)
+   
+   Write-Host -fore cyan $Message
 
-	$OldErrorActionPreference = $ErrorActionPreference
-	$ErrorActionPreference = "Stop"
-	try
-	{
-		$netSendResult = net send $env:COMPUTERNAME "$Message"
-	}
-	catch
-	{
-		$netSendResult = $Error[0].ToString()
-		echo "net send: $netSendResult"
-	}
-	finally
-	{
-		$ErrorActionPreference = $OldErrorActionPreference
-	}
-	
-	if ($netSendResult -match $SUCCESSFUL_MESSAGE)
-	{
-	}
-	else
-	{
-		$now = [DateTime]::Now
-		$msgBoxResult = [Windows.MessageBox]::Show( $now.ToString() + "`n`n" + $Message ,$caption)
-	}
+    if (Test-Path alias:xm)
+    {
+        xm $Caption
+    }
+    else
+    {
+	    $OldErrorActionPreference = $ErrorActionPreference
+	    $ErrorActionPreference = "Stop"
+	    try
+	    {
+		    $netSendResult = net send $env:COMPUTERNAME "$Message"
+	    }
+	    catch
+	    {
+		    $netSendResult = $Error[0].ToString()
+		    echo "net send: $netSendResult"
+	    }
+	    finally
+	    {
+		    $ErrorActionPreference = $OldErrorActionPreference
+	    }
+	    
+	    if ($netSendResult -match $SUCCESSFUL_MESSAGE)
+	    {
+	    }
+	    else
+	    {
+		    $now = [DateTime]::Now
+		    $msgBoxResult = [Windows.MessageBox]::Show( $now.ToString() + "`n`n" + $Message ,$caption)
+	    }
+    }
 }

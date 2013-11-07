@@ -1,6 +1,7 @@
 # Assumes $ProfileParent has been defined, as the directory containing the profile.
 # Assumes $ScriptDir has been defined, as the directory containing all other scripts to be loaded.
 
+Import-Module PowerTab
 Import-Module Pscx -arg ~\Pscx.UserPreferences.ps1
 
 . $ScriptDir\datefn.ps1
@@ -9,11 +10,14 @@ Import-Module Pscx -arg ~\Pscx.UserPreferences.ps1
 . $ScriptDir\Format-Columns.ps1
 . $ScriptDir\Format-High.ps1
 . $ScriptDir\Get-Checksum.ps1
+. $ScriptDir\HasNulls.ps1
 . $ScriptDir\lscf.ps1
 . $ScriptDir\oss.ps1
 . $ScriptDir\ps-version.ps1
 . $ScriptDir\ScanSrc.ps1
+. $ScriptDir\Show-Message.ps1
 . $ScriptDir\slay.ps1
+. $ScriptDir\waitfor.ps1
 
 # --------------------------------------------------  find-and-alias  --------------------------------------------------
 <#
@@ -59,7 +63,7 @@ function find-and-alias
 # ---------------------------------------------------------    ---------------------------------------------------------
 
 new-alias 		cols	Format-Columns
-find-and-alias 	ec 		"C:\emacs\emacs-24.2\bin\emacsclientw.exe","C:\emacs\emacs-23.3\bin\emacsclientw.exe"
+find-and-alias 	ec 		"c:\usr\local\emacs\emacs-24.3\bin\emacsclientw.exe","C:\emacs\emacs-24.2\bin\emacsclientw.exe","C:\emacs\emacs-23.3\bin\emacsclientw.exe"
 new-alias		ff		Find-File
 new-alias 		hi 		Format-High
 new-alias 		np		'C:\Program Files\Notepad++\notepad++.exe'
@@ -69,6 +73,7 @@ new-alias 		sum		Get-Checksum
 find-and-alias	svcutil	@("C:\Program Files\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\svcutil.exe",
                           "C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\svcutil.exe",
                           "C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\svcutil.exe")
+new-alias		xm		Show-Message # From back in my X-Windows days, when xmessage(1) was what I wanted. :)
 
 # -------------------------------------------------  Global variables  -------------------------------------------------
 
@@ -120,3 +125,16 @@ function posh {
     # started via the PowerShell shortcut (or different, if you prefer).
     invoke-item $PSHOME\powershell.exe
 }
+
+# --------------------------------------------------  Restart-ClocX  ---------------------------------------------------
+
+<#
+.SYNOPSIS
+   Restarts the clocx process on the current computer.
+#>
+function Restart-ClocX
+{
+    slay ClocX
+    & 'C:\Program Files\ClocX\ClocX.exe'
+}
+

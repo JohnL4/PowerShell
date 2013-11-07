@@ -1,16 +1,6 @@
 $ProfileParent = split-path -parent $Profile
-$ScriptDir = "H:\PowerShell"
 
-if (Test-Path $ScriptDir)
-{
-   # all good
-}
-else
-{   
-   $ScriptDir = $ProfileParent
-}
-
-. $ScriptDir\profile_common.ps1
+. $ProfileParent\profile_common.ps1
 
 function prompt
 {
