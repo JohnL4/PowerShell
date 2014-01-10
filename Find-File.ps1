@@ -11,5 +11,7 @@ function Find-File
         $regex
         )
 
-    ls -rec | ? {$_.GetType().Name.Equals('FileInfo') -and (-not (HasNulls $_)) -and ($_.Name -match $regex)}
+    # ls -rec | ? {$_.GetType().Name.Equals('FileInfo') -and (-not (HasNulls $_)) -and ($_.Name -match $regex)}
+    # ls -rec | ? {$_.GetType().Name.Equals('FileInfo') -and ($_.Name -match $regex)}
+    ls -rec | ? {($_.Name -match $regex) -and (-not (HasNulls $_ -nonFileResult $True))}
 }

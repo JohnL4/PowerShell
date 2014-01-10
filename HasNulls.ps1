@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-	Returns $true if the given file has nulls in the first 4 Kib.
+	Returns $true if the given file has nulls in the first block (currently 1024 characters, which may be unicode).
 	
 .INPUTS
 	String names of files or FileInfo objects.
@@ -11,64 +11,81 @@
 .EXAMPLE
 	ls -rec | ? {[IO.FileInfo].IsAssignableFrom($_.GetType()) -and (-not (HasNulls $_ ))} | ss -list '\bEDTab\b' | ogv
 #>
-function HasNulls(
+function HasNulls
+    (
 	# File to check
-	$file
+	$file,
 	
-	# [boolean]
-	# # The result to return if the input is not a file (or string filename)
-	# $nonfileResult
+	[boolean]
+	# The result to return if the input is not a file (or string filename)
+	$nonfileResult
 	)
+
 {
-	try 
-	{
-		if ($file.GetType().ToString() -eq "System.String")
-		{
-			Write-Debug "arg is string"
-			$fn = ((Get-Location).Path, $file) -join "\"
-			Write-Debug "Opening `"$fn`""
-			$reader = [IO.File]::OpenRead( $fn)
-		}
-		elseif ($file.GetType().ToString() -eq "System.IO.FileInfo")
-		{
-			Write-Debug "arg is fileinfo"
-			$reader = $file.OpenRead()
-		}
-		else
-		{
-			Write-Debug "arg type unhandled"
-			# if ($nonfileResult -eq $Null)
-			# {
-				throw @{ 
-					Message = "Unrecognized object type: " + $file.GetType().ToString(); 
-					Object = $file 
-				} | New-HashObject
-			# }
-			# else
-			# {
-				# return $nonfileResult
-			# }
-		}
-		$bytes = new-object byte[] 4096
-		$numRead = $reader.Read($bytes, 0, $bytes.Count)
-		Write-Debug "`$numRead = $numRead"
-		# Write-Debug ("Read: " + ($bytes[0..($numRead-1)] -join ", "))
-		
-		$indexOfFirstNull = [Array]::IndexOf( $bytes[0..($numRead-1)], [byte]0)
-		Write-Debug "`$indexOfFirstNull = $indexOfFirstNull"
-		# for ($i = 0; $i -lt $numRead; $i += 1)
-		# {
-			# if ($bytes[$i] -eq 0)
-			# {
-				# return $true
-			# }
-		# }
-		# return $false
-		return ($indexOfFirstNull -ge 0)
-	}
-	finally
-	{
-		if ($reader)
-			{ $reader.Dispose() }
-	}
+
+#     Param
+#         (
+#             [parameter(Mandatory=$True, ValueFromPipeline=$True)]
+#             [IO.FileSystemInfo[]]
+#             $file
+#         )
+    Process
+    {
+        if ($file -eq $Null) { $file = $_ }
+	    try 
+	    {
+            $ftype = $file.GetType().ToString()
+		    if ($ftype -eq "System.String")
+		    {
+			    Write-Debug "arg is string"
+			    $fn = ((Get-Location).Path, $file) -join "\"
+			    Write-Debug "Opening `"$fn`""
+			    $reader = [IO.File]::OpenRead( $fn)
+		    }
+		    elseif ($ftype -eq "System.IO.FileInfo")
+		    {
+			    Write-Debug "arg is fileinfo"
+			    $reader = $file.OpenRead()
+		    }
+            elseif ($ftype -eq "System.IO.DirectoryInfo")
+            {
+                Write-Debug ('{0} is directory' -f $file.FullName)
+                return $nonFileResult
+            }
+			else
+			{
+                Write-Debug ('arg name, type: {0}, {1}' -f $file.ToString(),$ftype)
+				return $nonfileResult
+			}
+# 		    else
+# 		    {
+# 			    Write-Debug "arg type unhandled"
+# 			    # if ($nonfileResult -eq $Null)
+# 			    # {
+# 				throw @{ 
+# 					Message = "Unrecognized object type: " + $ftype; 
+# 					Object = $file 
+# 				} | New-HashObject
+# 		    }
+            $streamReader = New-Object 'IO.StreamReader' $reader,$True # $True ==> auto-detect encoding
+            Write-Debug ("Encoding for '{0}': {1}" -f $reader.Name,$streamReader.CurrentEncoding)
+            
+		    $chars = new-object char[] 1024
+		    $numRead = $streamReader.Read($chars, 0, $chars.Count)
+		    Write-Debug "`$numRead = $numRead"
+		    Write-Debug ("Read: " + ($chars[0..([Math]::Min(16, $numRead-1))] -join ", "))
+		    
+		    $indexOfFirstNull = [Array]::IndexOf( $chars[0..($numRead-1)], [char]0)
+		    Write-Debug "`$indexOfFirstNull = $indexOfFirstNull"
+            $retval = ($indexOfFirstNull -ge 0)
+
+		    return $retval
+	    }
+	    finally
+	    {
+		    if ($streamReader)
+			{ $streamReader.Dispose() }
+            $file = $Null
+	    }
+    }
 }
