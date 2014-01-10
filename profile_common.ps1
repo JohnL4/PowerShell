@@ -1,6 +1,8 @@
 # Assumes $ProfileParent has been defined, as the directory containing the profile.
 # Assumes $ScriptDir has been defined, as the directory containing all other scripts to be loaded.
 
+. $ScriptDir\Set-HomeLocation.ps1
+
 Import-Module PowerTab
 Import-Module Pscx -arg ~\Pscx.UserPreferences.ps1
 
@@ -63,7 +65,7 @@ function find-and-alias
 # ---------------------------------------------------------    ---------------------------------------------------------
 
 new-alias 		cols	Format-Columns
-find-and-alias 	ec 		"c:\usr\local\emacs\emacs-24.3\bin\emacsclientw.exe","C:\emacs\emacs-24.2\bin\emacsclientw.exe","C:\emacs\emacs-23.3\bin\emacsclientw.exe"
+find-and-alias 	ec 		"c:\usr\local\emacs-24.3\bin\emacsclientw.exe","C:\emacs\emacs-24.2\bin\emacsclientw.exe","C:\emacs\emacs-23.3\bin\emacsclientw.exe"
 new-alias		ff		Find-File
 new-alias 		hi 		Format-High
 new-alias 		np		'C:\Program Files\Notepad++\notepad++.exe'
@@ -73,7 +75,7 @@ new-alias 		sum		Get-Checksum
 find-and-alias	svcutil	@("C:\Program Files\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\svcutil.exe",
                           "C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\svcutil.exe",
                           "C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\svcutil.exe")
-new-alias		xm		Show-Message # From back in my X-Windows days, when xmessage(1) was what I wanted. :)
+new-alias       xm      Show-Message
 
 # -------------------------------------------------  Global variables  -------------------------------------------------
 
@@ -96,6 +98,11 @@ New-Variable -name IMAGE_REGEX -option ReadOnly `
         -value (New-Object System.Text.RegularExpressions.Regex( '\.(png|bmp|gif|ico|jpe?g)$', $regex_opts))
 
 Remove-Variable regex_opts
+
+
+# ----------------------------------------------  Environment variables  -----------------------------------------------
+
+$env:LESS = "-Mi -j10 -z-3"
 
 # ---------------------------------------------  Aliases (tiny functions)  ---------------------------------------------
 
@@ -125,16 +132,3 @@ function posh {
     # started via the PowerShell shortcut (or different, if you prefer).
     invoke-item $PSHOME\powershell.exe
 }
-
-# --------------------------------------------------  Restart-ClocX  ---------------------------------------------------
-
-<#
-.SYNOPSIS
-   Restarts the clocx process on the current computer.
-#>
-function Restart-ClocX
-{
-    slay ClocX
-    & 'C:\Program Files\ClocX\ClocX.exe'
-}
-
