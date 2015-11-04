@@ -10,7 +10,13 @@ else
    $ScriptDir = $ProfileParent
 }
 
+# $VerbosePreference="Continue"
+
+Write-Verbose "Sourcing common script"
+
 . $ScriptDir\profile_common.ps1
+
+Write-Verbose "Sourced common script"
 
 function prompt
 {
@@ -21,3 +27,5 @@ function prompt
     Write-Host ("PS " + $(get-location) +">") -nonewline -backgroundcolor gray -foregroundcolor DarkMagenta # -foregroundcolor Green
     return " "
 }
+
+Write-Verbose "Defined function prompt()"

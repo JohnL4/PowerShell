@@ -9,6 +9,8 @@
 		None.
 	.OUTPUTS
 		Date, formatted into string.  Current implementation is YYYY-MM-DD_HHMM.
+    .NOTES
+        Try "%d-%b-%Y %H:00" for format "27-Oct-2015 13:00"
 #>
 function datefn()
 {

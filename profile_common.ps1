@@ -4,8 +4,26 @@
 . $ScriptDir\Set-HomeLocation.ps1
 
 Import-Module PowerTab
-Import-Module Pscx -arg ~\Pscx.UserPreferences.ps1
 
+#------------------------------------------------  Amazon Web Services  ------------------------------------------------
+# See http://docs.aws.amazon.com/powershell/latest/userguide/pstools-getting-started.html
+
+Import-Module "c:\Program Files (x86)\AWS Tools\powershell\AWSPowerShell\AWSPowerShell.psd1"
+Set-DefaultAWSRegion -Region us-east-1
+
+#------------------------------------------------------  end AWS  ------------------------------------------------------
+
+switch ($PsVersionTable.PSVersion.Major)
+{
+    2 {Import-Module Pscx -version 2.0 -arg ~\Pscx.UserPreferences-2.0.ps1 -pass `
+            | % {"{0} {1}" -f $_.Name,$_.Version}}
+    {3,4} {Import-Module Pscx -MinimumVersion 3.1.0.0 -arg ~\Pscx.UserPreferences-3.1.ps1 -pass `
+            | % {"{0} {1}" -f $_.Name,$_.Version}}
+    default {Write-Warning ("Unexpected PowerShell version ({0}); PSCX not loaded" -f ($PsVersionTable.PSVersion -join '.'))}
+}
+
+. $ScriptDir\Add-PathToRuby.ps1
+. $ScriptDir\Copy-Interfaces.ps1
 . $ScriptDir\datefn.ps1
 . $ScriptDir\EggTimer.ps1
 . $ScriptDir\Find-File.ps1
@@ -15,7 +33,6 @@ Import-Module Pscx -arg ~\Pscx.UserPreferences.ps1
 . $ScriptDir\HasNulls.ps1
 . $ScriptDir\lscf.ps1
 . $ScriptDir\oss.ps1
-. $ScriptDir\ps-version.ps1
 . $ScriptDir\ScanSrc.ps1
 . $ScriptDir\Show-Message.ps1
 . $ScriptDir\slay.ps1
@@ -67,12 +84,15 @@ function find-and-alias
 new-alias 		cols	Format-Columns
 find-and-alias 	ec 		"c:\usr\local\emacs-24.3\bin\emacsclientw.exe","C:\emacs\emacs-24.2\bin\emacsclientw.exe","C:\emacs\emacs-23.3\bin\emacsclientw.exe"
 new-alias		ff		Find-File
+new-alias		ffa		Find-FileAny
 new-alias 		hi 		Format-High
-new-alias 		np		'C:\Program Files\Notepad++\notepad++.exe'
+find-and-alias  np		@('C:\Program Files\Notepad++\notepad++.exe',
+                          'C:\Program Files (x86)\Notepad++\notepad++.exe')
 new-alias 		os		Out-String
 new-alias 		ss		Select-String
 new-alias 		sum		Get-Checksum
 find-and-alias	svcutil	@("C:\Program Files\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\svcutil.exe",
+                          "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\svcutil.exe",
                           "C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\svcutil.exe",
                           "C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\svcutil.exe")
 new-alias       xm      Show-Message
