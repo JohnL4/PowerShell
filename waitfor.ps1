@@ -15,7 +15,7 @@ function waitfor
         Start-Sleep -seconds 60
     }
     Write-Host
-    Write-Host "$ComputerName is up."
+    Write-Host "$ComputerName is up." -Foreground cyan
     Write-Host
     xm "$ComputerName is up."
 }

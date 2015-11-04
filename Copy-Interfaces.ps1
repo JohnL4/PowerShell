@@ -1,7 +1,6 @@
 <#
 .SYNOPSIS
    Copy Eclipsys.Clinicals.Windows.Interfaces to designated location
-.EXAMPLE
 .NOTES
 .LINK
    about_Comment_Based_Help
@@ -42,6 +41,9 @@ function Copy-Interfaces
     }
     else
     {
-        throw "One of '$workspacePrefix', '$bin', '$deps' does not exist"
+        $(Test-Path $workspacePrefix) -or $(throw "`"$workspacePrefix`" does not exist") > $null
+        $(Test-Path $bin) -or $(throw "`"$bin`" does not exist") > $null
+        $(Test-Path $deps) -or $(throw "`"$deps`" does not exist") > $null
+
     }
 }

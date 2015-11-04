@@ -1,1 +1,7 @@
 *~
+Modules
+*.zip
+*.7z
+*.orig
+*.broken
+*.backup

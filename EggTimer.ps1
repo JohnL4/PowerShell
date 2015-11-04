@@ -44,7 +44,11 @@ function EggTimer( [String] $MinutesSeconds, [String] $Message)
 	$caption = $NOT_IN_CAPTION_RE.Replace( $caption, " ")
 	[Threading.Thread]::Sleep( $time * 1000)
    
-   Write-Host -fore cyan $Message
+    # Write-Host -fore cyan $Message
+
+    Write-Host -fore yellow -back yellow $Message
+    Write-Host -fore black  -back cyan $Message
+    Write-Host -fore yellow -back yellow $Message
 
     if (Test-Path alias:xm)
     {
