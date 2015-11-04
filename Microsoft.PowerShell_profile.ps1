@@ -1,5 +1,6 @@
 $ProfileParent = split-path -parent $Profile
-$ScriptDir = "H:\PowerShell"
+# $ScriptDir = "H:\PowerShell" # Deprecated; directory no longer writable; obsolescent.
+$ScriptDir = $ProfileParent
 
 if (Test-Path $ScriptDir)
 {

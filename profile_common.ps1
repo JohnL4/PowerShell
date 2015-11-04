@@ -1,9 +1,17 @@
 # Assumes $ProfileParent has been defined, as the directory containing the profile.
 # Assumes $ScriptDir has been defined, as the directory containing all other scripts to be loaded.
 
+$scriptName = "profile_common.ps1"
+
+# $VerbosePreference="Inquire"
+
+Write-Verbose ("{0}: `$ProfileParent = {1}" -f $scriptName,$ProfileParent)
+Write-Verbose ("{0}: `$ScriptDir = {1}" -f $scriptName,$ScriptDir)
+Write-Verbose ("{0}: `$env:PSModulePath = {1}" -f $scriptName,$env:PSModulePath)
+
 . $ScriptDir\Set-HomeLocation.ps1
 
-Import-Module PowerTab
+Import-Module $ScriptDir\Modules\PowerTab
 
 #------------------------------------------------  Amazon Web Services  ------------------------------------------------
 # See http://docs.aws.amazon.com/powershell/latest/userguide/pstools-getting-started.html
