@@ -1,3 +1,5 @@
+# $VerbosePreference = "Continue"
+
 # Assumes $ProfileParent has been defined, as the directory containing the profile.
 # Assumes $ScriptDir has been defined, as the directory containing all other scripts to be loaded.
 
@@ -9,6 +11,8 @@ Write-Verbose ("{0}: `$ProfileParent = {1}" -f $scriptName,$ProfileParent)
 Write-Verbose ("{0}: `$ScriptDir = {1}" -f $scriptName,$ScriptDir)
 Write-Verbose ("{0}: `$env:PSModulePath = {1}" -f $scriptName,$env:PSModulePath)
 
+# $VerbosePreference = "SilentlyContinue"
+
 . $ScriptDir\Set-HomeLocation.ps1
 
 Import-Module $ScriptDir\Modules\PowerTab
@@ -16,17 +20,23 @@ Import-Module $ScriptDir\Modules\PowerTab
 #------------------------------------------------  Amazon Web Services  ------------------------------------------------
 # See http://docs.aws.amazon.com/powershell/latest/userguide/pstools-getting-started.html
 
-Import-Module "c:\Program Files (x86)\AWS Tools\powershell\AWSPowerShell\AWSPowerShell.psd1"
-Set-DefaultAWSRegion -Region us-east-1
+# Import-Module "c:\Program Files (x86)\AWS Tools\powershell\AWSPowerShell\AWSPowerShell.psd1"
+# Set-DefaultAWSRegion -Region us-east-1
 
 #------------------------------------------------------  end AWS  ------------------------------------------------------
+
+# $VerbosePreference = "Continue"
+Write-Verbose ("`$PsVersionTable.PSVersion.Major = {0}" -f $PsVersionTable.PSVersion.Major)
+# $VerbosePreference = "SilentlyContinue"
 
 switch ($PsVersionTable.PSVersion.Major)
 {
     2 {Import-Module Pscx -version 2.0 -arg ~\Pscx.UserPreferences-2.0.ps1 -pass `
             | % {"{0} {1}" -f $_.Name,$_.Version}}
-    {3,4} {Import-Module Pscx -MinimumVersion 3.1.0.0 -arg ~\Pscx.UserPreferences-3.1.ps1 -pass `
+    {$_ -in 3,4} {Import-Module Pscx -MinimumVersion 3.1.0.0 -arg ~\Pscx.UserPreferences-3.1.ps1 -pass `
             | % {"{0} {1}" -f $_.Name,$_.Version}}
+	5 {Import-Module Pscx -MinimumVersion 3.2.0.0 -arg ~/Pscx.UserPreferences-3.2.ps1 -pass `
+			| % {"{0} {1}" -f $_.Name,$_.Version}}
     default {Write-Warning ("Unexpected PowerShell version ({0}); PSCX not loaded" -f ($PsVersionTable.PSVersion -join '.'))}
 }
 

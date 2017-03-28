@@ -5,3 +5,5 @@ Modules
 *.orig
 *.broken
 *.backup
+/.project
+/switch-play.ps1
