@@ -10,8 +10,12 @@ function waitfor
         $ComputerName
         )
 
-    while (0 -eq $(Ping-Host $ComputerName -count 1).Received)
+    # while (0 -eq $(Ping-Host $ComputerName -count 1).Received)
+    $n = 1
+    while (-not $(Test-Connection -quiet $ComputerName -count 1))
     {
+        Write-Host "`t$ComputerName still down ($n)"
+        $n = $n + 1
         Start-Sleep -seconds 60
     }
     Write-Host

@@ -1,23 +1,41 @@
 # Assumes $ProfileParent has been defined, as the directory containing the profile.
 # Assumes $ScriptDir has been defined, as the directory containing all other scripts to be loaded.
 
-$scriptName = "profile_common.ps1"
-
 # $VerbosePreference="Inquire"
 
-Write-Verbose ("{0}: `$ProfileParent = {1}" -f $scriptName,$ProfileParent)
-Write-Verbose ("{0}: `$ScriptDir = {1}" -f $scriptName,$ScriptDir)
-Write-Verbose ("{0}: `$env:PSModulePath = {1}" -f $scriptName,$env:PSModulePath)
+<#
+.SYNOPSIS
+    Returns true iff current PowerShell session is running with elevated privileges (i.e., "As Administrator").
+.NOTES
+    From http://ss64.com/ps/syntax-elevate.html
+#>
+function IsAdmin
+{
+    ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")
+}
+
+Write-Verbose ("{0}: `$ProfileParent = {1}" -f "profile_common.ps1",$ProfileParent)
+Write-Verbose ("{0}: `$ScriptDir = {1}" -f "profile_common.ps1",$ScriptDir)
+Write-Verbose ("{0}: `$env:PSModulePath = {1}" -f "profile_common.ps1",$env:PSModulePath)
+Write-Verbose ("IsAdmin: {0}" -f $(IsAdmin))
+
+if (Test-Path "C:\Users\j6l")
+{
+    # $Home = "C:\Users\j6l"
+    $env:Home = "C:\Users\j6l"
+}
 
 . $ScriptDir\Set-HomeLocation.ps1
+
+# $VerbosePreference = "SilentlyContinue"
 
 Import-Module $ScriptDir\Modules\PowerTab
 
 #------------------------------------------------  Amazon Web Services  ------------------------------------------------
 # See http://docs.aws.amazon.com/powershell/latest/userguide/pstools-getting-started.html
 
-Import-Module "c:\Program Files (x86)\AWS Tools\powershell\AWSPowerShell\AWSPowerShell.psd1"
-Set-DefaultAWSRegion -Region us-east-1
+# Import-Module "c:\Program Files (x86)\AWS Tools\powershell\AWSPowerShell\AWSPowerShell.psd1"
+# Set-DefaultAWSRegion -Region us-east-1
 
 #------------------------------------------------------  end AWS  ------------------------------------------------------
 
@@ -44,14 +62,15 @@ switch ($PsVersionTable.PSVersion.Major)
 . $ScriptDir\ScanSrc.ps1
 . $ScriptDir\Show-Message.ps1
 . $ScriptDir\slay.ps1
+. $ScriptDir\sudo.ps1
 . $ScriptDir\waitfor.ps1
 
-# --------------------------------------------------  find-and-alias  --------------------------------------------------
+# --------------------------------------------------  Find-Alias  --------------------------------------------------
 <#
 .SYNOPSIS
    Create an alias to the first of several paths found.
 #>
-function find-and-alias
+function Find-Alias
 {
     param (
         [string]
@@ -87,19 +106,53 @@ function find-and-alias
         write-warning "No path found, no '$alias' alias"
     }
 }
+
+# ----------------------------------------------------  Get-Latest  ----------------------------------------------------
+
+<#
+.SYNOPSIS
+    Returns the latest item in a path, by sorting by reverse lexical order and taking the first item
+#>
+function Get-Latest
+{
+    param(
+        [string]
+        # Parent directory
+        $directory,
+
+        [switch]
+        # Find the latest file in the given directory, rather than the latest sub-directory
+        $file
+    )
+
+    if ($file)
+    {
+        $type = [System.IO.FileInfo]
+    }
+    else
+    {
+        $type = [System.IO.DirectoryInfo]
+    }
+    
+    $retval = (ls $directory | ? {$_.GetType() -eq $type} | sort -desc | select -first 1)
+    return $retval
+}
+
 # ---------------------------------------------------------    ---------------------------------------------------------
 
 new-alias 		cols	Format-Columns
-find-and-alias 	ec 		"c:\usr\local\emacs-24.3\bin\emacsclientw.exe","C:\emacs\emacs-24.2\bin\emacsclientw.exe","C:\emacs\emacs-23.3\bin\emacsclientw.exe"
+Find-Alias      ec 		"C:\usr\local\emacs-24.5\bin\emacsclientw.exe","c:\usr\local\emacs-24.3\bin\emacsclientw.exe","C:\emacs\emacs-24.2\bin\emacsclientw.exe","C:\emacs\emacs-23.3\bin\emacsclientw.exe"
 new-alias		ff		Find-File
 new-alias		ffa		Find-FileAny
+Find-Alias		git		"C:\Program Files\Git\cmd\git.exe"
 new-alias 		hi 		Format-High
-find-and-alias  np		@('C:\Program Files\Notepad++\notepad++.exe',
+Find-Alias      np		@('C:\Program Files\Notepad++\notepad++.exe',
                           'C:\Program Files (x86)\Notepad++\notepad++.exe')
 new-alias 		os		Out-String
+new-alias       sel     Select-Object # 'select' is still too long
 new-alias 		ss		Select-String
 new-alias 		sum		Get-Checksum
-find-and-alias	svcutil	@("C:\Program Files\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\svcutil.exe",
+Find-Alias      svcutil	@("C:\Program Files\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\svcutil.exe",
                           "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\svcutil.exe",
                           "C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\svcutil.exe",
                           "C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\svcutil.exe")
@@ -107,25 +160,6 @@ new-alias       xm      Show-Message
 
 # -------------------------------------------------  Global variables  -------------------------------------------------
 
-$regex_opts = ([System.Text.RegularExpressions.RegexOptions]::IgnoreCase `
-          -bor [System.Text.RegularExpressions.RegexOptions]::Compiled)
-
-# We create some variables once, globally, so we don't have to recreate it (regex construction/parsing is expensive?)
-# every time we run 'lscf' (defined below), which I expect to be frequent.
-
-New-Variable -name EXECUTABLE_REGEX -option ReadOnly `
-        -description "Regular expression that recognizes executable files by their suffix" `
-        -value (New-Object System.Text.RegularExpressions.Regex( '\.(exe|bat|cmd|py|pl|ps1|psm1|vbs|rb|reg)$', $regex_opts))
-
-New-Variable -name ARCHIVE_REGEX -option ReadOnly `
-        -description "Regular expression that recognizes archive files by their suffix" `
-        -value (New-Object System.Text.RegularExpressions.Regex( '\.(zip|gz|gzip|bz2|7z)$', $regex_opts))
-
-New-Variable -name IMAGE_REGEX -option ReadOnly `
-        -description "Regular expression that recognizes image files by their suffix" `
-        -value (New-Object System.Text.RegularExpressions.Regex( '\.(png|bmp|gif|ico|jpe?g)$', $regex_opts))
-
-Remove-Variable regex_opts
 
 
 # ----------------------------------------------  Environment variables  -----------------------------------------------
@@ -158,5 +192,8 @@ function posh {
     # but that might be user/machine-specific.
     # After your window comes up for the first time, you can configure it to look the same as your "normal" window
     # started via the PowerShell shortcut (or different, if you prefer).
-    invoke-item $PSHOME\powershell.exe
+    invoke-item $PSHOME\powershell.exe # TODO: use start-process?
 }
+
+function        umlet   { start-process c:/usr/local/Umlet/umlet.jar }
+function        yed     { start-process "$((Get-Latest c:/usr/local/yed).FullName)/yed.jar" }

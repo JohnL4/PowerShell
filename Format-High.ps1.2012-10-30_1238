@@ -1,0 +1,213 @@
+<#
+.SYNOPSIS
+    Formats input by columns using maximum suitable column number.
+
+.DESCRIPTION
+    Format-High prints the specified property, expression, or string
+    representation of input objects filling the table by columns.
+
+    It is named in contrast to Format-Wide which prints by rows.
+
+.EXAMPLE
+    # just items
+    ls c:\windows | Format-High
+
+    # ditto in colors based on PSIsContainer
+    ls c:\windows | Format-High -Print {$c = if ($args[1].PSIsContainer) {'yellow'} else {'white'}; Write-Host $args[0] -ForegroundColor $c -NoNewline}
+
+    # just processes, not good
+    ps | Format-High
+
+    # process names, much better
+    ps | Format-High Name
+
+    # custom expression and width
+    ps | Format-High {$_.Name + ':' + $_.WS} 70
+
+    # process names in colors based on working sets
+    ps | Format-High Name 70 {$c = if ($args[1].WS -gt 10mb) {'red'} else {'green'}; Write-Host $args[0] -ForegroundColor $c -NoNewline}
+
+.NOTES
+   Via http://stackoverflow.com/questions/4126409/how-to-write-a-list-sorted-lexicographically-in-a-grid-listed-by-column
+#>
+function Format-High {
+   
+    param
+    (
+        [object]
+        # The property of the input objects to display.  If not given, uses result of .ToString().
+        $Property,      # Use FullName for recursive listings?
+
+        [int]
+        # Number of characters of width to constrain the display to.  Default is terminal width (which is not available
+        # in the PowerShell IDE, by the way).
+        $Width = $Host.UI.RawUI.WindowSize.Width - 1,
+
+        [switch]
+        # If given, all inputs will be scanned for a common prefix, which will not be printed.
+        $StripCommonPrefix,
+
+        [scriptblock]
+        # A script block used to actually do the printing.  This script block receives two arguments: a string (padded
+        # to the proper width) to be printed and a reference to the object described by the string (so you can make
+        # decisions about formatting the string based on arbitrary object properties).
+        $Print = { Write-Host $args[0] -NoNewline },
+
+        [object[]]
+        # Array of objects to be printed.  Defaults to function input.
+        $InputObject
+    )
+
+    $gutterWidth = 2    # Space between columns
+
+    Write-Debug "`$Property = $Property"
+
+    # process the input, get strings to format
+    # @ -- force array context (like Perl).
+    # $input is standard ("automatic") variable holding an enumerator over the input to the function
+    if ($InputObject -eq $null) { $InputObject = @($input) } 
+    if ($Property -is [string]) { $strings = $InputObject | Select-Object -ExpandProperty $Property }
+    elseif ($Property -is [scriptblock]) { $strings = $InputObject | ForEach-Object $Property }
+    else { $strings = $InputObject }
+    $strings = @(foreach($_ in $strings) { "$_" }) # Force ToString() call?
+
+    if ($StripCommonPrefix)
+    {
+        $strings = Strip-CommonPrefix $strings
+#        # Find prefix candidate (shortest string)
+#        $minLength = [Linq.Enumerable]::Max($lengths) # Yes, Max()
+#        foreach ($s in $strings)
+#        {
+#            if ($s.Length -le $minLength)
+#            {
+#                $minLength = $s.Length
+#                $minString = $s
+#            }
+#        }
+#
+#        # Find common prefix
+#        $prefix = $Null
+#        for ($s = 1; $s -lt $strings.Length; $s++)
+#        {
+#            for ($c = 0; $c -lt $minLength; $c++)
+#            {
+#                if ($minString[$c] -ne $strings[$s][$c])
+#                {
+#                    $prefix = $minString.Substring( 0, $c)
+#                    break
+#                }
+#            }
+#            if ($prefix -ne $Null)
+#            {
+#                break
+#            }
+#        }
+#
+#        # Strip common prefix
+#        if (($prefix -ne $Null) -and ($prefix -ne ""))
+#        {
+#            $strings = @(foreach ($s in $strings) { $s.Substring( $prefix.Length) })
+#            [int[]]$lengths = @(foreach($_ in $strings) { $_.Length })
+#        }
+    }
+
+    # No need to constantly be computing string lengths (assuming they aren't somehow cached).
+    [int[]]$lengths = @(foreach($_ in $strings) { $_.Length })
+    $minLength = [Linq.Enumerable]::Min($lengths)
+
+    # pass 1: find the maximum column number
+
+    # This looks like simulated annealing, essentially.  We start with one column and squeeze down until we can't fit
+    # the display into the current number of columns.  Seems like we could jumpstart this loop by dividing max element
+    # length (say, 32) into display width (say, 120, which would result in at least 3 columns).  (Note: done.)
+
+    $nbest = 1
+    $bestwidths = @($Width)     # One-element array, at this point.
+    $maxLength = ($lengths | Measure-Object -max).Maximum + $gutterWidth
+    $minColumns = [Math]::Max( 2, [Math]::Floor( $Width / $maxLength) - 1)
+    # Write-Debug "`$minColumns = $minColumns"
+    for($ncolumn = $minColumns; ; ++$ncolumn) {
+        $nrow = [Math]::Ceiling($strings.Count / $ncolumn)
+        $widths = @(
+            for($s = 0; $s -lt $strings.Count; $s += $nrow) {
+                $e = [Math]::Min($strings.Count, $s + $nrow)
+                ($lengths[$s .. ($e - 1)] | Measure-Object -Maximum).Maximum + $gutterWidth
+            }
+        )
+        if (($widths | Measure-Object -Sum).Sum -gt $Width) {
+            break
+        }
+        $bestwidths = $widths
+        $nbest = $ncolumn
+        if ($nrow -le 1) {
+            break
+        }
+    }
+
+    # pass 2: print strings
+    $nrow = [Math]::Ceiling($strings.Count / $nbest)
+    for($r = 0; $r -lt $nrow; ++$r) {
+        for($c = 0; $c -lt $nbest; ++$c) {
+            $i = $c * $nrow + $r
+            if ($i -lt $strings.Count) {
+                & $Print ($strings[$i].PadRight($bestwidths[$c])) $InputObject[$i]
+            }
+        }
+        & $Print "`r`n"
+    }
+
+}
+
+<#
+.SYNOPSIS
+   Strips common prefix (if any) from an array of strings, returning result array
+#>
+function Strip-CommonPrefix
+{
+    param(
+        [string[]]
+        # Array of strings to have common prefixes stripped from
+        $strings
+        )
+
+    [int[]]$lengths = @(foreach($_ in $strings) { $_.Length })
+    
+    # Find prefix candidate (shortest string)
+    $minLength = [Linq.Enumerable]::Max($lengths) # Yes, Max()
+    foreach ($s in $strings)
+    {
+        if ($s.Length -le $minLength)
+        {
+            $minLength = $s.Length
+            $minString = $s
+        }
+    }
+    Write-Debug "`$minLength = $minLength; `$minString = `"$minString`""
+
+    # Find common prefix
+    $prefix = $Null
+    for ($s = 0; $s -lt $strings.Length; $s++)
+    {
+        for ($c = 0; $c -lt $minLength; $c++)
+        {
+            if ($minString[$c] -ne $strings[$s][$c])
+            {
+                $prefix = $minString.Substring( 0, $c)
+                break
+            }
+        }
+        if ($prefix -ne $Null)
+        {
+            break
+        }
+    }
+    Write-Debug "`$prefix = `"$prefix`""
+
+    # Strip common prefix
+    if (($prefix -ne $Null) -and ($prefix -ne ""))
+    {
+        $strings = @(foreach ($s in $strings) { $s.Substring( $prefix.Length) })
+    }
+
+    return $strings
+}

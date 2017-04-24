@@ -9,7 +9,15 @@ $bgColors = "Black", "DarkBlue", "DarkGreen", "DarkCyan", "DarkRed", "DarkMagent
 $fgColors = "Black", "DarkBlue", "DarkGreen", "DarkCyan", "DarkRed", "DarkMagenta", "DarkYellow", "Gray", "DarkGray",
             "Blue", "Green", "Cyan", "Red", "Magenta", "Yellow", "White" 
 
-$width = $Host.UI.RawUI.WindowSize.Width - 1
+if ($Host.UI.RawUI.WindowSize.Width -eq $Null) 
+{ 
+    $width = 200 
+}
+else 
+{ 
+    $width = $Host.UI.RawUI.WindowSize.Width - 1 
+}
+
 $cellWidth = [Math]::Floor( $width / ($fgColors.Length + 1))
 
 $padLeft = [Math]::Floor( ($cellWidth - "BG\FG".Length) / 2)
