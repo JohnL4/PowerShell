@@ -1,8 +1,12 @@
 <#
 .SYNOPSIS
-    Show heavy users of system resources (CPU, for now) without requiring a GUI like perfmon
+    Show heavy users of system resources without requiring a GUI like perfmon.
 .NOTES
 # (org-mode, http://orgmode.org/ )
+
+Sadly, this thing is kind of hardcoded, at the moment, in terms of the columns and rows it displays.  But I think it's a
+reasonable first guess.
+
 * System counters that look interesting:
 
   - IPv{4,6}
