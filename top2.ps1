@@ -55,11 +55,11 @@ reasonable first guess.
 param(
     [int]
     # Number of seconds to delay before resampling and redisplaying.
-    $delay = 15,
+    $delay = 30,
 
     [int]
     # Number of processes to display in each section of the output
-    $numProcesses = 15
+    $numProcesses = 5
     
     #
 )
@@ -82,6 +82,13 @@ $SYS_PATH_NAME =
 
 $ONE_MEG = 1024 * 1024
 
+$shortHeaders = @{
+    CPU = "CPU";
+    WorkingSet = "WS ";
+    PageFaultsPerSec = "PF ";
+    IOBytesPerSec = "IO "
+    }
+    
 # ---------------------------------------------------  Take-Sample  ----------------------------------------------------
 <#
 Takes one sample and dumps it to stdout as a series of calls to Format-Table
@@ -89,8 +96,14 @@ Takes one sample and dumps it to stdout as a series of calls to Format-Table
 function Take-Sample
 {
     param(
+        [int]
         # Delay in seconds
-        $delay
+        $delay,
+
+        [int]
+        # Number of processes to display in each section of the output
+        $numProcesses
+        #
     )
     
     # Perf counter "paths" look like this:  "\\lusk-j-w71\process(chrome#12)\page faults/sec".
@@ -175,19 +188,21 @@ function Take-Sample
     Write-Verbose ("{0} counter objects" -f $counterObjects.Count)
 
     # foreach ($sortKey in @('% Processor Time','Virtual Bytes','Working Set','Page Faults/sec','IO Data Bytes/sec'))
-    foreach ($sortKey in @('CPU','PageFaultsPerSec','IOBytesPerSec'))
+    foreach ($sortKey in @('CPU','WorkingSet','PageFaultsPerSec','IOBytesPerSec'))
     {
-        Write-Host -foreground cyan ("Sorting by {0}" -f $sortKey)
+        # Write-Host -foreground cyan ("Sorting by {0}" -f $sortKey)
         $counterObjects `
                 | sort $sortKey -desc `
-                | select -f 7 `
-                | select -prop @("ID" `
-                ,@{Label="CPU %"; Expression={[Math]::Round( $_.CPU)}} `
-                ,@{Label="VM (MiB)"; Expression={[Math]::Round( $_.VirtualBytes / $ONE_MEG)}} `
-                ,@{Label="WS (MiB)"; Expression={[Math]::Round( $_.WorkingSet / $ONE_MEG)}} `
-                ,@{Label="Pg Faults/sec"; Expression={[Math]::Round( $_.PageFaultsPerSec)}} `
-                ,@{Label="IO/sec (Kib)"; Expression={[Math]::Round( $_.IOBytesPerSec / 1024)}} `
-                ,@{Label="Process Name"; Expression={($_.ProcessName -split '[()]')[1]}} ) `
+                | select -f $numProcesses `
+                | select -prop @(
+                    @{Label=$shortHeaders[$sortKey]; Expression=" "},
+                    "ID",
+                    @{Label="CPU %"; Expression={[Math]::Round( $_.CPU)}} ,
+                    @{Label="VM (MiB)"; Expression={[Math]::Round( $_.VirtualBytes / $ONE_MEG)}} ,
+                    @{Label="WS (MiB)"; Expression={[Math]::Round( $_.WorkingSet / $ONE_MEG)}} ,
+                    @{Label="Pg Faults/sec"; Expression={[Math]::Round( $_.PageFaultsPerSec)}} ,
+                    @{Label="IO/sec (Kib)"; Expression={[Math]::Round( $_.IOBytesPerSec / 1024)}} 
+                    @{Label="Process Name"; Expression={($_.ProcessName -split '[()]')[1]}} ) `
                 | ft -au -wr
     }
 
@@ -213,10 +228,10 @@ function Take-Sample
 # ===================================================  MAIN BEGINS  ====================================================
 
 $counterPaths = $PROCESS_PATH_NAMES + $SYS_PATH_NAME
-Write-Verbose ("Will sample {0} counters at an interval of {1} seconds" -f $counterPaths.Count,$delay)
+Write-Verbose ("Will sample {0} counters, displaying {2} at an interval of {1} seconds" -f $counterPaths.Count,$delay,$numProcesses)
 
 while ($True) {
-    Take-Sample -delay $delay
+    Take-Sample -delay $delay -numProcesses $numProcesses
 }
 
 # ====================================================  MAIN ENDS  =====================================================
