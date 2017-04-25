@@ -1,4 +1,0 @@
-PowerShell
-==========
-
-PowerShell scripts.

@@ -1,0 +1,16 @@
+* PowerShell
+
+  PowerShell scripts.  Most of these scripts should have usable documentation at the head of the script, so look there
+  for info on each one.
+
+* Scripts Of Note
+
+** =top2.ps1=
+
+   A gruesome hack providing an approximation of the functionality available in the *nix =top(1)= command.
+
+   Uses Windows Performance Counters to sample process stats, sorting them in various ways (CPU, Working Set, Page
+   Faults/sec, IO Bytes/sec), and also showing overall system stats (Idle CPU %, Available Megabytes, Page Faults/sec,
+   Physical Disk Queue Length, IP Datagrams/sec).
+
+   
