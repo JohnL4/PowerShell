@@ -59,10 +59,13 @@ param(
 
     [int]
     # Number of processes to display in each section of the output
-    $numProcesses = 5
+    $numProcesses = 6
     
     #
 )
+
+# See http://stackoverflow.com/a/12995867/370611
+[System.Threading.Thread]::CurrentThread.Priority = 'BelowNormal'
 
 $PROCESS_PATH_NAMES = 
     "\Process(*)\ID Process",
@@ -113,7 +116,7 @@ function Take-Sample
 
     $counterSamples = Get-Counter $counterPaths -SampleInterval $delay | select -expand CounterSamples
 
-    $sysCounterSamples = Get-Counter 
+    # $sysCounterSamples = Get-Counter 
 
     $ErrorActionPreference = $oldErrorActionPreference
 
@@ -228,7 +231,7 @@ function Take-Sample
 # ===================================================  MAIN BEGINS  ====================================================
 
 $counterPaths = $PROCESS_PATH_NAMES + $SYS_PATH_NAME
-Write-Verbose ("Will sample {0} counters, displaying {2} at an interval of {1} seconds" -f $counterPaths.Count,$delay,$numProcesses)
+Write-Verbose ("Will sample {0} counters, displaying {2} processes at an interval of {1} seconds" -f $counterPaths.Count,$delay,$numProcesses)
 
 while ($True) {
     Take-Sample -delay $delay -numProcesses $numProcesses
