@@ -9,12 +9,16 @@ reasonable first guess.
 
 * System counters that look interesting:
 
-  - IPv{4,6}
-    - =\IPv4\Datagrams/sec=
-    - =\IPv6\Datagrams/sec=
   - Memory
     - =\Memory\Page Faults/sec=
     - =\Memory\Available MBytes=
+  - Network
+    - =\IPv4\Datagrams/sec=
+    - =\IPv6\Datagrams/sec=
+    - =\TCPv4\Segments/sec=
+    - =\TCPv6\Segments/sec=
+    - =\Network Interface(*)\Bytes Total/sec=
+    - =\Network Interface(*)\Current Bandwidth=
   - PhysicalDisk
     - =\PhysicalDisk(0 C:)\Avg. Disk Queue Length=
   - Process
@@ -77,13 +81,15 @@ $PROCESS_PATH_NAMES =
     "\Process(*)\IO Other Bytes/sec"
 
 $SYS_PATH_NAME =
-    "\IPv4\Datagrams/sec",
-    "\IPv6\Datagrams/sec",
     "\Memory\Page Faults/sec",
     "\Memory\Available MBytes",
+    "\Network Interface(*)\Bytes Total/sec",
+    "\Network Interface(*)\Current Bandwidth",
     "\PhysicalDisk(*)\Avg. Disk Queue Length"
 
 $ONE_MEG = 1024 * 1024
+
+$NETWORK_INTERFACE_REGEX = New-Object Text.RegularExpressions.Regex "^network interface\((.*)\)"
 
 $shortHeaders = @{
     CPU = "CPU";
@@ -127,8 +133,8 @@ function Take-Sample
     $counterObjects = New-Object System.Collections.ArrayList
     $specialCounters = New-Object Hashtable
 
-    $counterObject = New-Object Hashtable
-    $counterObject['IO Bytes/sec'] = 0
+    $counterHash = New-Object Hashtable
+    # $counterHash['IO Bytes/sec'] = 0
 
     foreach ($counterSample in $counterSamples | sort Path)
     {
@@ -136,60 +142,62 @@ function Take-Sample
         $n = $pathParts.Count
         $counterName = $pathParts[$n-1]
         $ProcessName = $pathParts[$n-2];              # Or 'IPv{4,6}' or 'Memory' or 'PhysicalDisk(something)'
-        if (($counterObject.ProcessName -ne $Null) -and ($counterObject.ProcessName -ne $ProcessName))
+        if (($counterHash.ProcessName -ne $Null) -and ($counterHash.ProcessName -ne $ProcessName))
         {
             # Write-Verbose ("new sample object for process {0}" -f $ProcessName)
-            if (($counterObject.ProcessName -match '^Process\(') `
-                    -and (-not (($counterObject.ProcessName -match '^Process\(_Total\)') `
-                    -or ($counterObject.ProcessName -match '^Process\(Idle\)') `
+            if (($counterHash.ProcessName -match '^Process\(') `
+                    -and (-not (($counterHash.ProcessName -match '^Process\(_Total\)') `
+                    -or ($counterHash.ProcessName -match '^Process\(Idle\)') `
                     )))
             {
-                $addedAt = $counterObjects.Add( $($counterObject | New-HashObject))
+                $addedAt = $counterObjects.Add( $($counterHash | New-HashObject))
             }
             else
             {
                 # Not really a process name at this point, but whatever.
-                $specialCounters[$counterObject.ProcessName] = $counterObject
+                $specialCounters[$counterHash.ProcessName] = $counterHash
             }
-            $counterObject = New-Object Hashtable
-            $counterObject['IO Bytes/sec'] = 0
+            $counterHash = New-Object Hashtable
+            # $counterHash['IO Bytes/sec'] = 0
             #
         }
-        $counterObject.ProcessName = $ProcessName
+        $counterHash.ProcessName = $ProcessName
         switch ($counterName)
         {
             "ID Process" {
-                $counterObject.ID = $counterSample.CookedValue
+                $counterHash.ID = $counterSample.CookedValue
             }
             "% Processor Time" {
-                $counterObject.CPU = $counterSample.CookedValue
+                $counterHash.CPU = $counterSample.CookedValue
             }
             "Virtual Bytes" {
-                $counterObject.VirtualBytes = $counterSample.CookedValue
+                $counterHash.VirtualBytes = $counterSample.CookedValue
             }
             "Working Set" {
-                $counterObject.WorkingSet = $counterSample.CookedValue
+                $counterHash.WorkingSet = $counterSample.CookedValue
             }
             "Page Faults/sec" {                       # Also applies to '\Memory\' counters
-                $counterObject.PageFaultsPerSec = $counterSample.CookedValue
+                $counterHash.PageFaultsPerSec = $counterSample.CookedValue
             }
             "IO Data Bytes/sec" {
-                $counterObject.IOBytesPerSec += $counterSample.CookedValue
+                $counterHash.IOBytesPerSec += $counterSample.CookedValue
             }
             "IO Other Bytes/sec" {
-                $counterObject.IOBytesPerSec += $counterSample.CookedValue
+                $counterHash.IOBytesPerSec += $counterSample.CookedValue
             }
             default {
-                $counterObject[$counterName] = $counterSample.CookedValue
+                $counterHash[$counterName] = $counterSample.CookedValue
             }
         }
         #
     }
     # last object
-    $addedAt = $counterObjects.Add( $($counterObject | New-HashObject))
+    $addedAt = $counterObjects.Add( $($counterHash | New-HashObject))
 
     Write-Verbose ("{0} counter objects" -f $counterObjects.Count)
 
+    Write-Host -foreground cyan $(Get-Date)
+    
     # foreach ($sortKey in @('% Processor Time','Virtual Bytes','Working Set','Page Faults/sec','IO Data Bytes/sec'))
     foreach ($sortKey in @('CPU','WorkingSet','PageFaultsPerSec','IOBytesPerSec'))
     {
@@ -214,17 +222,46 @@ function Take-Sample
     $overallSys = @{IdleCpu = [Math]::Round( $specialCounters["process(idle)"].CPU);
                     AvailMem = [Math]::Round( $specialCounters["memory"]["available mbytes"]);
                     PageFaultsPerSec = [Math]::Round( $specialCounters["memory"].PageFaultsPerSec);
-                    DiskQueue_C = [Math]::Round( $specialCounters["physicaldisk(0 c:)"]["avg. disk queue length"], 2);
-                    IPv4_DgramsPerSec = [Math]::Round( $specialCounters["ipv4"]["datagrams/sec"]);
-                    IPv6_DgramsPerSec = [Math]::Round( $specialCounters["ipv6"]["datagrams/sec"])}
+                    DiskQueue_C = [Math]::Round( $specialCounters["physicaldisk(0 c:)"]["avg. disk queue length"], 2)}
+                    # IPv4_DgramsPerSec = [Math]::Round( $specialCounters["ipv4"]["datagrams/sec"]);
+                    # IPv6_DgramsPerSec = [Math]::Round( $specialCounters["ipv6"]["datagrams/sec"])}
+
+    # $networkInterfaceBytes = New-Object Collections.ArrayList
+    $ethernetBytes = 0;
+    $wifiBytes = 0;
+    $otherBytes = 0;
+    foreach ($counterKey in $specialCounters.Keys)
+    {
+        $match = $NETWORK_INTERFACE_REGEX.Match( $counterKey)
+        $bps = $specialCounters[ $counterKey]["bytes total/sec"]
+        if ($match.Success -and ($bps -gt 0))
+        {
+            $interface = $match.Groups[1]
+            $bps = [Math]::Round( $bps)
+            Write-Verbose ("interface {0} bytes/sec: {1}" -f $interface,$bps)
+            # $addedAt = $networkInterfaceBytes.Add(
+            #     $(@{Interface=$interface; "BytesPerSec" = [Math]::Round( $bps)} | New-HashObject))
+            switch -regex ($interface)
+            {
+                "ethernet" { $ethernetBytes += $bps; Break }
+                "wireless" { $wifiBytes += $bps; Break }
+                default { $otherBytes += $bps }
+            }
+            #
+        }
+        #
+    }
+
+    # $networkInterfaceBytes | sort "Bytes/sec" -desc | ft -au
 
     $overallSys | New-HashObject `
             | select @(@{Label="Idle CPU %"; Expression="IdleCpu"}
                        ,@{Label="Avail MBytes"; Expression="AvailMem"}
                        ,@{Label="Page Faults/sec"; Expression="PageFaultsPerSec"}
                        ,@{Label="C: Queue Length"; Expression="DiskQueue_C"}
-                       ,@{Label="IPv4 Dgrams/sec"; Expression="IPv4_DgramsPerSec"}
-                       ,@{Label="IPv6 Dgrams/sec"; Expression="IPv6_DgramsPerSec"}) `
+                       ,@{Label="Ethernet Bytes/sec"; Expression={$ethernetBytes}}
+                       ,@{Label="Wifi Bytes/sec"; Expression={$wifiBytes}}
+                       ,@{Label="Other Bytes/sec"; Expression={$otherBytes}}) `
                                | ft -auto
 }
 
