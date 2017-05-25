@@ -63,7 +63,7 @@ param(
 
     [int]
     # Number of processes to display in each section of the output
-    $numProcesses = 6
+    $numProcesses = 8
     
     #
 )
@@ -87,7 +87,7 @@ $SYS_PATH_NAME =
     "\Network Interface(*)\Current Bandwidth",
     "\PhysicalDisk(*)\Avg. Disk Queue Length"
 
-$ONE_MEG = 1024 * 1024
+$ONE_MEG = 1000000 # 1024 * 1024
 
 $NETWORK_INTERFACE_REGEX = New-Object Text.RegularExpressions.Regex "^network interface\((.*)\)"
 
@@ -97,10 +97,16 @@ $shortHeaders = @{
     PageFaultsPerSec = "PF ";
     IOBytesPerSec = "IO "
     }
-    
+
+# For colorizing sorted column.  See usage of Write-PSObject, below.
+$SORT_KEY_TO_COLUMN_HEADER_MAP = @{'CPU' = "CPU %"; 'WorkingSet' = "WS (MB)"; 'PageFaultsPerSec' = "PF/sec"; 'IOBytesPerSec' = "IO/sec (KB)"}
+
+# Colorized table output, https://gallery.technet.microsoft.com/scriptcenter/Format-Table-Colors-in-e0a4beac
+. $ProfileParent/Write-PSObject.ps1
+
 # ---------------------------------------------------  Take-Sample  ----------------------------------------------------
 <#
-Takes one sample and dumps it to stdout as a series of calls to Format-Table
+Takes one sample and dumps it to stdout as a series of calls to Format-Table (or Write-PSObject)
 #>
 function Take-Sample
 {
@@ -201,20 +207,22 @@ function Take-Sample
     # foreach ($sortKey in @('% Processor Time','Virtual Bytes','Working Set','Page Faults/sec','IO Data Bytes/sec'))
     foreach ($sortKey in @('CPU','WorkingSet','PageFaultsPerSec','IOBytesPerSec'))
     {
+        $sortColumnHeader = $SORT_KEY_TO_COLUMN_HEADER_MAP[ $sortKey]
         # Write-Host -foreground cyan ("Sorting by {0}" -f $sortKey)
         $counterObjects `
                 | sort $sortKey -desc `
                 | select -f $numProcesses `
                 | select -prop @(
                     @{Label=$shortHeaders[$sortKey]; Expression=" "},
-                    "ID",
+                    @{Label="ProcID"; Expression={$_.ID}}, 
                     @{Label="CPU %"; Expression={[Math]::Round( $_.CPU)}} ,
-                    @{Label="VM (MiB)"; Expression={[Math]::Round( $_.VirtualBytes / $ONE_MEG)}} ,
-                    @{Label="WS (MiB)"; Expression={[Math]::Round( $_.WorkingSet / $ONE_MEG)}} ,
-                    @{Label="Pg Faults/sec"; Expression={[Math]::Round( $_.PageFaultsPerSec)}} ,
-                    @{Label="IO/sec (Kib)"; Expression={[Math]::Round( $_.IOBytesPerSec / 1024)}} 
+                    @{Label="VM (MB)"; Expression={[Math]::Round( $_.VirtualBytes / $ONE_MEG)}} ,
+                    @{Label="WS (MB)"; Expression={[Math]::Round( $_.WorkingSet / $ONE_MEG)}} ,
+                    @{Label="PF/sec"; Expression={[Math]::Round( $_.PageFaultsPerSec)}} ,
+                    @{Label="IO/sec (KB)"; Expression={[Math]::Round( $_.IOBytesPerSec / 1000)}} 
                     @{Label="Process Name"; Expression={($_.ProcessName -split '[()]')[1]}} ) `
-                | ft -au -wr
+                | Write-PSObject -ColoredColumns $sortColumnHeader -ColumnForeColor Yellow # ft -au -wr
+        Write-Host # Blank line
     }
 
     # $specialCounters | ft -au -wr
@@ -262,7 +270,8 @@ function Take-Sample
                        ,@{Label="Ethernet Bytes/sec"; Expression={$ethernetBytes}}
                        ,@{Label="Wifi Bytes/sec"; Expression={$wifiBytes}}
                        ,@{Label="Other Bytes/sec"; Expression={$otherBytes}}) `
-                               | ft -auto
+                               | Write-PSObject # ft -auto
+
 }
 
 # ===================================================  MAIN BEGINS  ====================================================

@@ -49,7 +49,7 @@ switch ($PsVersionTable.PSVersion.Major)
 }
 
 . $ScriptDir\Add-PathToRuby.ps1
-. $ScriptDir\Copy-Interfaces.ps1
+# . $ScriptDir\Copy-Interfaces.ps1
 . $ScriptDir\datefn.ps1
 . $ScriptDir\EggTimer.ps1
 . $ScriptDir\Find-File.ps1
