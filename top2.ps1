@@ -104,6 +104,9 @@ $SORT_KEY_TO_COLUMN_HEADER_MAP = @{'CPU' = "CPU %"; 'WorkingSet' = "WS (MB)"; 'P
 # Colorized table output, https://gallery.technet.microsoft.com/scriptcenter/Format-Table-Colors-in-e0a4beac
 . $ProfileParent/Write-PSObject.ps1
 
+$counterPaths = $PROCESS_PATH_NAMES + $SYS_PATH_NAME
+Write-Verbose ("Will sample {0} counters, displaying {2} processes at an interval of {1} seconds" -f $counterPaths.Count,$delay,$numProcesses)
+
 # ---------------------------------------------------  Take-Sample  ----------------------------------------------------
 <#
 Takes one sample and dumps it to stdout as a series of calls to Format-Table (or Write-PSObject)
@@ -275,9 +278,6 @@ function Take-Sample
 }
 
 # ===================================================  MAIN BEGINS  ====================================================
-
-$counterPaths = $PROCESS_PATH_NAMES + $SYS_PATH_NAME
-Write-Verbose ("Will sample {0} counters, displaying {2} processes at an interval of {1} seconds" -f $counterPaths.Count,$delay,$numProcesses)
 
 while ($True) {
     Take-Sample -delay $delay -numProcesses $numProcesses
