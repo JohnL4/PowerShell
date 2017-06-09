@@ -17,6 +17,7 @@ function HasNulls
 	# File to check
 	$filename,
 
+    [parameter(ValueFromPipeline=$true)]
     [System.IO.FileInfo]
     # A File object
     $inputFileObject,
