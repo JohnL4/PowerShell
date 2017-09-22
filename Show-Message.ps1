@@ -12,6 +12,8 @@ function Show-Message
         $Message
         )
 
+    Write-Host -ForegroundColor Cyan $Message
+    
     # The following call is obsolete.  I'd like to find a better way to load this assembly without having to specify its
     # version exactly.  Although, who knows, maybe version 2.0.0.0 will be around forever.
     [Reflection.Assembly]::LoadWithPartialName( "System.Windows.Forms") | Out-Null

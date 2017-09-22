@@ -43,7 +43,7 @@ switch ($PsVersionTable.PSVersion.Major)
 {
     2 {Import-Module Pscx -version 2.0 -arg ~\Pscx.UserPreferences-2.0.ps1 -pass `
             | % {"{0} {1}" -f $_.Name,$_.Version}}
-    {3,4} {Import-Module Pscx -MinimumVersion 3.1.0.0 -arg ~\Pscx.UserPreferences-3.1.ps1 -pass `
+    {$_ -in (3,4,5)} {Import-Module Pscx -MinimumVersion 3.2.0.0 -arg ~\Pscx.UserPreferences-3.2.ps1 -pass `
             | % {"{0} {1}" -f $_.Name,$_.Version}}
     default {Write-Warning ("Unexpected PowerShell version ({0}); PSCX not loaded" -f ($PsVersionTable.PSVersion -join '.'))}
 }
@@ -141,10 +141,10 @@ function Get-Latest
 # ---------------------------------------------------------    ---------------------------------------------------------
 
 new-alias 		cols	Format-Columns
-Find-Alias      ec 		"C:\usr\local\emacs-24.5\bin\emacsclientw.exe","c:\usr\local\emacs-24.3\bin\emacsclientw.exe","C:\emacs\emacs-24.2\bin\emacsclientw.exe","C:\emacs\emacs-23.3\bin\emacsclientw.exe"
+Find-Alias      ec 		"C:\usr\local\emacs\25.2\bin\emacsclientw.exe"
 new-alias		ff		Find-File
 new-alias		ffa		Find-FileAny
-Find-Alias		git		"C:\Program Files\Git\cmd\git.exe"
+# Find-Alias		git		"C:\Program Files\Git\cmd\git.exe"
 new-alias 		hi 		Format-High
 Find-Alias      np		@('C:\Program Files\Notepad++\notepad++.exe',
                           'C:\Program Files (x86)\Notepad++\notepad++.exe')
@@ -152,10 +152,8 @@ new-alias 		os		Out-String
 new-alias       sel     Select-Object # 'select' is still too long
 new-alias 		ss		Select-String
 new-alias 		sum		Get-Checksum
-Find-Alias      svcutil	@("C:\Program Files\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\svcutil.exe",
-                          "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\svcutil.exe",
-                          "C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\svcutil.exe",
-                          "C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\svcutil.exe")
+Find-Alias      svcutil	@("C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.2 Tools\SvcUtil.exe")
+Find-Alias		vsc		@("C:\Program Files\Microsoft VS Code\Code.exe")
 new-alias       xm      Show-Message
 
 # -------------------------------------------------  Global variables  -------------------------------------------------

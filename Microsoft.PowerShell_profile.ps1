@@ -13,6 +13,12 @@ else
 
 # $VerbosePreference="Continue"
 
+# Syntax highlighting - use Get-PSReadlineOption to display current options.
+Set-PSReadlineOption -TokenKind String -ForegroundColor red
+Set-PSReadlineOption -TokenKind Parameter -ForegroundColor white
+Set-PSReadlineOption -TokenKind Comment -ForegroundColor gray
+Set-PSReadlineOption -TokenKind Operator -ForegroundColor gray
+
 Write-Verbose "Sourcing common script"
 
 . $ScriptDir\profile_common.ps1
