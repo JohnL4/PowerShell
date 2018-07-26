@@ -142,10 +142,16 @@ function Get-Latest
 
 new-alias 		cols	Format-Columns
 Find-Alias      ec 		"C:\usr\local\emacs\25.2\bin\emacsclientw.exe"
+Find-Alias      entlibconfig "c:\usr\local\EnterpriseLibrary6.0\EntLibConfig.exe"
 new-alias		ff		Find-File
 new-alias		ffa		Find-FileAny
 # Find-Alias		git		"C:\Program Files\Git\cmd\git.exe"
 new-alias 		hi 		Format-High
+
+Find-Alias      jar     @("c:\usr\local\java\jdk-9.0.4\bin\jar.exe")
+Find-Alias      javac   @("c:\usr\local\java\jdk-9.0.4\bin\javac.exe")
+
+Find-Alias      mvn     @("c:\usr\local\apache-maven-3.5.2\bin\mvn.cmd")
 Find-Alias      np		@('C:\Program Files\Notepad++\notepad++.exe',
                           'C:\Program Files (x86)\Notepad++\notepad++.exe')
 new-alias 		os		Out-String
@@ -162,6 +168,12 @@ new-alias       xm      Show-Message
 
 # ----------------------------------------------  Environment variables  -----------------------------------------------
 
+if (Test-Path "c:/usr/local/Java") {
+    $env:JAVA_HOME = $(ls c:/usr/local/Java | sort CreationTime -desc | select -first 1 FullName).FullName
+}
+else {
+    Write-Warning "No Java"
+}
 $env:LESS = "-Mi -j10 -z-3"
 
 # ---------------------------------------------  Aliases (tiny functions)  ---------------------------------------------

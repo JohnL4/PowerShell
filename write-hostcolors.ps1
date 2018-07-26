@@ -9,6 +9,11 @@ $bgColors = "Black", "DarkBlue", "DarkGreen", "DarkCyan", "DarkRed", "DarkMagent
 $fgColors = "Black", "DarkBlue", "DarkGreen", "DarkCyan", "DarkRed", "DarkMagenta", "DarkYellow", "Gray", "DarkGray",
             "Blue", "Green", "Cyan", "Red", "Magenta", "Yellow", "White" 
 
+$bgColorLabels =  "Blk", "DkBlu", "DkGrn", "DkCyn", "DkRed", "DkMag", "DkYel", "Gry", "DkGry", "Blu", "Grn", "Cyn",
+                  "Red", "Mag", "Yel", "Wht"
+$fgColorLabels =  "Blk", "DkBlu", "DkGrn", "DkCyn", "DkRed", "DkMag", "DkYel", "Gry", "DkGry", "Blu", "Grn", "Cyn",
+                  "Red", "Mag", "Yel", "Wht"
+
 if ($Host.UI.RawUI.WindowSize.Width -eq $Null) 
 { 
     $width = 200 
@@ -26,30 +31,39 @@ $padRight = $cellWidth - $padLeft - "BG\FG".Length
 Write-Debug "`$width = $width; `$cellWidth = $cellWidth; `$padLeft = $padLeft; `$padRight = $padRight"
 
 Write-Host "BG\FG".PadLeft( $cellWidth - $padRight).PadRight( $cellWidth) -nonewline
+$b = 0   # Background color index
+$f = 0   # Foreground color index
 foreach ($fgColor in $fgColors)
 {
-    $padLeft = [Math]::Floor( ($cellWidth - $fgColor.Length) / 2)
-    $padRight = $cellWidth - $padLeft - $fgColor.Length
+    $fgColorLabel = $fgColorLabels[$f]
+    $padLeft = [Math]::Floor( ($cellWidth - $fgColorLabel.Length) / 2)
+    $padRight = $cellWidth - $padLeft - $fgColorLabel.Length
     Write-Debug "`$padLeft = $padLeft; `$padRight = $padRight"
-    Write-Host $fgColor.PadLeft( $cellWidth - $padRight).PadRight( $cellWidth) -nonewline
+    Write-Host $fgColorLabel.PadLeft( $cellWidth - $padRight).PadRight( $cellWidth) -nonewline
+    $f++
 }
 Write-Host
 
+$b = 0
 foreach ($bgColor in $bgColors)
 {
-    $padLeft = [Math]::Floor( ($cellWidth - $bgColor.Length) / 2)
-    $padRight = $cellWidth - $padLeft - $bgColor.Length
+    $bgColorLabel = $bgColorLabels[$b]
+    $padLeft = [Math]::Floor( ($cellWidth - $bgColorLabel.Length) / 2)
+    $padRight = $cellWidth - $padLeft - $bgColorLabel.Length
 
     Write-Debug "`$padLeft = $padLeft; `$padRight = $padRight"
-    Write-Host $bgColor.PadLeft( $cellWidth - $padRight).PadRight( $cellWidth) -nonewline
-
+    Write-Host $bgColorLabel.PadLeft( $cellWidth - $padRight).PadRight( $cellWidth) -nonewline
+    $f = 0
     foreach ($fgColor in $fgColors)
     {
-        $padLeft = [Math]::Floor( ($cellWidth - $fgColor.Length) / 2)
-        $padRight = $cellWidth - $padLeft - $fgColor.Length
+        $fgColorLabel = $fgColorLabels[$f]
+        $padLeft = [Math]::Floor( ($cellWidth - $fgColorLabel.Length) / 2)
+        $padRight = $cellWidth - $padLeft - $fgColorLabel.Length
 
         Write-Debug "`$padLeft = $padLeft; `$padRight = $padRight"
-        Write-Host $fgColor.PadLeft( $cellWidth - $padRight).PadRight( $cellWidth) -nonewline -back $bgColor -fore $fgColor
+        Write-Host $fgColorLabel.PadLeft( $cellWidth - $padRight).PadRight( $cellWidth) -nonewline -back $bgColor -fore $fgColor
+        $f++
     }
     Write-Host
+    $b++
 }
