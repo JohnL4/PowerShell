@@ -159,7 +159,8 @@ new-alias       sel     Select-Object # 'select' is still too long
 new-alias 		ss		Select-String
 new-alias 		sum		Get-Checksum
 Find-Alias      svcutil	@("C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.2 Tools\SvcUtil.exe")
-Find-Alias		vsc		@("C:\Program Files\Microsoft VS Code\Code.exe")
+Find-Alias		vsc		@("${env:LOCALAPPDATA}\Programs\Microsoft VS Code\Code.exe",
+                          "C:\Program Files\Microsoft VS Code\Code.exe")
 new-alias       xm      Show-Message
 
 # -------------------------------------------------  Global variables  -------------------------------------------------
@@ -177,6 +178,17 @@ else {
 $env:LESS = "-Mi -j10 -z-3"
 
 # ---------------------------------------------  Aliases (tiny functions)  ---------------------------------------------
+
+function labelwin {
+    param(
+        [string]
+        # String label for current console window
+        $title
+    )
+    # $PROMPT_TITLE_PREFIX defined in Microsoft.PowerShell_profile.ps1
+    Set-Variable -Name PROMPT_TITLE_PREFIX -Value $title -Scope Global 
+    $host.ui.RawUI.WindowTitle = New-WindowTitle
+}
 
 <#
 .SYNOPSIS
