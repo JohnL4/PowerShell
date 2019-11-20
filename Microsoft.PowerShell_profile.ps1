@@ -25,6 +25,17 @@ Write-Verbose "Sourcing common script"
 
 Write-Verbose "Sourced common script"
 
+# Update the following two variables to modify the window title more-or-less permanently.  Otherwise, your attempt to
+# update the window title will be immediately wiped out by this prompt function.
+# Update these variables from other functions like this: Set-Variable -Name PROMPT_TITLE_PREFIX -Value $title -Scope Global
+$PROMPT_TITLE_PREFIX = ""
+$PROMPT_TITLE_SUFFIX = ""
+
+function New-WindowTitle {
+    $userLocn = ("{0}@{1}" -f $env:USERNAME, $(get-location))
+    return ("{0} {1} {2}" -f $PROMPT_TITLE_PREFIX, $userLocn, $PROMPT_TITLE_SUFFIX)
+}
+
 function prompt
 {
     # Note that DarkMagenta is the color slot used in the default PowerShell Start Menu shortcut for the console
@@ -33,14 +44,14 @@ function prompt
 
     if (IsAdmin)
     {
-        $Host.UI.RawUI.WindowTitle = ("{0}@{1}" -f $env:USERNAME, $(get-location))
+        $Host.UI.RawUI.WindowTitle = New-WindowTitle
         Write-Host ("PS " + $(get-location)) -nonewline -backgroundcolor gray -foregroundcolor DarkMagenta # -foregroundcolor Green
         Write-Host "#" -nonewline -backgroundcolor Gray -foregroundcolor DarkRed
         return " "
     }
     else
     {
-        $Host.UI.RawUI.WindowTitle = ("{0}@{1}" -f $env:USERNAME, $(get-location))
+        $Host.UI.RawUI.WindowTitle = New-WindowTitle
         Write-Host ("PS " + $(get-location) +">") -nonewline -backgroundcolor gray -foregroundcolor DarkMagenta # -foregroundcolor Green
         return " "
     }

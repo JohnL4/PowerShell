@@ -138,34 +138,9 @@ function Get-Latest
     return $retval
 }
 
-# ---------------------------------------------------------    ---------------------------------------------------------
-
-new-alias 		cols	Format-Columns
-Find-Alias      ec 		"C:\usr\local\emacs\25.2\bin\emacsclientw.exe"
-Find-Alias      entlibconfig "c:\usr\local\EnterpriseLibrary6.0\EntLibConfig.exe"
-new-alias		ff		Find-File
-new-alias		ffa		Find-FileAny
-# Find-Alias		git		"C:\Program Files\Git\cmd\git.exe"
-new-alias 		hi 		Format-High
-
-Find-Alias      jar     @("c:\usr\local\java\jdk-9.0.4\bin\jar.exe")
-Find-Alias      javac   @("c:\usr\local\java\jdk-9.0.4\bin\javac.exe")
-
-Find-Alias      mvn     @("c:\usr\local\apache-maven-3.5.2\bin\mvn.cmd")
-Find-Alias      np		@('C:\Program Files\Notepad++\notepad++.exe',
-                          'C:\Program Files (x86)\Notepad++\notepad++.exe')
-new-alias 		os		Out-String
-new-alias       sel     Select-Object # 'select' is still too long
-new-alias 		ss		Select-String
-new-alias 		sum		Get-Checksum
-Find-Alias      svcutil	@("C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.2 Tools\SvcUtil.exe")
-Find-Alias		vsc		@("${env:LOCALAPPDATA}\Programs\Microsoft VS Code\Code.exe",
-                          "C:\Program Files\Microsoft VS Code\Code.exe")
-new-alias       xm      Show-Message
+# --------------------------------------------------  End Get-Latest  --------------------------------------------------
 
 # -------------------------------------------------  Global variables  -------------------------------------------------
-
-
 
 # ----------------------------------------------  Environment variables  -----------------------------------------------
 
@@ -175,9 +150,37 @@ if (Test-Path "c:/usr/local/Java") {
 else {
     Write-Warning "No Java"
 }
+
 $env:LESS = "-Mi -j10 -z-3"
 
-# ---------------------------------------------  Aliases (tiny functions)  ---------------------------------------------
+# -----------------------------------------------------  Aliases  ------------------------------------------------------
+
+new-alias 		cols	Format-Columns
+Find-Alias      ec 		"C:\usr\local\emacs\26.1\bin\emacsclientw.exe"
+Find-Alias      entlibconfig "c:\usr\local\EnterpriseLibrary6.0\EntLibConfig.exe"
+new-alias		ff		Find-File
+new-alias		ffa		Find-FileAny
+# Find-Alias		git		"C:\Program Files\Git\cmd\git.exe"
+new-alias 		hi 		Format-High
+
+Find-Alias      jar     @("$env:JAVA_HOME\bin\jar.exe")
+Find-Alias      java    @("$env:JAVA_HOME\bin\java.exe")
+Find-Alias      javac   @("$env:JAVA_HOME\bin\javac.exe")
+
+Find-Alias      mvn     @("c:\usr\local\apache-maven-3.5.2\bin\mvn.cmd")
+Find-Alias      np		@('C:\Program Files\Notepad++\notepad++.exe',
+                          'C:\Program Files (x86)\Notepad++\notepad++.exe')
+new-alias 		os		Out-String
+new-alias       sel     Select-Object # 'select' is still too long
+new-alias 		ss		Select-String
+new-alias 		sum		Get-Checksum
+new-alias       swm     SwapMouse
+Find-Alias      svcutil	@("C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.2 Tools\SvcUtil.exe")
+Find-Alias		vsc		@("${env:LOCALAPPDATA}\Programs\Microsoft VS Code\Code.exe",
+                          "C:\Program Files\Microsoft VS Code\Code.exe")
+new-alias       xm      Show-Message
+
+# ----------------------------------------------------  Functions  -----------------------------------------------------
 
 function labelwin {
     param(
