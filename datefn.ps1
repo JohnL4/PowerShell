@@ -26,8 +26,12 @@ function datefn()
 		$filename,
 
 		[FileAttribute]
-		# The date to use from the given $filename: Creation or LastAccess or LastWrite (not the UTC versions)
-		$timeAttribute
+		# The date to use from the given $filename: LastWrite (the default), Creation, or LastAccess (not the UTC versions)
+		$timeAttribute,
+
+        [switch]
+        # Use only the date part of the selected file attribute, not the time part (i.e., only mm/dd/yyyy, not hh:mm).
+        $dateOnly
 	)
 
 	if ($timeAttribute -ne $Null -and $filename.Length -eq 0) {
@@ -36,6 +40,13 @@ function datefn()
 	if ($timeAttribute -eq $Null) {
 		$timeAttribute = [FileAttribute]::WriteTime
 	}
+
+    if ($dateOnly) {
+        $timeFormat = "%Y-%m-%d"
+    }
+    else {
+        $timeFormat = "%Y-%m-%d_%H%M"
+    }
 
 	$date = $Null
 	if ($filename.Length -eq 0) {
@@ -50,5 +61,5 @@ function datefn()
 			WriteTime		{ $date = $file.LastWriteTime }
 		}
 	}
-	return get-date -date $date -uformat "%Y-%m-%d_%H%M"
+	return get-date -date $date -uformat $timeFormat
 }

@@ -29,7 +29,7 @@ if (Test-Path "C:\Users\j6l")
 
 # $VerbosePreference = "SilentlyContinue"
 
-Import-Module $ScriptDir\Modules\PowerTab
+Import-Module PowerTab -ArgumentList "$ProfileParent\PowerTabConfig.xml"
 
 #------------------------------------------------  Amazon Web Services  ------------------------------------------------
 # See http://docs.aws.amazon.com/powershell/latest/userguide/pstools-getting-started.html
@@ -178,6 +178,7 @@ new-alias       swm     SwapMouse
 Find-Alias      svcutil	@("C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.2 Tools\SvcUtil.exe")
 Find-Alias		vsc		@("${env:LOCALAPPDATA}\Programs\Microsoft VS Code\Code.exe",
                           "C:\Program Files\Microsoft VS Code\Code.exe")
+Find-Alias      xfl     @("C:\work\sxa\LocalTools\Xform-NLog.ps1")
 new-alias       xm      Show-Message
 
 # ----------------------------------------------------  Functions  -----------------------------------------------------

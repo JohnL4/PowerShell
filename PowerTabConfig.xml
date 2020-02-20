@@ -1,7 +1,13 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
   <Config>
-    <Category>Global</Category>
+    <Category>Core</Category>
+    <Name>DefaultHandler</Name>
+    <Value>Dynamic</Value>
+    <Type>String</Type>
+  </Config>
+  <Config>
+    <Category>Core</Category>
     <Name>CustomUserFunction</Name>
     <Value>Write-Warning</Value>
     <Type>String</Type>
@@ -9,23 +15,17 @@
   <Config>
     <Category>Version</Category>
     <Name>Version</Name>
-    <Value>0.99.6.0</Value>
+    <Value>1.1.0</Value>
     <Type>String</Type>
   </Config>
   <Config>
-    <Category>Global</Category>
-    <Name>DefaultHandler</Name>
-    <Value>Dynamic</Value>
-    <Type>String</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
+    <Category>Core</Category>
     <Name>AlternateHandler</Name>
     <Value>Dynamic</Value>
     <Type>String</Type>
   </Config>
   <Config>
-    <Category>Global</Category>
+    <Category>ConsoleList</Category>
     <Name>CustomCompletionChars</Name>
     <Value>]:)</Value>
     <Type>String</Type>
@@ -80,12 +80,6 @@
   </Config>
   <Config>
     <Category>ShortcutChars</Category>
-    <Name>CustomFunction</Name>
-    <Value>#</Value>
-    <Type>String</Type>
-  </Config>
-  <Config>
-    <Category>ShortcutChars</Category>
     <Name>Invoke</Name>
     <Value>&amp;</Value>
     <Type>String</Type>
@@ -110,6 +104,12 @@
   </Config>
   <Config>
     <Category>ShortcutChars</Category>
+    <Name>CustomFunction</Name>
+    <Value>#</Value>
+    <Type>String</Type>
+  </Config>
+  <Config>
+    <Category>ShortcutChars</Category>
     <Name>Native</Name>
     <Value>!</Value>
     <Type>String</Type>
@@ -128,109 +128,25 @@
   </Config>
   <Config>
     <Category>Global</Category>
-    <Name>AutoExpandOnDot</Name>
-    <Value>1</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
     <Name>Enabled</Name>
     <Value>1</Value>
     <Type>Bool</Type>
   </Config>
   <Config>
-    <Category>Global</Category>
+    <Category>ConsoleList</Category>
     <Name>DoubleBorder</Name>
     <Value>1</Value>
     <Type>Bool</Type>
   </Config>
   <Config>
-    <Category>Global</Category>
-    <Name>ShowAccessorMethods</Name>
-    <Value>1</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>FileSystemExpand</Name>
-    <Value>1</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>SpaceComplete</Name>
-    <Value>1</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>AliasQuickExpand</Name>
-    <Value>0</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>TabActivityIndicator</Name>
-    <Value>1</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>DoubleTabEnabled</Name>
-    <Value>0</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>CloseListOnEmptyFilter</Name>
-    <Value>1</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>DoubleTabLock</Name>
-    <Value>0</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>DotComplete</Name>
-    <Value>1</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>CustomComplete</Name>
-    <Value>1</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>CustomFunctionEnabled</Name>
-    <Value>0</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>VisualStudioTabBehavior</Name>
-    <Value>0</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>AutoExpandOnBackSlash</Name>
-    <Value>1</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
-    <Name>IgnoreConfirmPreference</Name>
-    <Value>0</Value>
-    <Type>Bool</Type>
-  </Config>
-  <Config>
-    <Category>Global</Category>
+    <Category>ConsoleList</Category>
     <Name>BackSlashComplete</Name>
+    <Value>1</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>ConsoleList</Category>
+    <Name>DotComplete</Name>
     <Value>1</Value>
     <Type>Bool</Type>
   </Config>
@@ -241,13 +157,97 @@
     <Type>Bool</Type>
   </Config>
   <Config>
+    <Category>ConsoleList</Category>
+    <Name>SpaceComplete</Name>
+    <Value>1</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>Core</Category>
+    <Name>DoubleTabLock</Name>
+    <Value>0</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>ConsoleList</Category>
+    <Name>AutoExpandOnBackSlash</Name>
+    <Value>1</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>Core</Category>
+    <Name>CustomFunctionEnabled</Name>
+    <Value>0</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>ConsoleList</Category>
+    <Name>VisualStudioTabBehavior</Name>
+    <Value>0</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>Core</Category>
+    <Name>FileSystemExpand</Name>
+    <Value>1</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>ConsoleList</Category>
+    <Name>CloseListOnEmptyFilter</Name>
+    <Value>1</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>Core</Category>
+    <Name>AliasQuickExpand</Name>
+    <Value>0</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>Core</Category>
+    <Name>IgnoreConfirmPreference</Name>
+    <Value>0</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>Core</Category>
+    <Name>DoubleTabEnabled</Name>
+    <Value>0</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
     <Category>Global</Category>
+    <Name>TabActivityIndicator</Name>
+    <Value>1</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>ConsoleList</Category>
+    <Name>AutoExpandOnDot</Name>
+    <Value>1</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>Core</Category>
+    <Name>ShowAccessorMethods</Name>
+    <Value>1</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>ConsoleList</Category>
+    <Name>CustomComplete</Name>
+    <Value>1</Value>
+    <Type>Bool</Type>
+  </Config>
+  <Config>
+    <Category>ConsoleList</Category>
     <Name>MinimumListItems</Name>
     <Value>2</Value>
     <Type>Int</Type>
   </Config>
   <Config>
-    <Category>Global</Category>
+    <Category>ConsoleList</Category>
     <Name>FastScrollItemcount</Name>
     <Value>10</Value>
     <Type>Int</Type>
