@@ -5,3 +5,4 @@ Modules
 *.orig
 *.broken
 *.backup
+/PowerTabConfig.xml.old

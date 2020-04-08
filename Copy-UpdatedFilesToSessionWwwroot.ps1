@@ -1,11 +1,25 @@
 <#
 .SYNOPSIS
     Copy recently-updated files to the wwwroot of a remote session to another machine
+
 .DESCRIPTION
     Certain files will be excluded: 
-    
+
     - Files below the .git directory
     - Temporary files (by the following regular expressions: ~$, ^#.*#$, ^\.#)
+
+.NOTES
+    Note that merely pushing recent files in a subdirectory still might not give the results you
+    expect if your "new" subdirectory contains a bunch of old files (such as images) that are
+    required to travel with the updated files.  In that case, it's probably better to just copy the
+    entire directory.
+
+.EXAMPLE
+
+    cp $dirToPush (join-path "c:\inetpub\wwwroot" $($dirToPush.FullName | split-path -noq | split-path -parent)) -ToSession $vm  -rec -for -excl "*~" 
+
+    Copy an entire directory tree, regardless of age.
+
 #>
 param (
     # The directory to mirror.  Can be either a string or a System.IO.FileSystemInfo object.
