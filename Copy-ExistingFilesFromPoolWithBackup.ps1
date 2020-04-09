@@ -20,6 +20,9 @@
     indicate your original "destination" and see what it puts in the new destination.  After that, you can copy the
     results of the dry run to your real destination.
 
+    If there are no destination files to be overwritten (length of list of destination files is 0), then the REFERENCE
+    files will be backed up instead.  This will facilitate the "dry run" scenario above.
+
 #>
 
 param (
@@ -173,7 +176,13 @@ Write-Host -fore cyan "Take backups..."
 # Suppress errors for missing files.  This might happen when copying to a new, empty destination different from
 # reference, but should never happen when backing up files we're about to overwrite, because we just computed this
 # list.
-$commonFileNames | % {Join-Path $destDir $_} | cp -dest $newBackupDir -PassThru -ea SilentlyContinue
+$existingDestFiles = $commonFileNames | % {Join-Path $destDir $_} | ls -ea SilentlyContinue
+if (0 -eq $existingDestFiles.Count) {
+    Write-Warning "No destination files found; backing up reference files instead"
+    $commonFileNames | % {Join-Path $refDir $_} | cp -dest $newBackupDir -PassThru -ea Continue
+} else {
+    $commonFileNames | % {Join-Path $destDir $_} | cp -dest $newBackupDir -PassThru -ea Continue
+}
 
 Write-Host -fore cyan "Do copy..."
 $commonFileNames | % {Join-Path $srcDir $_} | cp -dest $destDir -Force -PassThru
