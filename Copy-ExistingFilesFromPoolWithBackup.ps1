@@ -12,7 +12,7 @@
 
     -Force parameter will be used for copy to overwrite read-only files.
 
-    This script does not operate recursively.
+    This script does not operate recursively.  In other words, it will not handle directory TREES.
 
 .NOTES
 
@@ -37,7 +37,7 @@ param (
     $destDir,
 
     [parameter( Mandatory = $true)]
-    [string]
+    [IO.DirectoryInfo]
     # The backup directory.  Ideally, doesn't (yet) exist.
     $backupDir,
 

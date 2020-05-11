@@ -59,6 +59,7 @@ switch ($PsVersionTable.PSVersion.Major)
 . $ScriptDir\HasNulls.ps1
 . $ScriptDir\lscf.ps1
 . $ScriptDir\oss.ps1
+. $ScriptDir\Remove-Suffix.ps1
 . $ScriptDir\ScanSrc.ps1
 . $ScriptDir\Show-Message.ps1
 . $ScriptDir\slay.ps1
@@ -171,6 +172,7 @@ Find-Alias      mvn     @("c:\usr\local\apache-maven-3.5.2\bin\mvn.cmd")
 Find-Alias      np		@('C:\Program Files\Notepad++\notepad++.exe',
                           'C:\Program Files (x86)\Notepad++\notepad++.exe')
 new-alias 		os		Out-String
+New-Alias       rsf     Remove-Suffix
 new-alias       sel     Select-Object # 'select' is still too long
 new-alias 		ss		Select-String
 new-alias 		sum		Get-Checksum
