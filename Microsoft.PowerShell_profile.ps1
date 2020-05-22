@@ -14,10 +14,18 @@ else
 # $VerbosePreference="Continue"
 
 # Syntax highlighting - use Get-PSReadlineOption to display current options.
-Set-PSReadlineOption -TokenKind String -ForegroundColor red
-Set-PSReadlineOption -TokenKind Parameter -ForegroundColor white
-Set-PSReadlineOption -TokenKind Comment -ForegroundColor gray
-Set-PSReadlineOption -TokenKind Operator -ForegroundColor gray
+try 
+{
+	Set-PSReadlineOption -TokenKind String -ForegroundColor red
+	Set-PSReadlineOption -TokenKind Parameter -ForegroundColor white
+	Set-PSReadlineOption -TokenKind Comment -ForegroundColor gray
+	Set-PSReadlineOption -TokenKind Operator -ForegroundColor gray
+}
+catch
+{
+	# See https://stackoverflow.com/a/52651577
+	Set-PSReadlineOption -Colors @{ String = "Red"; Parameter = "White"; Comment = "Gray"; Operator = "Gray"}
+}
 
 Write-Verbose "Sourcing common script"
 
