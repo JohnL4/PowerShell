@@ -157,7 +157,7 @@ $env:LESS = "-Mi -j10 -z-3"
 # -----------------------------------------------------  Aliases  ------------------------------------------------------
 
 new-alias 		cols	Format-Columns
-Find-Alias      ec 		"C:\usr\local\emacs\26.1\bin\emacsclientw.exe"
+Find-Alias      ec 		"C:\usr\local\emacs\26.3\bin\emacsclientw.exe"
 Find-Alias      entlibconfig "c:\usr\local\EnterpriseLibrary6.0\EntLibConfig.exe"
 new-alias		ff		Find-File
 new-alias		ffa		Find-FileAny
@@ -174,12 +174,12 @@ Find-Alias      np		@('C:\Program Files\Notepad++\notepad++.exe',
 new-alias 		os		Out-String
 New-Alias       rsf     Remove-Suffix
 new-alias       sel     Select-Object # 'select' is still too long
-new-alias 		ss		Select-String
 new-alias 		sum		Get-Checksum
 new-alias       swm     SwapMouse
 Find-Alias      svcutil	@("C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.2 Tools\SvcUtil.exe")
-Find-Alias		vsc		@("${env:LOCALAPPDATA}\Programs\Microsoft VS Code\Code.exe",
-                          "C:\Program Files\Microsoft VS Code\Code.exe")
+# Don't need 'vsc' alias because VS Code installs its own command: 'code' (which maps to 'code.cmd' on windows).
+# Find-Alias		vsc		@("${env:LOCALAPPDATA}\Programs\Microsoft VS Code\Code.exe",
+#                           "C:\Program Files\Microsoft VS Code\Code.exe")
 Find-Alias      xfl     @("C:\work\sxa\LocalTools\Xform-NLog.ps1")
 new-alias       xm      Show-Message
 
