@@ -14,5 +14,5 @@
 #>
 function datefn()
 {
-	get-date -uformat "%Y-%m-%d_%H%M"
+	get-date -uformat "%Y-%m-%d-%H%M"
 }
