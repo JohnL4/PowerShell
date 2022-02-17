@@ -9,7 +9,10 @@ function Backup-File {
     param (
         [Parameter( ValueFromPipeline=$true)]  
         [string]      
-        $File
+        $File,
+
+        [switch]
+        $Pass
     )
     
     begin {
@@ -23,7 +26,7 @@ function Backup-File {
             $f = $File
         }
         if ($f.GetType().Name -eq "String") {
-            $f = ls $f
+            $f = Get-ChildItem $f
         }
         if ((! $f) -or ($f.GetType().Name -ne "FileInfo")) {
             throw ("No file specified or directory specified ({0})" -f $f)
@@ -33,7 +36,17 @@ function Backup-File {
         $ext = $f.Extension
         $newFileName = ("{0}.{1}{2}" -f $basename,$(datefn -f $f),$ext)
         $newPath = Join-Path $dirName $newFileName
-        cp $f $newPath -pass
+        $i = 1
+        while (Test-Path $newPath) {
+            $i += 1
+            $newFileName = ("{0}.{1}.{3}{2}" -f $basename,$(datefn -f $f),$ext, $i)
+            $newPath = Join-Path $dirName $newFileName
+        }
+        if ($Pass) {
+            Copy-Item $f $newPath -pass
+        } else {
+            Copy-Item $f $newPath
+        }
     }
     
     end {
