@@ -159,7 +159,7 @@ $env:LESS = "-Mi -j10 -z-3"
 # -----------------------------------------------------  Aliases  ------------------------------------------------------
 
 new-alias 		cols	Format-Columns
-Find-Alias      ec 		"C:\usr\local\emacs\27.2\x86_64\bin\emacsclientw.exe"
+Find-Alias      ec 		"C:\usr\local\emacs\26.3\bin\emacsclientw.exe"
 Find-Alias      entlibconfig "c:\usr\local\EnterpriseLibrary6.0\EntLibConfig.exe"
 new-alias		ff		Find-File
 new-alias		ffa		Find-FileAny
@@ -186,6 +186,10 @@ Find-Alias      xfl     @("C:\work\sxa\LocalTools\Xform-NLog.ps1")
 new-alias       xm      Show-Message
 
 # ----------------------------------------------------  Functions  -----------------------------------------------------
+
+function iisx { 
+    & "c:\Program Files\IIS Express\iisexpress.exe" /path:"C:\Users\j6l\OneDrive - Pulse8 Inc\Shared-With-Everyone" 
+}
 
 function labelwin {
     param(
