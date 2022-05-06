@@ -60,6 +60,7 @@ switch ($PsVersionTable.PSVersion.Major)
 . $ScriptDir\HasNulls.ps1
 . $ScriptDir\lscf.ps1
 . $ScriptDir\oss.ps1
+. $ScriptDir\pss.ps1
 . $ScriptDir\Remove-Suffix.ps1
 . $ScriptDir\ScanSrc.ps1
 . $ScriptDir\Show-Message.ps1

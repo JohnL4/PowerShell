@@ -32,5 +32,5 @@ function waitfor
     Write-Host
     Write-Host "$ComputerName is up." -Foreground cyan
     Write-Host
-    xm "$ComputerName is up."
+    # xm "$ComputerName is up."
 }

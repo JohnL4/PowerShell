@@ -53,7 +53,7 @@ function datefn()
 		$date = [DateTime]::Now
 	}
 	else {
-		$file = Get-ChildItem $filename
+		$file = Get-Item $filename
 		switch ($timeAttribute)
 		{
 			AccessTime		{ $date = $file.LastAccessTime }
