@@ -5,10 +5,6 @@
     <Description>AADJCSP</Description>
   </COM>
   <COM>
-    <Name>ABIT.ABIT</Name>
-    <Description>ABIT Class</Description>
-  </COM>
-  <COM>
     <Name>AccClientDocMgr.AccClientDocMgr</Name>
     <Description>AccClientDocMgr Class</Description>
   </COM>
@@ -17,12 +13,12 @@
     <Description>AccDictionary Class</Description>
   </COM>
   <COM>
-    <Name>AccServerDocMgr.AccServerDocMgr</Name>
-    <Description>AccServerDocMgr Class</Description>
+    <Name>Access.Application</Name>
+    <Description>Microsoft Access Application</Description>
   </COM>
   <COM>
-    <Name>AcroPDF.PDF</Name>
-    <Description>Adobe PDF Reader</Description>
+    <Name>AccServerDocMgr.AccServerDocMgr</Name>
+    <Description>AccServerDocMgr Class</Description>
   </COM>
   <COM>
     <Name>ADODB.Command</Name>
@@ -93,24 +89,12 @@
     <Description>ADOX.User.6.0</Description>
   </COM>
   <COM>
-    <Name>AirplaneModeAPI</Name>
-    <Description>AirplaneModeAPI</Description>
-  </COM>
-  <COM>
-    <Name>aliasq.aliasq</Name>
-    <Description>aliasq Class</Description>
-  </COM>
-  <COM>
     <Name>AMOVIE.ActiveMovieControl</Name>
     <Description>ActiveMovieControl Object</Description>
   </COM>
   <COM>
     <Name>Application.Manifest</Name>
     <Description>Manifest mime handler</Description>
-  </COM>
-  <COM>
-    <Name>AppProvider.RemoteAppHandler</Name>
-    <Description>RemoteAppHandler Class</Description>
   </COM>
   <COM>
     <Name>AzRoles.AzAuthorizationStore</Name>
@@ -123,10 +107,6 @@
   <COM>
     <Name>AzRoles.AzPrincipalLocator</Name>
     <Description>AzPrincipalLocator Class</Description>
-  </COM>
-  <COM>
-    <Name>BatteryVDev</Name>
-    <Description>BatteryVDev</Description>
   </COM>
   <COM>
     <Name>BDATuner.AnalogAudioComponentType</Name>
@@ -261,10 +241,6 @@
     <Description>Collection of all the available BDA Tuning Model Tuning Space objects on this system</Description>
   </COM>
   <COM>
-    <Name>BdeUISrv.BDEUILauncher</Name>
-    <Description>BDEUILauncher Class</Description>
-  </COM>
-  <COM>
     <Name>Behavior.Microsoft.DXTFilterBehavior</Name>
     <Description>DXTFilterBehavior</Description>
   </COM>
@@ -283,18 +259,6 @@
   <COM>
     <Name>bidispl.bidispl</Name>
     <Description>Bidi Spooler APIs</Description>
-  </COM>
-  <COM>
-    <Name>BiosVdev</Name>
-    <Description>BiosVdev</Description>
-  </COM>
-  <COM>
-    <Name>BitDefender.RootkitScanner</Name>
-    <Description>BitDefender Rootkit Scanner Class</Description>
-  </COM>
-  <COM>
-    <Name>BitDefender.ThreatScanner</Name>
-    <Description>BitDefender Threat Scanner Class</Description>
   </COM>
   <COM>
     <Name>BOOTSTRAP</Name>
@@ -357,12 +321,16 @@
     <Description>SMTP OnArrival Script Host Sink Class</Description>
   </COM>
   <COM>
-    <Name>CellularAPI</Name>
-    <Description>CellularAPI</Description>
+    <Name>certadm.OCSPAdmin</Name>
+    <Description>OCSPAdmin Class</Description>
   </COM>
   <COM>
-    <Name>CellularAPI_OEM</Name>
-    <Description>CellularAPI_OEM</Description>
+    <Name>certadm.OCSPPropertyCollection</Name>
+    <Description>OCSPPropertyCollection Class</Description>
+  </COM>
+  <COM>
+    <Name>CertificateAuthority.Admin</Name>
+    <Description>CertAdmin Class</Description>
   </COM>
   <COM>
     <Name>CertificateAuthority.Config</Name>
@@ -393,8 +361,16 @@
     <Description>Encode String Array Class</Description>
   </COM>
   <COM>
+    <Name>CertificateAuthority.ExitManage</Name>
+    <Description>CertManageModule Class (exit legacy support)</Description>
+  </COM>
+  <COM>
     <Name>CertificateAuthority.GetConfig</Name>
     <Description>CertGetConfig Class</Description>
+  </COM>
+  <COM>
+    <Name>CertificateAuthority.PolicyManage</Name>
+    <Description>CertManageModule Class (policy legacy support)</Description>
   </COM>
   <COM>
     <Name>CertificateAuthority.Request</Name>
@@ -409,8 +385,48 @@
     <Description>CertServerPolicy Class</Description>
   </COM>
   <COM>
+    <Name>CertificateAuthority.View</Name>
+    <Description>CertView Class</Description>
+  </COM>
+  <COM>
     <Name>CertificateStore</Name>
     <Description>CertificateStore</Description>
+  </COM>
+  <COM>
+    <Name>certocm.CertEnrollUpgrade</Name>
+    <Description>CertEnrollUpgrade Class</Description>
+  </COM>
+  <COM>
+    <Name>certocm.CertificateEnrollmentPolicyServerSetup</Name>
+    <Description>CertificateEnrollmentPolicyServerSetup Class</Description>
+  </COM>
+  <COM>
+    <Name>certocm.CertificateEnrollmentServerSetup</Name>
+    <Description>CertificateEnrollmentServerSetup Class</Description>
+  </COM>
+  <COM>
+    <Name>certocm.CertSrvSetup</Name>
+    <Description>CertSrvSetup Class</Description>
+  </COM>
+  <COM>
+    <Name>certocm.CertSrvSetupKeyInformation</Name>
+    <Description>CertSrvSetupKeyInformation Class</Description>
+  </COM>
+  <COM>
+    <Name>certocm.CertSrvUpgrade</Name>
+    <Description>CertSrvUpgrade Class</Description>
+  </COM>
+  <COM>
+    <Name>certocm.MSCEPSetup</Name>
+    <Description>MSCEPSetup Class</Description>
+  </COM>
+  <COM>
+    <Name>certocm.MscepUpgrade</Name>
+    <Description>MscepUpgrade Class</Description>
+  </COM>
+  <COM>
+    <Name>certocm.PolicyEnrollUpgrade</Name>
+    <Description>PolicyEnrollUpgrade Class</Description>
   </COM>
   <COM>
     <Name>CfgComp.CfgComp</Name>
@@ -445,6 +461,30 @@
     <Description>CImeDictAPIWebServiceComment Class</Description>
   </COM>
   <COM>
+    <Name>Citrix.IcaEndpoint.Capture</Name>
+    <Description>Citrix IcaEndpoint Capture Class</Description>
+  </COM>
+  <COM>
+    <Name>Citrix.IcaEndpoint.Render</Name>
+    <Description>Citrix IcaEndpoint Render Class</Description>
+  </COM>
+  <COM>
+    <Name>Citrix.Mobility</Name>
+    <Description>CitrixMobile Object</Description>
+  </COM>
+  <COM>
+    <Name>CitrixSpeexDecoder.CCitrixSpeexDecoder</Name>
+    <Description>CCitrixSpeexDecoder Class</Description>
+  </COM>
+  <COM>
+    <Name>CitrixSpeexEncoder.CCitrixSpeexEncoder</Name>
+    <Description>CCitrixSpeexEncoder Class</Description>
+  </COM>
+  <COM>
+    <Name>CivicAddressReport</Name>
+    <Description>CivicAddressReport Class</Description>
+  </COM>
+  <COM>
     <Name>ClientCertificateInstall</Name>
     <Description>ClientCertificateInstall</Description>
   </COM>
@@ -477,16 +517,8 @@
     <Description>CodeCompareShlExt Class</Description>
   </COM>
   <COM>
-    <Name>com.sun.star.ServiceManager</Name>
-    <Description>LibreOffice Service Manager (Ver 1.0)</Description>
-  </COM>
-  <COM>
     <Name>COMAdmin.COMAdminCatalog</Name>
     <Description>Catalog2 Class</Description>
-  </COM>
-  <COM>
-    <Name>CoManagementHandler.CoManagementHandler</Name>
-    <Description>CoManagementHandler Class</Description>
   </COM>
   <COM>
     <Name>CommunicatorMeetingJoinAx.JoinManager</Name>
@@ -495,10 +527,6 @@
   <COM>
     <Name>CompatContextMenu.CompatContextMenu</Name>
     <Description>CompatContextMenu Class</Description>
-  </COM>
-  <COM>
-    <Name>ComplianceHandler.ComplianceHandler</Name>
-    <Description>ComplianceHandler Class</Description>
   </COM>
   <COM>
     <Name>ComPlusDebug.CorpubPublish</Name>
@@ -577,54 +605,6 @@
     <Description>Cor Remote Loader, CorLoad, CorLoad 1</Description>
   </COM>
   <COM>
-    <Name>CPL_Manager.MouseCplExt</Name>
-    <Description>CPL Mouse Manager</Description>
-  </COM>
-  <COM>
-    <Name>CplExt.DAXAPOPropPage</Name>
-    <Description>DAXAPOPropPage Class</Description>
-  </COM>
-  <COM>
-    <Name>CplExt.DolbyDAX2APOPropPage</Name>
-    <Description>DolbyDAX2APOPropPage Class</Description>
-  </COM>
-  <COM>
-    <Name>CplExt.ExtDspPropPage</Name>
-    <Description>ExtDspPropPage Class</Description>
-  </COM>
-  <COM>
-    <Name>CPrepSrv.ClusterCleanup</Name>
-    <Description>ClusterCleanup Class</Description>
-  </COM>
-  <COM>
-    <Name>CPrepSrv.ClusterFirewall</Name>
-    <Description>ClusterFirewall Class</Description>
-  </COM>
-  <COM>
-    <Name>CPrepSrv.ClusterLog</Name>
-    <Description>ClusterLog Class</Description>
-  </COM>
-  <COM>
-    <Name>CPrepSrv.ClusterNetwork</Name>
-    <Description>ClusterNetwork Class</Description>
-  </COM>
-  <COM>
-    <Name>CPrepSrv.ClusterSetup</Name>
-    <Description>ClusterSetup Class</Description>
-  </COM>
-  <COM>
-    <Name>CPrepSrv.ClusterStorage</Name>
-    <Description>ClusterStorage Class</Description>
-  </COM>
-  <COM>
-    <Name>CPrepSrv.ClusterUpdate</Name>
-    <Description>ClusterUpdate Class</Description>
-  </COM>
-  <COM>
-    <Name>CrashDumpVdev</Name>
-    <Description>CrashDumpVdev</Description>
-  </COM>
-  <COM>
     <Name>CrmClerk.CrmClerk</Name>
     <Description>CrmClerk Class</Description>
   </COM>
@@ -643,10 +623,6 @@
   <COM>
     <Name>CspCellularSettings</Name>
     <Description>CfgSP CellularSettings</Description>
-  </COM>
-  <COM>
-    <Name>CSppActivationVDev</Name>
-    <Description>CSppActivationVDev</Description>
   </COM>
   <COM>
     <Name>cttunesvr.CtTuner</Name>
@@ -677,8 +653,8 @@
     <Description>OLE DB Rowset Server</Description>
   </COM>
   <COM>
-    <Name>DebugDevice</Name>
-    <Description>DebugDevice</Description>
+    <Name>DeclaredConfiguration</Name>
+    <Description>DeclaredConfiguration</Description>
   </COM>
   <COM>
     <Name>DefaultLocationApi</Name>
@@ -691,10 +667,6 @@
   <COM>
     <Name>device</Name>
     <Description>DeviceMoniker</Description>
-  </COM>
-  <COM>
-    <Name>DeviceGuardHandler.DeviceGuardHandler</Name>
-    <Description>DeviceGuardHandler Class</Description>
   </COM>
   <COM>
     <Name>DeviceManageability</Name>
@@ -725,10 +697,6 @@
     <Description>DMAccNodeProcessor.1.0</Description>
   </COM>
   <COM>
-    <Name>DmaVdev</Name>
-    <Description>DmaVdev</Description>
-  </COM>
-  <COM>
     <Name>DMClient</Name>
     <Description>DMClient</Description>
   </COM>
@@ -739,14 +707,6 @@
   <COM>
     <Name>DownloadBehavior.DownloadBehavior</Name>
     <Description>DownloadBehavior Class</Description>
-  </COM>
-  <COM>
-    <Name>Dropbox.AutoplayEventHandler</Name>
-    <Description>Dropbox Autoplay COM Server</Description>
-  </COM>
-  <COM>
-    <Name>Dropbox.OfficeAddIn</Name>
-    <Description>Dropbox.OfficeAddIn Class</Description>
   </COM>
   <COM>
     <Name>dtsh.DetectionAndSharing</Name>
@@ -953,16 +913,8 @@
     <Description>DynamicManagement</Description>
   </COM>
   <COM>
-    <Name>DynMemVDev</Name>
-    <Description>DynMemVDev</Description>
-  </COM>
-  <COM>
     <Name>EapMschapv2Cfg.EapMschapv2Cfg</Name>
     <Description>EapMschapv2Cfg Class</Description>
-  </COM>
-  <COM>
-    <Name>EdgeBrowserHandler.EdgeBrowserHandler</Name>
-    <Description>EdgeBrowserHandler Class</Description>
   </COM>
   <COM>
     <Name>EditionUpgradeHelperObj.EditionUpgradeHelper</Name>
@@ -971,30 +923,6 @@
   <COM>
     <Name>EditionUpgradeManagerObj.EditionUpgradeManager</Name>
     <Description>EditionUpgradeManager Class</Description>
-  </COM>
-  <COM>
-    <Name>EmulatedFloppy</Name>
-    <Description>EmulatedFloppy</Description>
-  </COM>
-  <COM>
-    <Name>EmulatedIde</Name>
-    <Description>EmulatedIde</Description>
-  </COM>
-  <COM>
-    <Name>EmulatedNic</Name>
-    <Description>EmulatedNic</Description>
-  </COM>
-  <COM>
-    <Name>EmulatedNicPool</Name>
-    <Description>EmulatedNicPool</Description>
-  </COM>
-  <COM>
-    <Name>EmulatedNicPoolWmiFactory</Name>
-    <Description>EmulatedNicPoolWmiFactory</Description>
-  </COM>
-  <COM>
-    <Name>EnterpriseDataObject.EnterpriseDataObject</Name>
-    <Description>EnterpriseDataObject Class</Description>
   </COM>
   <COM>
     <Name>EnterpriseModernAppManagement</Name>
@@ -1017,40 +945,32 @@
     <Description>Event System</Description>
   </COM>
   <COM>
-    <Name>EvernoteCC.EvernoteContactConnector</Name>
-    <Description>EvernoteContactConnector Class</Description>
+    <Name>Excel.Application</Name>
+    <Description>Microsoft Excel Application</Description>
   </COM>
   <COM>
-    <Name>EvernoteIE.Addin</Name>
-    <Description>Evernote extension</Description>
+    <Name>Excel.Chart</Name>
+    <Description>Microsoft Excel Chart</Description>
   </COM>
   <COM>
-    <Name>EvtEng.CEvtEngine</Name>
-    <Description>CEvtEngine Class</Description>
+    <Name>Excel.ChartApplication</Name>
+    <Description>Microsoft Excel Charting Application</Description>
   </COM>
   <COM>
-    <Name>ExploitGuardHandler.ExploitGuardHandler</Name>
-    <Description>ExploitGuardHandler Class</Description>
+    <Name>Excel.OpenDocumentSpreadsheet</Name>
+    <Description>OpenDocument Spreadsheet</Description>
   </COM>
   <COM>
-    <Name>FaxComEx.FaxDocument</Name>
-    <Description>FaxDocument Class</Description>
+    <Name>Excel.Sheet</Name>
+    <Description>Microsoft Excel Worksheet</Description>
   </COM>
   <COM>
-    <Name>FaxComEx.FaxServer</Name>
-    <Description>FaxServer Class</Description>
+    <Name>Excel.SheetBinaryMacroEnabled</Name>
+    <Description>Microsoft Excel Binary Worksheet</Description>
   </COM>
   <COM>
-    <Name>FaxControl.FaxControl</Name>
-    <Description>FaxControl Class</Description>
-  </COM>
-  <COM>
-    <Name>FaxServer.FaxServer</Name>
-    <Description>FaxServer Class</Description>
-  </COM>
-  <COM>
-    <Name>FaxTiff.FaxTiff</Name>
-    <Description>FaxTiff Class</Description>
+    <Name>Excel.SheetMacroEnabled</Name>
+    <Description>Microsoft Excel Macro-Enabled Worksheet</Description>
   </COM>
   <COM>
     <Name>FDE</Name>
@@ -1059,10 +979,6 @@
   <COM>
     <Name>FDE</Name>
     <Description>Folder Redirection Editor</Description>
-  </COM>
-  <COM>
-    <Name>FhSearchPHLibrary.FhSearchProtocol</Name>
-    <Description>FhSearchProtocol Class</Description>
   </COM>
   <COM>
     <Name>FilePlaybackTerminal.FilePlaybackTerminal</Name>
@@ -1075,10 +991,6 @@
   <COM>
     <Name>FodHelper.FodHelperObj</Name>
     <Description>FodHelperComObject Class</Description>
-  </COM>
-  <COM>
-    <Name>ForeignSiteData.ForeignSiteData</Name>
-    <Description>ForeignSiteData Class</Description>
   </COM>
   <COM>
     <Name>FormHost.FormHost</Name>
@@ -1141,10 +1053,6 @@
     <Description>User Mode Bus Driver Class</Description>
   </COM>
   <COM>
-    <Name>FunctionDiscovery.WCNProvider</Name>
-    <Description>WCN-Config Function Discovery Provider Class</Description>
-  </COM>
-  <COM>
     <Name>FunctionDiscovery.WSDPrintProxy</Name>
     <Description>WSD Print Proxy Class</Description>
   </COM>
@@ -1157,12 +1065,8 @@
     <Description>FoxOLEDB 1.0 Object</Description>
   </COM>
   <COM>
-    <Name>GpupVDev</Name>
-    <Description>GpupVdev</Description>
-  </COM>
-  <COM>
-    <Name>GuestStateVDev</Name>
-    <Description>IoApicVdev</Description>
+    <Name>HDX264.HDX264Impl</Name>
+    <Description>HDX264Impl Class</Description>
   </COM>
   <COM>
     <Name>HHCtrl.FileFinder</Name>
@@ -1189,10 +1093,6 @@
   <COM>
     <Name>HtmlDlgSafeHelper.HtmlDlgSafeHelper</Name>
     <Description>HtmlDlgSafeHelper Class</Description>
-  </COM>
-  <COM>
-    <Name>HttpRaw 0.0.0</Name>
-    <Description>Cisco.PT.HttpRaw.0</Description>
   </COM>
   <COM>
     <Name>HWXInk.E-Ink</Name>
@@ -1369,40 +1269,12 @@
     <Description />
   </COM>
   <COM>
-    <Name>ICGuestInterfaceVdevDevice</Name>
-    <Description>ICGuestInterfaceVdevDevice</Description>
-  </COM>
-  <COM>
-    <Name>ICHeartbeatVdevDevice</Name>
-    <Description>ICHeartbeatVdevDevice</Description>
-  </COM>
-  <COM>
-    <Name>ICKvpExchangeVdevDevice</Name>
-    <Description>ICKvpExchangeVdevDevice</Description>
-  </COM>
-  <COM>
-    <Name>ICRdvVdevDevice</Name>
-    <Description>ICRdvVdevDevice</Description>
-  </COM>
-  <COM>
-    <Name>ICShutdownVdevDevice</Name>
-    <Description>ICShutdownVdevDevice</Description>
-  </COM>
-  <COM>
-    <Name>ICTimeSyncVdevDevice</Name>
-    <Description>ICTimeSyncVdevDevice</Description>
-  </COM>
-  <COM>
-    <Name>ICVssVdevDevice</Name>
-    <Description>ICVssVdevDevice</Description>
-  </COM>
-  <COM>
     <Name>IDBHO.IDBHOCtrl</Name>
     <Description>Windows Live Sign-in Control</Description>
   </COM>
   <COM>
-    <Name>Igfxext.CUIExternal</Name>
-    <Description>CUIExternal Class</Description>
+    <Name>ie_to_edge_bho.IEToEdgeBHO</Name>
+    <Description>IEToEdge BHO</Description>
   </COM>
   <COM>
     <Name>IImeIPointSrv1041</Name>
@@ -1514,10 +1386,6 @@
   </COM>
   <COM>
     <Name>ImeCommonAPI1041</Name>
-    <Description>ImeCommonAPI_JPN_Desktop_V1_old Class</Description>
-  </COM>
-  <COM>
-    <Name>ImeCommonAPI1041</Name>
     <Description>ImeCommonAPI_JPN_Desktop_V1 Class</Description>
   </COM>
   <COM>
@@ -1577,10 +1445,6 @@
     <Description>HanjaDic Class</Description>
   </COM>
   <COM>
-    <Name>Immunet.IPCtxtMenu</Name>
-    <Description>Immunet Protect Context Menu Handler</Description>
-  </COM>
-  <COM>
     <Name>IMOfferRAApp.IMOfferRA</Name>
     <Description>IMOfferRA Class</Description>
   </COM>
@@ -1625,16 +1489,8 @@
     <Description>Drawing</Description>
   </COM>
   <COM>
-    <Name>InputManagerVdev</Name>
-    <Description>InputManagerVdev</Description>
-  </COM>
-  <COM>
     <Name>InputPanelConfiguration.InputPanelConfiguration</Name>
     <Description>Input Panel Configuration</Description>
-  </COM>
-  <COM>
-    <Name>IntelCpHeciSvc.CphsSession</Name>
-    <Description>CphsSession Class</Description>
   </COM>
   <COM>
     <Name>Internet.HHCtrl</Name>
@@ -1653,12 +1509,12 @@
     <Description>Internet Explorer(Ver 1.0)</Description>
   </COM>
   <COM>
-    <Name>IoApicVdev</Name>
-    <Description>IoApicVdev</Description>
+    <Name>interopextension.InteropDictionary</Name>
+    <Description>InteropDictionary Class</Description>
   </COM>
   <COM>
-    <Name>IsaBusVdev</Name>
-    <Description>IsaBusVdev</Description>
+    <Name>interopextension.InteropHelper</Name>
+    <Description>InteropHelper Class</Description>
   </COM>
   <COM>
     <Name>ITIR.EngStemmer</Name>
@@ -1720,14 +1576,6 @@
     <Description>JpnRankerDS Class</Description>
   </COM>
   <COM>
-    <Name>JScriptProfiler.{3086F493-272E-4C44-BC13-046503D16722}</Name>
-    <Description>Microsoft JavaScript Profiler</Description>
-  </COM>
-  <COM>
-    <Name>KeyboardVdev</Name>
-    <Description>KeyboardVdev</Description>
-  </COM>
-  <COM>
     <Name>Krnlprov.KernelTraceProvider</Name>
     <Description>KernelTraceProvider Class</Description>
   </COM>
@@ -1736,32 +1584,16 @@
     <Description>KeystrokeGenerator Class</Description>
   </COM>
   <COM>
+    <Name>LatLongReport</Name>
+    <Description>Lat/Long Report Class</Description>
+  </COM>
+  <COM>
     <Name>LayoutRect.LayoutRect</Name>
     <Description>LayoutRect Class</Description>
   </COM>
   <COM>
-    <Name>LibreOffice.CalcDocument.1</Name>
-    <Description>OpenDocument Spreadsheet</Description>
-  </COM>
-  <COM>
-    <Name>LibreOffice.DrawDocument.1</Name>
-    <Description>OpenDocument Drawing</Description>
-  </COM>
-  <COM>
-    <Name>LibreOffice.ImpressDocument.1</Name>
-    <Description>OpenDocument Presentation</Description>
-  </COM>
-  <COM>
-    <Name>LibreOffice.MathDocument.1</Name>
-    <Description>OpenDocument Formula</Description>
-  </COM>
-  <COM>
-    <Name>LibreOffice.WriterDocument.1</Name>
-    <Description>OpenDocument Text</Description>
-  </COM>
-  <COM>
-    <Name>linkdata.linkdata</Name>
-    <Description>linkdata Class</Description>
+    <Name>LicLua.LicLuaObject</Name>
+    <Description>Office Licensing COM Server 16</Description>
   </COM>
   <COM>
     <Name>ListPad.ListPad</Name>
@@ -1781,6 +1613,10 @@
   </COM>
   <COM>
     <Name>LocationDisp.DispLatLongReport</Name>
+    <Description>DispLatLongReport Class</Description>
+  </COM>
+  <COM>
+    <Name>LocationDisp.DispLatLongReport</Name>
     <Description>LatLongReport Class</Description>
   </COM>
   <COM>
@@ -1788,12 +1624,32 @@
     <Description>LatLongReportFactory Class</Description>
   </COM>
   <COM>
+    <Name>LocationDisp.LocationReportFactory</Name>
+    <Description>ILocationReportFactory Class</Description>
+  </COM>
+  <COM>
     <Name>Logagent.Logagent</Name>
     <Description>Logagent Class</Description>
   </COM>
   <COM>
-    <Name>MCSF</Name>
-    <Description>MCSF</Description>
+    <Name>Lync.Gatekeeper</Name>
+    <Description>Gatekeeper Class</Description>
+  </COM>
+  <COM>
+    <Name>Lync.LyncEndorser</Name>
+    <Description>LyncEndorser Class</Description>
+  </COM>
+  <COM>
+    <Name>Lync.LyncForwarder</Name>
+    <Description>LyncForwarder Class</Description>
+  </COM>
+  <COM>
+    <Name>Lync.UCOfficeIntegration</Name>
+    <Description>UCOfficeIntegration Class</Description>
+  </COM>
+  <COM>
+    <Name>LyncMapi.MapiApplication</Name>
+    <Description>MapiApplication Class</Description>
   </COM>
   <COM>
     <Name>MDACVer.Version</Name>
@@ -1936,10 +1792,6 @@
     <Description>Windows Photo Viewer Gallery Interface</Description>
   </COM>
   <COM>
-    <Name>Microsoft.SyncShare.SyncShareFactory</Name>
-    <Description>Microsoft.SyncShare.SyncShareFactory Class</Description>
-  </COM>
-  <COM>
     <Name>Microsoft.Update.AgentInfo</Name>
     <Description>WindowsUpdateAgentInfo Class</Description>
   </COM>
@@ -1988,10 +1840,6 @@
     <Description>WebProxy Class</Description>
   </COM>
   <COM>
-    <Name>Microsoft.Virtualization.RemoteFileBrowsing</Name>
-    <Description>Hyper-V Remote File Browsing</Description>
-  </COM>
-  <COM>
     <Name>Microsoft.XMLDOM</Name>
     <Description>XML DOM Document</Description>
   </COM>
@@ -2008,8 +1856,11 @@
     <Description>XML Parser</Description>
   </COM>
   <COM>
-    <Name>MigratedUserCertificate.MigratedUserCertificate</Name>
-    <Description>MigratedUserCertificate Class</Description>
+    <Name>Microsoft.XPS.Shell.Metadata</Name>
+    <Description>Microsoft XPS Shell Metadata Handler</Description>
+  </COM>
+  <COM>
+    <Name>Microsoft.XPS.Shell.Thumbnail</Name>
   </COM>
   <COM>
     <Name>MMC.ExecutivePlatform</Name>
@@ -2104,6 +1955,14 @@
     <Description>Microsoft OLE DB Root Binder for Internet Publishing</Description>
   </COM>
   <COM>
+    <Name>MSGraph.Application</Name>
+    <Description>Microsoft Graph Application</Description>
+  </COM>
+  <COM>
+    <Name>MSGraph.Chart</Name>
+    <Description>Microsoft Graph Chart</Description>
+  </COM>
+  <COM>
     <Name>MSIME.China</Name>
     <Description>CHS Language model</Description>
   </COM>
@@ -2134,6 +1993,10 @@
   <COM>
     <Name>MSIME.Japan.SuggestionFramework</Name>
     <Description>Microsoft IME Japan LM Suggestion Data Source</Description>
+  </COM>
+  <COM>
+    <Name>MSIME.Taiwan</Name>
+    <Description>CHT Language model</Description>
   </COM>
   <COM>
     <Name>msinkaut.DrawingAttributes</Name>
@@ -2193,11 +2056,11 @@
   </COM>
   <COM>
     <Name>MSITFS</Name>
-    <Description>Microsoft InfoTech Protocol for IE 3.0</Description>
+    <Description>Microsoft InfoTech IStorage for Win32 Files</Description>
   </COM>
   <COM>
     <Name>MSITFS</Name>
-    <Description>Microsoft InfoTech IStorage for Win32 Files</Description>
+    <Description>Microsoft InfoTech IStorage System</Description>
   </COM>
   <COM>
     <Name>MSITFS</Name>
@@ -2205,90 +2068,7 @@
   </COM>
   <COM>
     <Name>MSITFS</Name>
-    <Description>Microsoft InfoTech IStorage System</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQApplication</Name>
-    <Description>MSMQApplication Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQCoordinatedTransactionDispenser</Name>
-    <Description>MSMQCoordinatedTransactionDispenser Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQDestination</Name>
-    <Description>MSMQDestination Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQEvent</Name>
-    <Description>MSMQEvent Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQManagement</Name>
-    <Description>MSMQManagement Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQMessage</Name>
-    <Description>MSMQMessage Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQQuery</Name>
-    <Description>MSMQQuery Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQQueue</Name>
-    <Description>MSMQQueue Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQQueueInfo</Name>
-    <Description>MSMQQueueInfo Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQQueueInfos</Name>
-    <Description>MSMQQueueInfos Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQTransaction</Name>
-    <Description>MSMQTransaction Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQ.MSMQTransactionDispenser</Name>
-    <Description>MSMQTransactionDispenser Object</Description>
-  </COM>
-  <COM>
-    <Name>MSMQSnap.ComputerMsmq</Name>
-    <Description>MSMQ ComputerMsmq Class</Description>
-  </COM>
-  <COM>
-    <Name>MSMQSnap.QueueExt</Name>
-    <Description>MSMQ Queue Extension Class</Description>
-  </COM>
-  <COM>
-    <Name>MSMQSnapin.Snapin</Name>
-    <Description>MSMQSnapin Class</Description>
-  </COM>
-  <COM>
-    <Name>MSMQSnapinAbout.1</Name>
-  </COM>
-  <COM>
-    <Name>MSMQTriggerObjects.IMSMQPropertyBag</Name>
-    <Description>IMSMQPropertyBag Class</Description>
-  </COM>
-  <COM>
-    <Name>MSMQTriggerObjects.MSMQRuleHandler</Name>
-    <Description>MSMQRuleHandler Class</Description>
-  </COM>
-  <COM>
-    <Name>MSMQTriggerObjects.MSMQRuleSet</Name>
-    <Description>MSMQRuleSet Class</Description>
-  </COM>
-  <COM>
-    <Name>MSMQTriggerObjects.MSMQTriggersConfig</Name>
-    <Description>MSMQTriggersConfig Class</Description>
-  </COM>
-  <COM>
-    <Name>MSMQTriggerObjects.MSMQTriggerSet</Name>
-    <Description>MSMQTriggerSet Class</Description>
+    <Description>Microsoft InfoTech Protocol for IE 3.0</Description>
   </COM>
   <COM>
     <Name>MSOLAP</Name>
@@ -2303,6 +2083,26 @@
     <Description>DisplayConnection140 Class</Description>
   </COM>
   <COM>
+    <Name>MSOLEDBSQL</Name>
+    <Description>MSOLEDBSQL</Description>
+  </COM>
+  <COM>
+    <Name>MSOLEDBSQL.AdvancedPage</Name>
+    <Description>MSOLEDBSQL Advanced Page</Description>
+  </COM>
+  <COM>
+    <Name>MSOLEDBSQL.ConnectionPage</Name>
+    <Description>MSOLEDBSQL Connection Page</Description>
+  </COM>
+  <COM>
+    <Name>MSOLEDBSQL.Enumerator</Name>
+    <Description>MSOLEDBSQL Enumerator</Description>
+  </COM>
+  <COM>
+    <Name>MSOLEDBSQL.ErrorLookup</Name>
+    <Description>MSOLEDBSQL Error Lookup</Description>
+  </COM>
+  <COM>
     <Name>MSP.MSP</Name>
     <Description>MSP Class</Description>
   </COM>
@@ -2311,20 +2111,24 @@
     <Description>MSPersist</Description>
   </COM>
   <COM>
-    <Name>MSRDC.RdcLibrary</Name>
-    <Description>RdcLibrary Class</Description>
+    <Name>MSProject.Application</Name>
+    <Description>Microsoft Project Basic</Description>
   </COM>
   <COM>
-    <Name>MSRDC.Similarity</Name>
-    <Description>Similarity Class</Description>
+    <Name>MSProject.ODBCMon</Name>
+    <Description>MSProject ODBCMoniker</Description>
   </COM>
   <COM>
-    <Name>MSRDC.SimilarityFileIdTable</Name>
-    <Description>SimilarityFileIdTable Class</Description>
+    <Name>MSProject.Project</Name>
+    <Description>Microsoft Project Document</Description>
   </COM>
   <COM>
-    <Name>MSRDC.SimilarityTraitsTable</Name>
-    <Description>SimilarityTraitsTable Class</Description>
+    <Name>MsRDP.MsRDP</Name>
+    <Description>Microsoft RDP Client Control (redistributable) - version 9</Description>
+  </COM>
+  <COM>
+    <Name>MsRDP.MsRDP</Name>
+    <Description>Microsoft RDP Client Control (redistributable) - version 11</Description>
   </COM>
   <COM>
     <Name>MsRDP.MsRDP</Name>
@@ -2332,11 +2136,7 @@
   </COM>
   <COM>
     <Name>MsRDP.MsRDP</Name>
-    <Description>Microsoft RDP Client Control (redistributable) - version 6</Description>
-  </COM>
-  <COM>
-    <Name>MsRDP.MsRDP</Name>
-    <Description>Microsoft RDP Client Control (redistributable) - version 5a</Description>
+    <Description>Microsoft RDP Client Control (redistributable) - version 4</Description>
   </COM>
   <COM>
     <Name>MsRDP.MsRDP</Name>
@@ -2344,7 +2144,27 @@
   </COM>
   <COM>
     <Name>MsRDP.MsRDP</Name>
+    <Description>Microsoft RDP Client Control (redistributable) - version 12</Description>
+  </COM>
+  <COM>
+    <Name>MsRDP.MsRDP</Name>
     <Description>Microsoft RDP Client Control (redistributable) - version 5</Description>
+  </COM>
+  <COM>
+    <Name>MsRDP.MsRDP</Name>
+    <Description>Microsoft RDP Client Control (redistributable) - version 3a</Description>
+  </COM>
+  <COM>
+    <Name>MsRDP.MsRDP</Name>
+    <Description>Microsoft RDP Client Control (redistributable) - version 5a</Description>
+  </COM>
+  <COM>
+    <Name>MsRDP.MsRDP</Name>
+    <Description>Microsoft RDP Client Control (redistributable) - version 6</Description>
+  </COM>
+  <COM>
+    <Name>MsRDP.MsRDP</Name>
+    <Description>Microsoft RDP Client Control (redistributable) - version 10</Description>
   </COM>
   <COM>
     <Name>MsRDP.MsRDP</Name>
@@ -2353,26 +2173,6 @@
   <COM>
     <Name>MsRDP.MsRDP</Name>
     <Description>Microsoft RDP Client Control (redistributable) - version 7</Description>
-  </COM>
-  <COM>
-    <Name>MsRDP.MsRDP</Name>
-    <Description>Microsoft RDP Client Control (redistributable) - version 4</Description>
-  </COM>
-  <COM>
-    <Name>MsRDP.MsRDP</Name>
-    <Description>Microsoft RDP Client Control (redistributable) - version 11</Description>
-  </COM>
-  <COM>
-    <Name>MsRDP.MsRDP</Name>
-    <Description>Microsoft RDP Client Control (redistributable) - version 10</Description>
-  </COM>
-  <COM>
-    <Name>MsRDP.MsRDP</Name>
-    <Description>Microsoft RDP Client Control (redistributable) - version 9</Description>
-  </COM>
-  <COM>
-    <Name>MsRDP.MsRDP</Name>
-    <Description>Microsoft RDP Client Control (redistributable) - version 3a</Description>
   </COM>
   <COM>
     <Name>MsRdpWebAccess.MsRdpClientShell</Name>
@@ -2392,31 +2192,11 @@
   </COM>
   <COM>
     <Name>MsTscAx.MsTscAx</Name>
-    <Description>Microsoft RDP Client Control - version 9</Description>
-  </COM>
-  <COM>
-    <Name>MsTscAx.MsTscAx</Name>
-    <Description>Microsoft Terminal Services Client Control - version 1</Description>
-  </COM>
-  <COM>
-    <Name>MsTscAx.MsTscAx</Name>
     <Description>Microsoft RDP Client Control - version 11</Description>
   </COM>
   <COM>
     <Name>MsTscAx.MsTscAx</Name>
-    <Description>Microsoft RDP Client Control - version 3</Description>
-  </COM>
-  <COM>
-    <Name>MsTscAx.MsTscAx</Name>
-    <Description>Microsoft RDP Client Control - version 7</Description>
-  </COM>
-  <COM>
-    <Name>MsTscAx.MsTscAx</Name>
-    <Description>Microsoft RDP Client Control - version 10</Description>
-  </COM>
-  <COM>
-    <Name>MsTscAx.MsTscAx</Name>
-    <Description>Microsoft RDP Client Control - version 5</Description>
+    <Description>Microsoft RDP Client Control - version 8</Description>
   </COM>
   <COM>
     <Name>MsTscAx.MsTscAx</Name>
@@ -2424,15 +2204,43 @@
   </COM>
   <COM>
     <Name>MsTscAx.MsTscAx</Name>
-    <Description>Microsoft RDP Client Control - version 2</Description>
-  </COM>
-  <COM>
-    <Name>MsTscAx.MsTscAx</Name>
     <Description>Microsoft RDP Client Control - version 6</Description>
   </COM>
   <COM>
     <Name>MsTscAx.MsTscAx</Name>
-    <Description>Microsoft RDP Client Control - version 8</Description>
+    <Description>Microsoft RDP Client Control - version 10</Description>
+  </COM>
+  <COM>
+    <Name>MsTscAx.MsTscAx</Name>
+    <Description>Microsoft Terminal Services Client Control - version 1</Description>
+  </COM>
+  <COM>
+    <Name>MsTscAx.MsTscAx</Name>
+    <Description>Microsoft RDP Client Control - version 7</Description>
+  </COM>
+  <COM>
+    <Name>MsTscAx.MsTscAx</Name>
+    <Description>Microsoft RDP Client Control - version 9</Description>
+  </COM>
+  <COM>
+    <Name>MsTscAx.MsTscAx</Name>
+    <Description>Microsoft RDP Client Control - version 3</Description>
+  </COM>
+  <COM>
+    <Name>MsTscAx.MsTscAx</Name>
+    <Description>Microsoft RDP Client Control - version 5</Description>
+  </COM>
+  <COM>
+    <Name>MsTscAx.MsTscAx</Name>
+    <Description>Microsoft RDP Client Control - version 12</Description>
+  </COM>
+  <COM>
+    <Name>MsTscAx.MsTscAx</Name>
+    <Description>Microsoft RDP Client Control - version 2</Description>
+  </COM>
+  <COM>
+    <Name>MstsMhst.MstscMhst</Name>
+    <Description>MstscMhst Class</Description>
   </COM>
   <COM>
     <Name>MSTSWebProxy.MSTSWebProxy</Name>
@@ -2547,10 +2355,6 @@
     <Description>WebDVD Adminitration class</Description>
   </COM>
   <COM>
-    <Name>MSWC.IISLog</Name>
-    <Description>MSWC.IISLog</Description>
-  </COM>
-  <COM>
     <Name>Msxml2.DOMDocument</Name>
     <Description>XML DOM Document 3.0</Description>
   </COM>
@@ -2560,11 +2364,11 @@
   </COM>
   <COM>
     <Name>Msxml2.DSOControl</Name>
-    <Description>XML Data Source Object 3.0</Description>
+    <Description>XML Data Source Object</Description>
   </COM>
   <COM>
     <Name>Msxml2.DSOControl</Name>
-    <Description>XML Data Source Object</Description>
+    <Description>XML Data Source Object 3.0</Description>
   </COM>
   <COM>
     <Name>Msxml2.FreeThreadedDOMDocument</Name>
@@ -2576,51 +2380,51 @@
   </COM>
   <COM>
     <Name>Msxml2.MXXMLWriter</Name>
-    <Description>MXXMLWriter 3.0</Description>
-  </COM>
-  <COM>
-    <Name>Msxml2.MXXMLWriter</Name>
     <Description>MXXMLWriter</Description>
   </COM>
   <COM>
-    <Name>Msxml2.SAXAttributes</Name>
-    <Description>SAXAttributes</Description>
+    <Name>Msxml2.MXXMLWriter</Name>
+    <Description>MXXMLWriter 3.0</Description>
   </COM>
   <COM>
     <Name>Msxml2.SAXAttributes</Name>
     <Description>SAXAttributes 3.0</Description>
   </COM>
   <COM>
-    <Name>Msxml2.SAXXMLReader</Name>
-    <Description>SAX XML Reader</Description>
+    <Name>Msxml2.SAXAttributes</Name>
+    <Description>SAXAttributes</Description>
   </COM>
   <COM>
     <Name>Msxml2.SAXXMLReader</Name>
     <Description>SAX XML Reader 3.0</Description>
   </COM>
   <COM>
-    <Name>Msxml2.ServerXMLHTTP</Name>
-    <Description>Server XML HTTP 3.0</Description>
+    <Name>Msxml2.SAXXMLReader</Name>
+    <Description>SAX XML Reader</Description>
   </COM>
   <COM>
     <Name>Msxml2.ServerXMLHTTP</Name>
     <Description>Server XML HTTP</Description>
   </COM>
   <COM>
-    <Name>Msxml2.XMLHTTP</Name>
-    <Description>XML HTTP</Description>
+    <Name>Msxml2.ServerXMLHTTP</Name>
+    <Description>Server XML HTTP 3.0</Description>
   </COM>
   <COM>
     <Name>Msxml2.XMLHTTP</Name>
     <Description>XML HTTP 3.0</Description>
   </COM>
   <COM>
-    <Name>Msxml2.XMLParser</Name>
-    <Description>XML Parser</Description>
+    <Name>Msxml2.XMLHTTP</Name>
+    <Description>XML HTTP</Description>
   </COM>
   <COM>
     <Name>Msxml2.XMLParser</Name>
     <Description>XML Parser 3.0</Description>
+  </COM>
+  <COM>
+    <Name>Msxml2.XMLParser</Name>
+    <Description>XML Parser</Description>
   </COM>
   <COM>
     <Name>Msxml2.XMLSchemaCache</Name>
@@ -2632,11 +2436,11 @@
   </COM>
   <COM>
     <Name>Msxml2.XSLTemplate</Name>
-    <Description>XSL Template</Description>
+    <Description>XSL Template 3.0</Description>
   </COM>
   <COM>
     <Name>Msxml2.XSLTemplate</Name>
-    <Description>XSL Template 3.0</Description>
+    <Description>XSL Template</Description>
   </COM>
   <COM>
     <Name>MTSAdmin.Catalog</Name>
@@ -2649,6 +2453,14 @@
   <COM>
     <Name>MTxSpm.SharedPropertyGroupManager</Name>
     <Description>PropGroupManagerObject Class</Description>
+  </COM>
+  <COM>
+    <Name>Name.NameCtrl</Name>
+    <Description>NameCtrl Class</Description>
+  </COM>
+  <COM>
+    <Name>NameControlServer.NameCtrl</Name>
+    <Description>NameControlServer Class</Description>
   </COM>
   <COM>
     <Name>NCProv.NCProvider</Name>
@@ -2715,6 +2527,10 @@
     <Description>Microsoft Office Template and Media Control</Description>
   </COM>
   <COM>
+    <Name>OfficeTheme</Name>
+    <Description>Microsoft Office Theme</Description>
+  </COM>
+  <COM>
     <Name>OfflineDomainJoin</Name>
     <Description>OfflineDomainJoin</Description>
   </COM>
@@ -2743,6 +2559,14 @@
     <Description>prturl Class</Description>
   </COM>
   <COM>
+    <Name>OneNote.Application</Name>
+    <Description>Application2 Class</Description>
+  </COM>
+  <COM>
+    <Name>OneNote.Folder</Name>
+    <Description>Microsoft OneNote Notebook</Description>
+  </COM>
+  <COM>
     <Name>OneNote.IEAddin</Name>
     <Description>Send to OneNote from Internet Explorer button</Description>
   </COM>
@@ -2751,24 +2575,99 @@
     <Description>Linked Notes button</Description>
   </COM>
   <COM>
-    <Name>ONIUI.CommandItems</Name>
-    <Description>CommandItems Class</Description>
+    <Name>OneNote.Notebook</Name>
+    <Description>Microsoft OneNote Notebook</Description>
   </COM>
   <COM>
-    <Name>ONIUI.ScheduleMeeting</Name>
-    <Description>ScheduleMeeting Class</Description>
+    <Name>OrgChart</Name>
+    <Description>Organization Chart Add-in for Microsoft Office programs</Description>
   </COM>
   <COM>
-    <Name>ONIUI.UIUtilities</Name>
-    <Description>UIUtilities Class</Description>
+    <Name>Outlook.Application</Name>
+    <Description>Microsoft Outlook</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkBusinessCardControl</Name>
+    <Description>Microsoft Outlook Business Card Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkCategoryStrip</Name>
+    <Description>Microsoft Outlook Category Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkCheckBox</Name>
+    <Description>Microsoft Outlook Check Box Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkComboBox</Name>
+    <Description>Microsoft Outlook Combo Box Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkCommandButton</Name>
+    <Description>Microsoft Outlook Command Button Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkContactPhoto</Name>
+    <Description>Microsoft Outlook Contact Photo Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkDateControl</Name>
+    <Description>Microsoft Outlook Date Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkFrameHeader</Name>
+    <Description>Microsoft Outlook Frame Header Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkInfoBar</Name>
+    <Description>Microsoft Outlook InfoBar Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkLabel</Name>
+    <Description>Microsoft Outlook Label Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkListBox</Name>
+    <Description>Microsoft Outlook List Box Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkOptionButton</Name>
+    <Description>Microsoft Outlook Option Button Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkPageControl</Name>
+    <Description>Microsoft Outlook Page Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkSenderPhoto</Name>
+    <Description>Microsoft Outlook Sender Photo Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkTextBox</Name>
+    <Description>Microsoft Outlook Text Box Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkTimeControl</Name>
+    <Description>Microsoft Outlook Time Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.OlkTimeZone</Name>
+    <Description>Microsoft Outlook Time Zone Control</Description>
+  </COM>
+  <COM>
+    <Name>Outlook.Search.MAPI16Handler</Name>
+    <Description>Outlook's Mapi16 Protocol Handler</Description>
+  </COM>
+  <COM>
+    <Name>OVCtl.OVCtl</Name>
+    <Description>Microsoft Outlook View Control</Description>
+  </COM>
+  <COM>
+    <Name>OVCtl.OVCtl</Name>
   </COM>
   <COM>
     <Name>Package</Name>
     <Description>Package</Description>
-  </COM>
-  <COM>
-    <Name>PciVdev</Name>
-    <Description>PciVdev</Description>
   </COM>
   <COM>
     <Name>PeerDraw.PeerDraw</Name>
@@ -2781,14 +2680,6 @@
   <COM>
     <Name>PenInputPanel.PenInputPanel</Name>
     <Description>Microsoft PenInputPanel Control</Description>
-  </COM>
-  <COM>
-    <Name>PicVdev</Name>
-    <Description>PicVdev</Description>
-  </COM>
-  <COM>
-    <Name>PitVdev</Name>
-    <Description>PitVdev</Description>
   </COM>
   <COM>
     <Name>PLA.BootTraceSession</Name>
@@ -2863,8 +2754,40 @@
     <Description>PortableDeviceWiaCompat Class</Description>
   </COM>
   <COM>
-    <Name>PowerVdev</Name>
-    <Description>PowerVdev</Description>
+    <Name>PowerPoint.Addin</Name>
+    <Description>Microsoft PowerPoint Macro-Enabled Addin</Description>
+  </COM>
+  <COM>
+    <Name>PowerPoint.Application</Name>
+    <Description>Microsoft PowerPoint Application</Description>
+  </COM>
+  <COM>
+    <Name>PowerPoint.OpenDocumentPresentation</Name>
+    <Description>OpenDocument Presentation</Description>
+  </COM>
+  <COM>
+    <Name>PowerPoint.Show</Name>
+    <Description>Microsoft PowerPoint Presentation</Description>
+  </COM>
+  <COM>
+    <Name>PowerPoint.ShowMacroEnabled</Name>
+    <Description>Microsoft PowerPoint Macro-Enabled Presentation</Description>
+  </COM>
+  <COM>
+    <Name>PowerPoint.Slide</Name>
+    <Description>Microsoft PowerPoint Slide</Description>
+  </COM>
+  <COM>
+    <Name>PowerPoint.SlideMacroEnabled</Name>
+    <Description>Microsoft PowerPoint Macro-Enabled Slide</Description>
+  </COM>
+  <COM>
+    <Name>PowerPoint.Template</Name>
+    <Description>Microsoft PowerPoint Template</Description>
+  </COM>
+  <COM>
+    <Name>PowerPoint.TemplateMacroEnabled</Name>
+    <Description>Microsoft PowerPoint Macro-Enabled Design Template</Description>
   </COM>
   <COM>
     <Name>PrintSys.CoFilterPipeline</Name>
@@ -2881,30 +2804,6 @@
   <COM>
     <Name>ProcessDebugManager.ThreadMgr</Name>
     <Description>ThreadManager Class</Description>
-  </COM>
-  <COM>
-    <Name>PropPageExt.AndreaPropPage</Name>
-    <Description>AndreaPropPage Class</Description>
-  </COM>
-  <COM>
-    <Name>PropPageExt.DolbyPCEE3sPage</Name>
-    <Description>DolbyPCEE3sPage Class</Description>
-  </COM>
-  <COM>
-    <Name>PropPageExt.DolbySprucePage</Name>
-    <Description>DolbySprucePage Class</Description>
-  </COM>
-  <COM>
-    <Name>PropPageExt.DtsS2PropPage</Name>
-    <Description>DtsS2PropPage Class</Description>
-  </COM>
-  <COM>
-    <Name>PropPageExt.SrsApoPropPage</Name>
-    <Description>SrsApoPropPage Class</Description>
-  </COM>
-  <COM>
-    <Name>PropSet.PropSet</Name>
-    <Description>PropSet Class</Description>
   </COM>
   <COM>
     <Name>Psisdecd.AnalogCable</Name>
@@ -2939,56 +2838,12 @@
     <Description>PBDA Class</Description>
   </COM>
   <COM>
-    <Name>ptoiEnt.CiscoPTOutlookAddin</Name>
-    <Description>CiscoPTOutlookAddin Class</Description>
+    <Name>Publisher.Application</Name>
+    <Description>Microsoft Publisher Application</Description>
   </COM>
   <COM>
-    <Name>ptoiEnt.CWaiterApp</Name>
-    <Description>CWaiterApp Class</Description>
-  </COM>
-  <COM>
-    <Name>ptoiEnt.PaneContainer</Name>
-    <Description>PaneContainer Class</Description>
-  </COM>
-  <COM>
-    <Name>ptOIEx64.MapiClient</Name>
-    <Description>MapiClient Class</Description>
-  </COM>
-  <COM>
-    <Name>ptOIVendor.CApp</Name>
-    <Description>CApp Class</Description>
-  </COM>
-  <COM>
-    <Name>ptOIVendor.CAppt</Name>
-    <Description>CAppt Class</Description>
-  </COM>
-  <COM>
-    <Name>ptOIVendor.CExp</Name>
-    <Description>CExp Class</Description>
-  </COM>
-  <COM>
-    <Name>ptONIUI.MeetingHelper</Name>
-    <Description>MeetingHelper Class</Description>
-  </COM>
-  <COM>
-    <Name>ptONIUI.PanelScheduleMeeting</Name>
-    <Description>PanelScheduleMeeting Class</Description>
-  </COM>
-  <COM>
-    <Name>PtONIUI.WbxPTSettingUI</Name>
-    <Description>WbxPTSettingUI Class</Description>
-  </COM>
-  <COM>
-    <Name>ptTMSUI.ScheduleTMSMeeting</Name>
-    <Description>ScheduleTMSMeeting Class</Description>
-  </COM>
-  <COM>
-    <Name>ptTMSUI.TMSSiteConfig</Name>
-    <Description>TMSSiteConfig Class</Description>
-  </COM>
-  <COM>
-    <Name>PtWbxst.WbxAction</Name>
-    <Description>WbxAction Class</Description>
+    <Name>Publisher.Document</Name>
+    <Description>Microsoft Publisher Document</Description>
   </COM>
   <COM>
     <Name>QC.MessageMover</Name>
@@ -3039,6 +2894,9 @@
     <Description>RASettingProperty Class</Description>
   </COM>
   <COM>
+    <Name>RasDialin.UserAdminExt</Name>
+  </COM>
+  <COM>
     <Name>RAServer.RASMapi</Name>
     <Description>RASMapi Class</Description>
   </COM>
@@ -3061,10 +2919,6 @@
   <COM>
     <Name>RdpCoreTS.WRdsProtocolManager</Name>
     <Description>UMRDPProtocolManager  Class</Description>
-  </COM>
-  <COM>
-    <Name>RdpEncoderVdev</Name>
-    <Description>RdpEncoderVdev</Description>
   </COM>
   <COM>
     <Name>Rdpvcomapi.RDPViewer</Name>
@@ -3119,10 +2973,6 @@
     <Description>RequestMakeCall Class</Description>
   </COM>
   <COM>
-    <Name>RHDMIExt.DLitePageHDMI</Name>
-    <Description>DLitePageHDMI Class</Description>
-  </COM>
-  <COM>
     <Name>RoamingSecurity.RoamingSecurity</Name>
     <Description>RoamingSecurity Class</Description>
   </COM>
@@ -3143,332 +2993,28 @@
     <Description>RowsetHelper</Description>
   </COM>
   <COM>
-    <Name>RTCOMDLL.RTLCSSAPI</Name>
-    <Description>RTLCSSAPI Class</Description>
+    <Name>RPM.CtxRdpV1ProtocolManager</Name>
+    <Description>CtxRdpV1ProtocolManager Class</Description>
   </COM>
   <COM>
-    <Name>RTCOMDLL.SONY</Name>
-    <Description>SONY Class</Description>
+    <Name>RPM.CtxRdpV2ProtocolManager</Name>
+    <Description>CtxRdpV2ProtocolManager Class</Description>
   </COM>
   <COM>
-    <Name>RTCOMDLL.SRSPremiumSound</Name>
-    <Description>SRSPremiumSound Class</Description>
+    <Name>RPM.WtsV1ProtocolManager</Name>
+    <Description>WtsV2ProtocolManager Class</Description>
   </COM>
   <COM>
-    <Name>RtcVdev</Name>
-    <Description>RtcVdev</Description>
+    <Name>RPM.WtsV2ProtocolManager</Name>
+    <Description>WtsV2ProtocolManager Class</Description>
   </COM>
   <COM>
-    <Name>RtkApoApi.DDLiveApi</Name>
-    <Description>DDLiveApi Class</Description>
+    <Name>RSOPPROV.RsopPlanningModeProvider</Name>
+    <Description>RsopPlanningModeProvider Class</Description>
   </COM>
   <COM>
-    <Name>RtkApoApi.DhtApi</Name>
-    <Description>DhtApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.DmsApi</Name>
-    <Description>DmsApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.DolbyApi</Name>
-    <Description>DolbyApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.DPCEE3Api</Name>
-    <Description>DPCEE3Api Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.DPCEE3RApi</Name>
-    <Description>DPCEE3RApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.DPCEE3sApi</Name>
-    <Description>DPCEE3sApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.DPCEE4Api</Name>
-    <Description>DPCEE4Api Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.DSpruseApi</Name>
-    <Description>DSpruseApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.DsrApi</Name>
-    <Description>DsrApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.DTSPSApi</Name>
-    <Description>DTSPSApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.DtsS2UltraPcApi</Name>
-    <Description>DtsS2UltraPcApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.DTSUP2Api</Name>
-    <Description>DTSUP2Api Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.ForteProcModeApi</Name>
-    <Description>ForteProcModeApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.MaxxAudio3Api</Name>
-    <Description>MaxxAudio3Api Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.MaxxAudioApi</Name>
-    <Description>MaxxAudioApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.MCEQApi</Name>
-    <Description>MCEQApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.MDRCApi</Name>
-    <Description>MDRCApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtApocapsApi</Name>
-    <Description>RtApocapsApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkApoCommonApi</Name>
-    <Description>RtkApoCommonApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkApoInfoListApi</Name>
-    <Description>RtkApoInfoListApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkApoNotification</Name>
-    <Description>RtkApoNotification Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkBassBackApi</Name>
-    <Description>RtkBassBackApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkBssApi</Name>
-    <Description>RtkBssApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkEffectSetting</Name>
-    <Description>RtkEffectSetting Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkLoadedApo</Name>
-    <Description>RtkLoadedApo Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkOmniSoundApi</Name>
-    <Description>RtkOmniSoundApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkPropSet</Name>
-    <Description>RtkPropSet Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkRec4StreamApi</Name>
-    <Description>RtkRec4StreamApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkRecEffectsApi</Name>
-    <Description>RtkRecEffectsApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkRecNoLimitApi</Name>
-    <Description>RtkRecNoLimitApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkRecOptionsApi</Name>
-    <Description>RtkRecOptionsApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkSRSPSApi</Name>
-    <Description>RtkSRSPSApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkUtilApi</Name>
-    <Description>RtkUtilApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtkWavesApi</Name>
-    <Description>RtkWavesApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.RtUpDownMixApi</Name>
-    <Description>RtUpDownMixApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.SAApi</Name>
-    <Description>SAApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.SonyApi</Name>
-    <Description>SonyApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.SounzVoizApi</Name>
-    <Description>SounzVoizApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkApoApi.TAdeApi</Name>
-    <Description>TAdeApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkCfg.RtkCfgApi</Name>
-    <Description>RtkCfgApi Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.AdvEndpointPropPage</Name>
-    <Description>AdvEndpointPropPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.AndreaRenderPage</Name>
-    <Description>AndreaRenderPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.BbePropPage</Name>
-    <Description>BbePropPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.CEPage</Name>
-    <Description>CEPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.ConexantPage</Name>
-    <Description>ConexantPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.DolbyPropPage</Name>
-    <Description>DolbyPropPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.DolbySPage</Name>
-    <Description>DolbySPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.DtsApoBtPage</Name>
-    <Description>DtsApoBtPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.DtsApoConnectPage</Name>
-    <Description>DtsApoConnectPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.DtsApoSyPage</Name>
-    <Description>DtsApoSyPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.DtsApoUpcPage</Name>
-    <Description>DtsApoUpcPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.DtsApoUpcSyBtPage</Name>
-    <Description>DtsApoUpcSyBtPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.DTSConnectPage</Name>
-    <Description>DTSConnectPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.DTSU2PPage</Name>
-    <Description>DTSU2PPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.ForteRenderPage</Name>
-    <Description>ForteRenderPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.Knowles2Page</Name>
-    <Description>Knowles2Page Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.KnowlesPage</Name>
-    <Description>KnowlesPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.MaxxAudioPage</Name>
-    <Description>MaxxAudioPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.Rtk3DHpPage</Name>
-    <Description>Rtk3DHpPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.Rtk5thEqPage</Name>
-    <Description>Rtk5thEqPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.RtkAdvPropPage</Name>
-    <Description>RtkAdvPropPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.RtkBssPage</Name>
-    <Description>RtkBssPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.RtkCapVoicePage</Name>
-    <Description>RtkCapVoicePage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.RtkClrRecPage</Name>
-    <Description>RtkClrRecPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.RtkRecSPage</Name>
-    <Description>RtkRecSPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.RtkRenderNsPage</Name>
-    <Description>RtkRenderNsPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.SelHwEqPage</Name>
-    <Description>SelHwEqPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.SF3LinkPage</Name>
-    <Description>SF3LinkPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.SmartAmpPage</Name>
-    <Description>SmartAmpPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.SonicMapper2LinkPage</Name>
-    <Description>SonicMapper2LinkPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.SoundAliveFMPage</Name>
-    <Description>SoundAliveFMPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.SoundAlivePage</Name>
-    <Description>SoundAlivePage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.SrsDisablePage</Name>
-    <Description>SrsDisablePage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.SrsLaunchPage</Name>
-    <Description>SrsLaunchPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.SrsPropPage</Name>
-    <Description>SrsPropPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtkPgExt.XearPage</Name>
-    <Description>XearPage Class</Description>
-  </COM>
-  <COM>
-    <Name>RtlCP.RtlCP</Name>
-    <Description>RtlCP Class</Description>
+    <Name>RsopWMIProvider.RsopWMIProviderImpl</Name>
+    <Description>RsopWMIProviderImpl Class</Description>
   </COM>
   <COM>
     <Name>SAPI.SpAudioFormat</Name>
@@ -3739,12 +3285,32 @@
     <Description>SpWaveFormatEx Class</Description>
   </COM>
   <COM>
+    <Name>SaveAsWeb.VisioSolutionDocumentMap</Name>
+    <Description>VisioSolutionDocumentMap Class</Description>
+  </COM>
+  <COM>
+    <Name>SaveAsWeb.VisSaveAsWeb</Name>
+    <Description>VisSaveAsWeb Class</Description>
+  </COM>
+  <COM>
+    <Name>SaveAsWeb.VisWebDispProxy</Name>
+    <Description>VisWebDispProxy Class</Description>
+  </COM>
+  <COM>
+    <Name>SaveAsWeb.VisWebPageSettings</Name>
+    <Description>VisWebPageSettings Class</Description>
+  </COM>
+  <COM>
     <Name>scanprofiles.scanprofilemgr</Name>
     <Description>scanprofilemgr class</Description>
   </COM>
   <COM>
     <Name>scanprofiles.scanprofileui</Name>
     <Description>scanprofileui class</Description>
+  </COM>
+  <COM>
+    <Name>SCCMPlugin.CCMIdentityStore</Name>
+    <Description>CCMIdentityStore Class</Description>
   </COM>
   <COM>
     <Name>Schedule.Service</Name>
@@ -3763,36 +3329,8 @@
     <Description>ScriptoSys Class</Description>
   </COM>
   <COM>
-    <Name>SDBACKUPCONFIG.SdBackupConfig</Name>
-    <Description>SdBackupConfig Class</Description>
-  </COM>
-  <COM>
     <Name>sdchange.sdchangeobj</Name>
     <Description>SDChangeObj Class</Description>
-  </COM>
-  <COM>
-    <Name>SDENGINE.CSdGITManager</Name>
-    <Description>CSdGITManager Class</Description>
-  </COM>
-  <COM>
-    <Name>SDENGINE.CSdWhcNotifier</Name>
-    <Description>CSdWhcNotifier Class</Description>
-  </COM>
-  <COM>
-    <Name>SDENGINE.SdEngine2</Name>
-    <Description>SdEngine2 Class</Description>
-  </COM>
-  <COM>
-    <Name>SdrService.SdController</Name>
-    <Description>SdController Class</Description>
-  </COM>
-  <COM>
-    <Name>SdrService.SdrRestoreService</Name>
-    <Description>SdrRestoreService Class</Description>
-  </COM>
-  <COM>
-    <Name>SDSHELLEXTENSION.SdShellExtension</Name>
-    <Description>File Backup Index</Description>
   </COM>
   <COM>
     <Name>SDSnapin.SDSnapin</Name>
@@ -3911,16 +3449,32 @@
     <Description>SensorManager Class</Description>
   </COM>
   <COM>
-    <Name>SerialVdev</Name>
-    <Description>SerialVdev</Description>
-  </COM>
-  <COM>
     <Name>ShapeCollector.ShapeCollector</Name>
     <Description>ShapeCollector Class</Description>
   </COM>
   <COM>
-    <Name>Sharepoint.OpenXMLDocuments</Name>
-    <Description>SharepointOpenXMLDocuments</Description>
+    <Name>SharePoint.ClipboardCtl</Name>
+    <Description>SharePoint Clipboard Control</Description>
+  </COM>
+  <COM>
+    <Name>SharePoint.DragDownloadCtl</Name>
+    <Description>SharePoint DragDownload Control</Description>
+  </COM>
+  <COM>
+    <Name>SharePoint.DragUploadCtl</Name>
+    <Description>SharePoint DragUpload Control</Description>
+  </COM>
+  <COM>
+    <Name>SharePoint.OpenDocuments</Name>
+    <Description>SharePoint OpenDocuments Class</Description>
+  </COM>
+  <COM>
+    <Name>SharePoint.SpreadsheetLauncher</Name>
+    <Description>SharePoint Spreadsheet Launcher</Description>
+  </COM>
+  <COM>
+    <Name>SharePoint.StssyncHandler</Name>
+    <Description>SharePoint Stssync Handler</Description>
   </COM>
   <COM>
     <Name>Shell.Application</Name>
@@ -3928,11 +3482,11 @@
   </COM>
   <COM>
     <Name>Shell.Explorer</Name>
-    <Description>Microsoft Web Browser Version 1</Description>
+    <Description>Microsoft Web Browser</Description>
   </COM>
   <COM>
     <Name>Shell.Explorer</Name>
-    <Description>Microsoft Web Browser</Description>
+    <Description>Microsoft Web Browser Version 1</Description>
   </COM>
   <COM>
     <Name>Shell.FolderView</Name>
@@ -3979,28 +3533,8 @@
     <Description>OCX</Description>
   </COM>
   <COM>
-    <Name>soffice.StarCalcDocument.6</Name>
-    <Description>OpenOffice.org 1.1 Spreadsheet</Description>
-  </COM>
-  <COM>
-    <Name>soffice.StarDrawDocument.6</Name>
-    <Description>OpenOffice.org 1.1 Drawing</Description>
-  </COM>
-  <COM>
-    <Name>soffice.StarImpressDocument.6</Name>
-    <Description>OpenOffice.org 1.1 Presentation</Description>
-  </COM>
-  <COM>
-    <Name>soffice.StarMathDocument.6</Name>
-    <Description>OpenOffice.org 1.1 Formula</Description>
-  </COM>
-  <COM>
-    <Name>soffice.StarWriterDocument.6</Name>
-    <Description>OpenOffice.org 1.1 Text Document</Description>
-  </COM>
-  <COM>
-    <Name>SpeakerVdev</Name>
-    <Description>SpeakerVdev</Description>
+    <Name>solution_utils.dll.CSD</Name>
+    <Description>CSD Class</Description>
   </COM>
   <COM>
     <Name>SpeechUX.ConfigUI</Name>
@@ -4013,10 +3547,6 @@
   <COM>
     <Name>SplSetup.CFindNetPrinters</Name>
     <Description>CFindNetPrinters Class</Description>
-  </COM>
-  <COM>
-    <Name>Spp.Spp</Name>
-    <Description>SPP Class</Description>
   </COM>
   <COM>
     <Name>SppComApi.ElevationConfig</Name>
@@ -4087,16 +3617,12 @@
     <Description>SQLXMLX.1</Description>
   </COM>
   <COM>
-    <Name>SrControl.SrControl</Name>
-    <Description>SrControl Class</Description>
-  </COM>
-  <COM>
-    <Name>SrDrvWuHelper.SrDrvWuHelper</Name>
-    <Description>SrDrvWuHelper Class</Description>
-  </COM>
-  <COM>
     <Name>SSPWorkspace</Name>
     <Description>SSPWorkspace Class</Description>
+  </COM>
+  <COM>
+    <Name>StackControlService.StackControl</Name>
+    <Description>StackControlService.StackControl 1.0</Description>
   </COM>
   <COM>
     <Name>statemodel.StateController</Name>
@@ -4109,110 +3635,6 @@
   <COM>
     <Name>stsinproc.speechtextservice</Name>
     <Description>speechtextservice class</Description>
-  </COM>
-  <COM>
-    <Name>SuperIoVdev</Name>
-    <Description>SuperIoVdev</Description>
-  </COM>
-  <COM>
-    <Name>SynCom.PointingDevice</Name>
-    <Description>SynDevice Class</Description>
-  </COM>
-  <COM>
-    <Name>SynCom.SynAPI</Name>
-    <Description>SynAPI Class</Description>
-  </COM>
-  <COM>
-    <Name>SynCom.SynDisplay</Name>
-    <Description>SynDisplay Class</Description>
-  </COM>
-  <COM>
-    <Name>SynCom.SynGroup</Name>
-    <Description>SynGroup Class</Description>
-  </COM>
-  <COM>
-    <Name>SynCom.SynPacket</Name>
-    <Description>SynPacket Class</Description>
-  </COM>
-  <COM>
-    <Name>SynCtrl.SynAPICtrl</Name>
-    <Description>Synaptics API Control</Description>
-  </COM>
-  <COM>
-    <Name>SynCtrl.SynDeviceCtrl</Name>
-    <Description>Synaptics Device Control</Description>
-  </COM>
-  <COM>
-    <Name>SynCtrl.SynDisplayCtrl</Name>
-    <Description>Synaptics Display Control</Description>
-  </COM>
-  <COM>
-    <Name>SynCtrl.SynGroupCtrl</Name>
-    <Description>Synaptics Group Control</Description>
-  </COM>
-  <COM>
-    <Name>SynCtrl.SynPacketCtrl</Name>
-    <Description>Synaptics Packet Control</Description>
-  </COM>
-  <COM>
-    <Name>Synth3dVideo</Name>
-    <Description>Synth3dVideo</Description>
-  </COM>
-  <COM>
-    <Name>SynthFcPortPool</Name>
-    <Description>SynthFcPortPool</Description>
-  </COM>
-  <COM>
-    <Name>SynthFcPortPoolWmiFactory</Name>
-    <Description>SynthFcPortPoolWmiFactory</Description>
-  </COM>
-  <COM>
-    <Name>SynthFcVdev</Name>
-    <Description>SynthFcVdev</Description>
-  </COM>
-  <COM>
-    <Name>SynthKeyboardVdev</Name>
-    <Description>SynthKeyboardVdev</Description>
-  </COM>
-  <COM>
-    <Name>SynthMouseVdev</Name>
-    <Description>SynthMouseVdev</Description>
-  </COM>
-  <COM>
-    <Name>SynthNic</Name>
-    <Description>SynthNic</Description>
-  </COM>
-  <COM>
-    <Name>SynthNicPool</Name>
-    <Description>SynthNicPool</Description>
-  </COM>
-  <COM>
-    <Name>SynthNicPoolWmiFactory</Name>
-    <Description>SynthNicPoolWmiFactory</Description>
-  </COM>
-  <COM>
-    <Name>SynthRdpVdev</Name>
-    <Description>SynthRdpVdev</Description>
-  </COM>
-  <COM>
-    <Name>SynthStor</Name>
-    <Description>SynthStor</Description>
-  </COM>
-  <COM>
-    <Name>SynthStorPool</Name>
-    <Description>SynthStorPool</Description>
-  </COM>
-  <COM>
-    <Name>SynthStorPoolWmiFactory</Name>
-    <Description>SynthStorPool</Description>
-  </COM>
-  <COM>
-    <Name>SynTPEnh.SynDevice2</Name>
-    <Description>SynDevice2 Class</Description>
-  </COM>
-  <COM>
-    <Name>SynTPEnh.SynPlugin</Name>
-    <Description>SynPlugin Class</Description>
   </COM>
   <COM>
     <Name>SysColorCtrl.SysColorCtrl</Name>
@@ -4255,30 +3677,6 @@
     <Description>Microsoft TextInputPanel Object</Description>
   </COM>
   <COM>
-    <Name>TFCOfficeShim.Connect</Name>
-    <Description>Connect Class</Description>
-  </COM>
-  <COM>
-    <Name>TFCOfficeShim.Connect</Name>
-    <Description>Connect Class</Description>
-  </COM>
-  <COM>
-    <Name>TFCOfficeShim.Connect</Name>
-    <Description>Connect Class</Description>
-  </COM>
-  <COM>
-    <Name>TFCOfficeShim.GetAddIn</Name>
-    <Description>GetAddIn Class</Description>
-  </COM>
-  <COM>
-    <Name>TFCOfficeShim.GetAddIn</Name>
-    <Description>GetAddIn Class</Description>
-  </COM>
-  <COM>
-    <Name>TFCOfficeShim.GetAddIn</Name>
-    <Description>GetAddIn Class</Description>
-  </COM>
-  <COM>
     <Name>Theme.Manager</Name>
     <Description>Windows Theme Manager API</Description>
   </COM>
@@ -4289,10 +3687,6 @@
   <COM>
     <Name>TipAutoCompleteClient.TipAutoCompleteClient</Name>
     <Description>Microsoft TipAutoCompleteClient Control</Description>
-  </COM>
-  <COM>
-    <Name>TMSSchedule 0.0.0</Name>
-    <Description>PT.OC.TMSSchedule.0</Description>
   </COM>
   <COM>
     <Name>TpcCom.ClassicW</Name>
@@ -4343,6 +3737,30 @@
     <Description>UserLexiconManager Class</Description>
   </COM>
   <COM>
+    <Name>Tsmmc.Compdata</Name>
+    <Description>TSmmc</Description>
+  </COM>
+  <COM>
+    <Name>TSMSISrv.TSMSIQueue</Name>
+    <Description>TSMSIQueue Class</Description>
+  </COM>
+  <COM>
+    <Name>TSSDClient.SDConnHdl</Name>
+    <Description>SDConnHdl Class</Description>
+  </COM>
+  <COM>
+    <Name>TSSDClient.SDSessionArbitrationHelper</Name>
+    <Description>SDSessionArbitrationHelper Class</Description>
+  </COM>
+  <COM>
+    <Name>tsuserex.ADsTSUserEx</Name>
+    <Description>ADsTSUserEx Class</Description>
+  </COM>
+  <COM>
+    <Name>tsuserex.interfaces</Name>
+    <Description>Terminal Server User Properties</Description>
+  </COM>
+  <COM>
     <Name>TvRatings.EvalRat</Name>
     <Description>EvalRat Class</Description>
   </COM>
@@ -4357,6 +3775,10 @@
   <COM>
     <Name>TxCTx.TransactionContextEx</Name>
     <Description>COM+ Extended Transaction Context Component</Description>
+  </COM>
+  <COM>
+    <Name>UCAddin.LyncAddin</Name>
+    <Description>LyncAddin Class</Description>
   </COM>
   <COM>
     <Name>Udtool.UserDicManager</Name>
@@ -4415,14 +3837,6 @@
     <Description>UPnPServices Class</Description>
   </COM>
   <COM>
-    <Name>UserCertificate.UserCertificate</Name>
-    <Description>UserCertificate Class</Description>
-  </COM>
-  <COM>
-    <Name>UserEditHelp.UserNameHolder</Name>
-    <Description>UserNameHolder Class</Description>
-  </COM>
-  <COM>
     <Name>VaultRoaming.SyncTaskHandler</Name>
     <Description>SyncTaskHandler Class</Description>
   </COM>
@@ -4431,16 +3845,44 @@
     <Description>VaultSettingsHandler Class</Description>
   </COM>
   <COM>
-    <Name>VideoMonitorVdev</Name>
-    <Description>VideoMonitorVdev</Description>
+    <Name>VCBSnapshotProvider.VmSnapshotProvider</Name>
+    <Description>VmSnapshotProvider Class</Description>
   </COM>
   <COM>
-    <Name>VideoS3Vdev</Name>
-    <Description>VideoS3Vdev</Description>
+    <Name>VCBSnapshotProvider.VmSnapshotRequestor</Name>
+    <Description>VmSnapshotRequestor Class</Description>
   </COM>
   <COM>
-    <Name>VideoSynthVdev</Name>
-    <Description>VideoSynthVdev</Description>
+    <Name>Visio.Application</Name>
+    <Description>Microsoft Visio Automation</Description>
+  </COM>
+  <COM>
+    <Name>Visio.Drawing</Name>
+    <Description>Microsoft Visio Drawing</Description>
+  </COM>
+  <COM>
+    <Name>Visio.DrawingMacroEnabled</Name>
+    <Description>Microsoft Visio Macro-Enabled Drawing</Description>
+  </COM>
+  <COM>
+    <Name>Visio.InvisibleApp</Name>
+    <Description>Microsoft Visio Automation</Description>
+  </COM>
+  <COM>
+    <Name>VisioViewer.Viewer</Name>
+    <Description>Microsoft Visio Document</Description>
+  </COM>
+  <COM>
+    <Name>VisioViewerDWGDisplay.VisioViewerDWGDisplay</Name>
+    <Description>Visio Viewer DWG Display</Description>
+  </COM>
+  <COM>
+    <Name>VisioViewerDWGDisplayCreator.VisioViewerDWGDisplayCreator</Name>
+    <Description>Visio Viewer DWG Display Creator</Description>
+  </COM>
+  <COM>
+    <Name>VisOcx.DrawingControl</Name>
+    <Description>Microsoft Visio 16.0 Drawing Control</Description>
   </COM>
   <COM>
     <Name>VisShe.CInfoTipShellExt</Name>
@@ -4451,60 +3893,16 @@
     <Description>CVisioFileFilter Class</Description>
   </COM>
   <COM>
-    <Name>VisShe.IconHandlerShellExt</Name>
-    <Description>IconHandlerShellExt Class</Description>
-  </COM>
-  <COM>
     <Name>VisShe.ImageExtractorShellExt</Name>
     <Description>ImageExtractorShellExt Class</Description>
   </COM>
   <COM>
-    <Name>VisShe.QuickViewShellExt</Name>
-    <Description>QuickViewShellExt Class</Description>
-  </COM>
-  <COM>
-    <Name>VmbusVDev</Name>
-    <Description>VmbusVdev</Description>
-  </COM>
-  <COM>
-    <Name>VmFlexIoVdev</Name>
-    <Description>VmFlexIoVdev</Description>
-  </COM>
-  <COM>
-    <Name>vmwpctrl</Name>
-    <Description>vmwpctrl</Description>
-  </COM>
-  <COM>
-    <Name>VpciVDev</Name>
-    <Description>VpciVdev</Description>
-  </COM>
-  <COM>
-    <Name>VPMEM</Name>
-    <Description>VPMEM</Description>
-  </COM>
-  <COM>
-    <Name>VrdUmed</Name>
-    <Description>VrdUmed</Description>
-  </COM>
-  <COM>
-    <Name>VRFAUTO.AppVerifierManager</Name>
-    <Description>AppVerifierManager Class</Description>
-  </COM>
-  <COM>
-    <Name>VS15ExcelAdaptor</Name>
-    <Description>Visual Studio Tools for Office Design-Time Adaptor for Excel</Description>
-  </COM>
-  <COM>
-    <Name>VS15WordAdaptor</Name>
-    <Description>Visual Studio Tools for Office Design-Time Adaptor for Word</Description>
+    <Name>VMPerfProvider.VMStatsProvider</Name>
+    <Description>VMStatsProvider Class</Description>
   </COM>
   <COM>
     <Name>VSFileHandler.VsShellExtHandler</Name>
     <Description>VsShellExtHandler Class</Description>
-  </COM>
-  <COM>
-    <Name>VSmbVdev</Name>
-    <Description>VSmbVdev</Description>
   </COM>
   <COM>
     <Name>VSMGMT.VssSnapshotMgmt</Name>
@@ -4515,18 +3913,6 @@
     <Description>CoVSPerf64 Class</Description>
   </COM>
   <COM>
-    <Name>VSPerfControl.CoVSPerf64</Name>
-    <Description>CoVSPerf64 Class</Description>
-  </COM>
-  <COM>
-    <Name>VSPerfControl.CoVSPerf64</Name>
-    <Description>CoVSPerf64 Class</Description>
-  </COM>
-  <COM>
-    <Name>VSPerfCorProf.{28D2D487-A946-48AB-B7EA-7B54EFEA6ADD}</Name>
-    <Description>Microsoft VSPerf Managed Profiler</Description>
-  </COM>
-  <COM>
     <Name>VSPerfCorProf.{33708259-ba1b-4add-9de4-d4f280ea1223}</Name>
     <Description>Microsoft VSPerf Managed Profiler</Description>
   </COM>
@@ -4535,24 +3921,16 @@
     <Description>Microsoft VSPerf Managed Profiler</Description>
   </COM>
   <COM>
-    <Name>VSPerfCorProf.{C60A40F7-B6A2-428C-8E87-E1BF6563F650}</Name>
-    <Description>Microsoft VSPerf Managed Profiler</Description>
-  </COM>
-  <COM>
-    <Name>VSPerfCorProf.{CEB54A08-BA2B-4FF7-81F9-4E4D02F5BFCA}</Name>
-    <Description>Microsoft VSPerf Managed Profiler</Description>
-  </COM>
-  <COM>
-    <Name>VSPerfCorProf.{E03EE726-D44E-43C4-A0DC-C8EA95F8E68A}</Name>
-    <Description>Microsoft VSPerf Managed Profiler</Description>
-  </COM>
-  <COM>
     <Name>VSS.VSSCoordinator</Name>
     <Description>VSSCoordinator Class</Description>
   </COM>
   <COM>
-    <Name>VTpmVdev</Name>
-    <Description>VTpmVdev</Description>
+    <Name>Vss.VSSShellExt</Name>
+    <Description>VSSShellExt Class</Description>
+  </COM>
+  <COM>
+    <Name>Vss.VSSUI</Name>
+    <Description>VSSUI Class</Description>
   </COM>
   <COM>
     <Name>W7TODMSCONVERTER</Name>
@@ -4587,28 +3965,8 @@
     <Description>WBEM Scripting Sink</Description>
   </COM>
   <COM>
-    <Name>WbxMSAI.WbxPPTAddIn</Name>
-    <Description>WbxPPTAddIn Class</Description>
-  </COM>
-  <COM>
-    <Name>WbxMSAI.WebExExcelAddIn</Name>
-    <Description>WebExExcelAddIn Class</Description>
-  </COM>
-  <COM>
-    <Name>WbxMSAI.WebExWordAddIn</Name>
-    <Description>WebExWordAddIn Class</Description>
-  </COM>
-  <COM>
-    <Name>WBXOIURL.WbxOI3FileObject</Name>
-    <Description>WbxOI3FileObject Class</Description>
-  </COM>
-  <COM>
-    <Name>WBXOIURL.WbxOI3URLObject</Name>
-    <Description>WbxOI3URLObject Class</Description>
-  </COM>
-  <COM>
-    <Name>WebExOI.Addin</Name>
-    <Description>Addin Class</Description>
+    <Name>WebEnrlServer.WebEnrlServer</Name>
+    <Description>WebEnrlServer Class</Description>
   </COM>
   <COM>
     <Name>WebPlatStorageBroker.WebPlatStorageBroker</Name>
@@ -4649,6 +4007,10 @@
   <COM>
     <Name>Windows.ContactManager</Name>
     <Description>ContactManager class</Description>
+  </COM>
+  <COM>
+    <Name>Windows.XPSActiveDocument</Name>
+    <Description>Microsoft XPS Active Document</Description>
   </COM>
   <COM>
     <Name>WindowsMail.MimeEdit</Name>
@@ -4693,26 +4055,6 @@
   <COM>
     <Name>Wisptis.TabletManager</Name>
     <Description>TabletManager Class</Description>
-  </COM>
-  <COM>
-    <Name>WlanAdhoc.WlanAdhocLUA</Name>
-    <Description>WlanAdhoc LUA</Description>
-  </COM>
-  <COM>
-    <Name>WlanPref.WlanPrefLUA</Name>
-    <Description>WlanPref LUA</Description>
-  </COM>
-  <COM>
-    <Name>WLIHVUI.IntelDOT11_IHVUI</Name>
-    <Description>IntelDOT11_IHVUI Class</Description>
-  </COM>
-  <COM>
-    <Name>WLIHVUI.IntelDOT11ExtUIPropertyCon</Name>
-    <Description>IntelDOT11ExtUIPropertyCon Class</Description>
-  </COM>
-  <COM>
-    <Name>WLIHVUI.IntelDOT11ExtUIPropertySec</Name>
-    <Description>IntelDOT11ExtUIPropertySec Class</Description>
   </COM>
   <COM>
     <Name>WMDMCESP.WMDMCESP</Name>
@@ -4775,6 +4117,38 @@
     <Description>WMSDK NamespaceFactory Class</Description>
   </COM>
   <COM>
+    <Name>Word.Application</Name>
+    <Description>Microsoft Word Application</Description>
+  </COM>
+  <COM>
+    <Name>Word.Basic</Name>
+    <Description>Microsoft Word Basic</Description>
+  </COM>
+  <COM>
+    <Name>Word.Document</Name>
+    <Description>Microsoft Word Document</Description>
+  </COM>
+  <COM>
+    <Name>Word.DocumentMacroEnabled</Name>
+    <Description>Microsoft Word Macro-Enabled Document</Description>
+  </COM>
+  <COM>
+    <Name>Word.OpenDocumentText</Name>
+    <Description>OpenDocument Text</Description>
+  </COM>
+  <COM>
+    <Name>Word.Picture</Name>
+    <Description>Microsoft Word Picture</Description>
+  </COM>
+  <COM>
+    <Name>Word.Template</Name>
+    <Description>Microsoft Word Template</Description>
+  </COM>
+  <COM>
+    <Name>Word.TemplateMacroEnabled</Name>
+    <Description>Microsoft Word Macro-Enabled Template</Description>
+  </COM>
+  <COM>
     <Name>Workspace.Installer</Name>
     <Description>WorkspaceInstaller Class</Description>
   </COM>
@@ -4803,14 +4177,6 @@
     <Description>WPDServiceProvider Class</Description>
   </COM>
   <COM>
-    <Name>wscAPI.WSCDefaultProduct</Name>
-    <Description>WSCDefaultProduct Class</Description>
-  </COM>
-  <COM>
-    <Name>wscAPI.WSCProductList</Name>
-    <Description>WSCProductList Class</Description>
-  </COM>
-  <COM>
     <Name>WScript.Network</Name>
     <Description>Windows Script Host Network Object</Description>
   </COM>
@@ -4833,10 +4199,6 @@
   <COM>
     <Name>WSMan.InternalAutomation</Name>
     <Description>WSMan InternalAutomation Class</Description>
-  </COM>
-  <COM>
-    <Name>WUfBHandler.WUfBHandler</Name>
-    <Description>WUfBHandler Class</Description>
   </COM>
   <COM>
     <Name>X509Enrollment.CAlternativeName</Name>
@@ -5147,12 +4509,12 @@
     <Description>X509 Simple Computer Enrollment Protocol Helper</Description>
   </COM>
   <COM>
-    <Name>ZeroConfigService.ZDevice</Name>
-    <Description>ZDevice Class</Description>
+    <Name>XDProvider.Citrix_XDEventProvider</Name>
+    <Description>Citrix_XDEventProvider Class</Description>
   </COM>
   <COM>
-    <Name>ZeroConfigService.ZService</Name>
-    <Description>ZService Class</Description>
+    <Name>XDProvider.Citrix_XDProvider</Name>
+    <Description>Citrix_XDProvider Class</Description>
   </COM>
   <Custom>
     <Filter>|%</Filter>
@@ -14490,6 +13852,11 @@
     <NS>System.Net.Configuration</NS>
   </Types>
   <Types>
+    <Name>System.Net.Configuration.WindowsAuthenticationElement</Name>
+    <DC>3</DC>
+    <NS>System.Net.Configuration</NS>
+  </Types>
+  <Types>
     <Name>System.Net.Security.AuthenticatedStream</Name>
     <DC>3</DC>
     <NS>System.Net.Security</NS>
@@ -19083,6 +18450,11 @@
     <Name>System.Diagnostics.Eventing.Reader.StandardEventKeywords</Name>
     <DC>4</DC>
     <NS>System.Diagnostics.Eventing.Reader</NS>
+  </Types>
+  <Types>
+    <Name>CrowdStrike.Sensor.ScriptControl.DllMain</Name>
+    <DC>3</DC>
+    <NS>CrowdStrike.Sensor.ScriptControl</NS>
   </Types>
   <Types>
     <Name>Microsoft.PowerShell.ToStringCodeMethods</Name>
@@ -27440,361 +26812,6 @@
     <NS>System.Data.Common</NS>
   </Types>
   <Types>
-    <Name>Microsoft.PowerShell.PSSecurityPSSnapIn</Name>
-    <DC>2</DC>
-    <NS>Microsoft.PowerShell</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.SecurityDescriptorCommandsBase</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.GetAclCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.SetAclCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.DnsNameRepresentation</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.CertificateProvider</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.X509StoreLocation</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.EnhancedKeyUsageRepresentation</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.SendAsTrustedIssuerProperty</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.EnhancedKeyUsageProperty</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.DnsNameProperty</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.CertificateProviderItemNotFoundException</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.CertificateNotFoundException</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.CertificateStoreNotFoundException</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.CertificateStoreLocationNotFoundException</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.GetCredentialCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.GetExecutionPolicyCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.SetExecutionPolicyCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.SecureStringCommandBase</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.ConvertFromToSecureStringCommandBase</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.ConvertFromSecureStringCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.ConvertToSecureStringCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.SignatureCommandsBase</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.GetAuthenticodeSignatureCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.SetAuthenticodeSignatureCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.CatalogCommandsBase</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.NewFileCatalogCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.TestFileCatalogCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.GetPfxCertificateCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.ProtectCmsMessageCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.GetCmsMessageCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Commands.UnprotectCmsMessageCommand</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Commands</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionEventArgs</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionCompletedEventHandler</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.IsolationLevel</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionStatus</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.DependentCloneOption</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.EnlistmentOptions</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.Transaction</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionInformation</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.DependentTransaction</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.CommittableTransaction</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.Enlistment</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.PreparingEnlistment</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.SinglePhaseEnlistment</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.IEnlistmentNotification</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.IPromotableSinglePhaseNotification</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.ITransactionPromoter</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.ISimpleTransactionSuperior</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.SubordinateTransaction</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.ISinglePhaseNotification</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionException</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionAbortedException</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionInDoubtException</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionManagerCommunicationException</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionPromotionException</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.IDtcTransaction</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionInterop</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.HostCurrentTransactionCallback</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionStartedEventHandler</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionManager</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionOptions</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.DistributedTransactionPermission</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.DistributedTransactionPermissionAttribute</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionScopeOption</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionScopeAsyncFlowOption</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.EnterpriseServicesInteropOption</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.TransactionScope</Name>
-    <DC>2</DC>
-    <NS>System.Transactions</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.Configuration.DefaultSettingsSection</Name>
-    <DC>3</DC>
-    <NS>System.Transactions.Configuration</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.Configuration.MachineSettingsSection</Name>
-    <DC>3</DC>
-    <NS>System.Transactions.Configuration</NS>
-  </Types>
-  <Types>
-    <Name>System.Transactions.Configuration.TransactionsSectionGroup</Name>
-    <DC>3</DC>
-    <NS>System.Transactions.Configuration</NS>
-  </Types>
-  <Types>
     <Name>System.Configuration.AppSettingsSection</Name>
     <DC>2</DC>
     <NS>System.Configuration</NS>
@@ -28340,12 +27357,362 @@
     <NS>System.Configuration.Provider</NS>
   </Types>
   <Types>
-    <Name>Microsoft.PowerShell.PSConsoleReadLine</Name>
+    <Name>Microsoft.PowerShell.PSSecurityPSSnapIn</Name>
     <DC>2</DC>
     <NS>Microsoft.PowerShell</NS>
   </Types>
   <Types>
-    <Name>Microsoft.PowerShell.TokenClassification</Name>
+    <Name>Microsoft.PowerShell.Commands.SecurityDescriptorCommandsBase</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.GetAclCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.SetAclCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.DnsNameRepresentation</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.CertificateProvider</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.X509StoreLocation</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.EnhancedKeyUsageRepresentation</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.SendAsTrustedIssuerProperty</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.EnhancedKeyUsageProperty</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.DnsNameProperty</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.CertificateProviderItemNotFoundException</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.CertificateNotFoundException</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.CertificateStoreNotFoundException</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.CertificateStoreLocationNotFoundException</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.GetCredentialCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.GetExecutionPolicyCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.SetExecutionPolicyCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.SecureStringCommandBase</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.ConvertFromToSecureStringCommandBase</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.ConvertFromSecureStringCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.ConvertToSecureStringCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.SignatureCommandsBase</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.GetAuthenticodeSignatureCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.SetAuthenticodeSignatureCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.CatalogCommandsBase</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.NewFileCatalogCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.TestFileCatalogCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.GetPfxCertificateCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.ProtectCmsMessageCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.GetCmsMessageCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.Commands.UnprotectCmsMessageCommand</Name>
+    <DC>3</DC>
+    <NS>Microsoft.PowerShell.Commands</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionEventArgs</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionCompletedEventHandler</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.IsolationLevel</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionStatus</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.DependentCloneOption</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.EnlistmentOptions</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.Transaction</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionInformation</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.DependentTransaction</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.CommittableTransaction</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.Enlistment</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.PreparingEnlistment</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.SinglePhaseEnlistment</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.IEnlistmentNotification</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.IPromotableSinglePhaseNotification</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.ITransactionPromoter</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.ISimpleTransactionSuperior</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.SubordinateTransaction</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.ISinglePhaseNotification</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionException</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionAbortedException</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionInDoubtException</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionManagerCommunicationException</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionPromotionException</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.IDtcTransaction</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionInterop</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.HostCurrentTransactionCallback</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionStartedEventHandler</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionManager</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionOptions</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.DistributedTransactionPermission</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.DistributedTransactionPermissionAttribute</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionScopeOption</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionScopeAsyncFlowOption</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.EnterpriseServicesInteropOption</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.TransactionScope</Name>
+    <DC>2</DC>
+    <NS>System.Transactions</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.Configuration.DefaultSettingsSection</Name>
+    <DC>3</DC>
+    <NS>System.Transactions.Configuration</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.Configuration.MachineSettingsSection</Name>
+    <DC>3</DC>
+    <NS>System.Transactions.Configuration</NS>
+  </Types>
+  <Types>
+    <Name>System.Transactions.Configuration.TransactionsSectionGroup</Name>
+    <DC>3</DC>
+    <NS>System.Transactions.Configuration</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.PSConsoleReadLine</Name>
     <DC>2</DC>
     <NS>Microsoft.PowerShell</NS>
   </Types>
@@ -28375,27 +27742,32 @@
     <NS>Microsoft.PowerShell</NS>
   </Types>
   <Types>
-    <Name>Microsoft.PowerShell.PSConsoleReadlineOptions</Name>
+    <Name>Microsoft.PowerShell.AddToHistoryOption</Name>
     <DC>2</DC>
     <NS>Microsoft.PowerShell</NS>
   </Types>
   <Types>
-    <Name>Microsoft.PowerShell.GetPSReadlineOption</Name>
+    <Name>Microsoft.PowerShell.PSConsoleReadLineOptions</Name>
     <DC>2</DC>
     <NS>Microsoft.PowerShell</NS>
   </Types>
   <Types>
-    <Name>Microsoft.PowerShell.SetPSReadlineOption</Name>
+    <Name>Microsoft.PowerShell.GetPSReadLineOption</Name>
     <DC>2</DC>
     <NS>Microsoft.PowerShell</NS>
   </Types>
   <Types>
-    <Name>Microsoft.PowerShell.ChangePSReadlineKeyHandlerCommandBase</Name>
+    <Name>Microsoft.PowerShell.SetPSReadLineOption</Name>
     <DC>2</DC>
     <NS>Microsoft.PowerShell</NS>
   </Types>
   <Types>
-    <Name>Microsoft.PowerShell.SetPSReadlineKeyHandlerCommand</Name>
+    <Name>Microsoft.PowerShell.ChangePSReadLineKeyHandlerCommandBase</Name>
+    <DC>2</DC>
+    <NS>Microsoft.PowerShell</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.SetPSReadLineKeyHandlerCommand</Name>
     <DC>2</DC>
     <NS>Microsoft.PowerShell</NS>
   </Types>
@@ -28410,7 +27782,17 @@
     <NS>Microsoft.PowerShell</NS>
   </Types>
   <Types>
+    <Name>Microsoft.PowerShell.VTColorUtils</Name>
+    <DC>2</DC>
+    <NS>Microsoft.PowerShell</NS>
+  </Types>
+  <Types>
     <Name>Microsoft.PowerShell.ConsoleKeyChordConverter</Name>
+    <DC>2</DC>
+    <NS>Microsoft.PowerShell</NS>
+  </Types>
+  <Types>
+    <Name>Microsoft.PowerShell.KeyHandlerGroup</Name>
     <DC>2</DC>
     <NS>Microsoft.PowerShell</NS>
   </Types>
@@ -28418,31 +27800,6 @@
     <Name>Microsoft.PowerShell.KeyHandler</Name>
     <DC>2</DC>
     <NS>Microsoft.PowerShell</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Internal.BreakHandler</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Internal</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Internal.ConsoleBreakSignal</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Internal</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Internal.StandardHandleId</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Internal</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Internal.SMALL_RECT</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Internal</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.PowerShell.Internal.CHAR_INFO</Name>
-    <DC>3</DC>
-    <NS>Microsoft.PowerShell.Internal</NS>
   </Types>
   <Types>
     <Name>Microsoft.PowerShell.Internal.IPSConsoleReadLineMockableMethods</Name>
@@ -29383,36 +28740,6 @@
     <Name>System.Configuration.Install.UninstallAction</Name>
     <DC>3</DC>
     <NS>System.Configuration.Install</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.CSharp.RuntimeBinder.Binder</Name>
-    <DC>3</DC>
-    <NS>Microsoft.CSharp.RuntimeBinder</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo</Name>
-    <DC>3</DC>
-    <NS>Microsoft.CSharp.RuntimeBinder</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfoFlags</Name>
-    <DC>3</DC>
-    <NS>Microsoft.CSharp.RuntimeBinder</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags</Name>
-    <DC>3</DC>
-    <NS>Microsoft.CSharp.RuntimeBinder</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException</Name>
-    <DC>3</DC>
-    <NS>Microsoft.CSharp.RuntimeBinder</NS>
-  </Types>
-  <Types>
-    <Name>Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException</Name>
-    <DC>3</DC>
-    <NS>Microsoft.CSharp.RuntimeBinder</NS>
   </Types>
   <Types>
     <Name>Microsoft.PowerShell.PSUtilityPSSnapIn</Name>
@@ -34220,6 +33547,26 @@
     <NS>System.Windows.Forms.Layout</NS>
   </Types>
   <Types>
+    <Name>System.Windows.Forms.Automation.AutomationLiveSetting</Name>
+    <DC>4</DC>
+    <NS>System.Windows.Forms.Automation</NS>
+  </Types>
+  <Types>
+    <Name>System.Windows.Forms.Automation.AutomationNotificationKind</Name>
+    <DC>4</DC>
+    <NS>System.Windows.Forms.Automation</NS>
+  </Types>
+  <Types>
+    <Name>System.Windows.Forms.Automation.AutomationNotificationProcessing</Name>
+    <DC>4</DC>
+    <NS>System.Windows.Forms.Automation</NS>
+  </Types>
+  <Types>
+    <Name>System.Windows.Forms.Automation.IAutomationLiveRegion</Name>
+    <DC>4</DC>
+    <NS>System.Windows.Forms.Automation</NS>
+  </Types>
+  <Types>
     <Name>System.Drawing.Bitmap</Name>
     <DC>2</DC>
     <NS>System.Drawing</NS>
@@ -35120,59 +34467,19 @@
     <NS>System.Drawing.Drawing2D</NS>
   </Types>
   <Types>
-    <Name>Trinet.Networking.ShareType</Name>
-    <DC>2</DC>
-    <NS>Trinet.Networking</NS>
-  </Types>
-  <Types>
-    <Name>Trinet.Networking.Share</Name>
-    <DC>2</DC>
-    <NS>Trinet.Networking</NS>
-  </Types>
-  <Types>
-    <Name>Trinet.Networking.ShareCollection</Name>
-    <DC>2</DC>
-    <NS>Trinet.Networking</NS>
-  </Types>
-  <Types>
-    <Name>Lerch.PowerShell.Intellisense</Name>
-    <DC>2</DC>
-    <NS>Lerch.PowerShell</NS>
-  </Types>
-  <Types>
-    <Name>Lerch.PowerShell.Win32</Name>
-    <DC>2</DC>
-    <NS>Lerch.PowerShell</NS>
-  </Types>
-  <Types>
-    <Name>Lerch.PowerShell.LerchSnapIn</Name>
-    <DC>2</DC>
-    <NS>Lerch.PowerShell</NS>
-  </Types>
-  <Types>
-    <Name>Lerch.PowerShell.Commands.InvokeIntellisenseCommand</Name>
-    <DC>3</DC>
-    <NS>Lerch.PowerShell.Commands</NS>
-  </Types>
-  <Types>
     <Name>Dummy</Name>
     <DC>1</DC>
-    <NS>Lerch</NS>
+    <NS>CrowdStrike</NS>
   </Types>
   <Types>
     <Name>Dummy</Name>
     <DC>2</DC>
-    <NS>Lerch.PowerShell</NS>
+    <NS>CrowdStrike.Sensor</NS>
   </Types>
   <Types>
     <Name>Dummy</Name>
     <DC>1</DC>
     <NS>Microsoft</NS>
-  </Types>
-  <Types>
-    <Name>Dummy</Name>
-    <DC>2</DC>
-    <NS>Microsoft.CSharp</NS>
   </Types>
   <Types>
     <Name>Dummy</Name>
@@ -35433,11 +34740,6 @@
     <Name>Dummy</Name>
     <DC>3</DC>
     <NS>System.Xml.Serialization</NS>
-  </Types>
-  <Types>
-    <Name>Dummy</Name>
-    <DC>1</DC>
-    <NS>Trinet</NS>
   </Types>
   <WMI>
     <Name>CIM_Indication</Name>
@@ -36202,10 +35504,6 @@ To receive an Indication, a consumer (or subscriber) must create an instance of 
     <Description>The Win32_NamedJobObjectStatistics association class relates a job object instance and the I/O accounting information instance containing accounting information for the job.</Description>
   </WMI>
   <WMI>
-    <Name>SMS_RegLookupEntry</Name>
-    <Description />
-  </WMI>
-  <WMI>
     <Name>Win32_NTLogEvent</Name>
     <Description>This class is used to translate instances from the NT Eventlog.</Description>
   </WMI>
@@ -36541,10 +35839,6 @@ The Win32_VideoConfiguration class represents a configuration of a video subsyst
     <Description>The Msft_Providers class exposes configuration relating to provider instances</Description>
   </WMI>
   <WMI>
-    <Name>Win32Reg_AddRemovePrograms</Name>
-    <Description />
-  </WMI>
-  <WMI>
     <Name>Win32_UserProfile</Name>
     <Description>The Win32_UserProfile class contains information about user profiles on a Windows system.</Description>
   </WMI>
@@ -36709,10 +36003,6 @@ The Win32_VideoConfiguration class represents a configuration of a video subsyst
     <Description>The Win32_ImplementedCategory class represents an association between a component category and the COM classusing its interfaces.</Description>
   </WMI>
   <WMI>
-    <Name>Win32Reg_SMSAdvancedClientPorts</Name>
-    <Description />
-  </WMI>
-  <WMI>
     <Name>Win32_RoamingProfileUserConfiguration</Name>
     <Description />
   </WMI>
@@ -36723,10 +36013,6 @@ The Win32_VideoConfiguration class represents a configuration of a video subsyst
   <WMI>
     <Name>Win32_InstalledSoftwareElement</Name>
     <Description> The InstalledSoftwareElement association allows one to  to identify the Computer System a particular Software element is installed on. </Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_USBDevice</Name>
-    <Description />
   </WMI>
   <WMI>
     <Name>Win32_SoftwareFeatureCheck</Name>
@@ -36910,10 +36196,6 @@ Collections typically aggregate 'like' objects, and represent an optimization. W
     <Description>CIM_StorageError defines blocks of media or memory space that are mapped 'out of use' due to errors. The Key of the class is the StartingAddress property of the bytes in error.</Description>
   </WMI>
   <WMI>
-    <Name>SMS_AI_InstalledSoftwareDupDetect</Name>
-    <Description />
-  </WMI>
-  <WMI>
     <Name>Win32_ServiceSpecificationService</Name>
     <Description />
   </WMI>
@@ -36972,6 +36254,10 @@ Collections typically aggregate 'like' objects, and represent an optimization. W
   <WMI>
     <Name>Win32_OfflineFilesPinInfo</Name>
     <Description />
+  </WMI>
+  <WMI>
+    <Name>Win32_ServerFeature</Name>
+    <Description>The Win32_ServerFeature class represents one role or feature on a computer running a Windows server-class operating system. This class allows administrators to inventory roles and features that are installed on a server.  Instances of this class are not available on client computers.  The Win32_ServerFeature class defines no methods.</Description>
   </WMI>
   <WMI>
     <Name>CIM_DirectorySpecificationFile</Name>
@@ -37967,6 +37253,10 @@ Note:  The SE_CREATE_PAGEFILE privilege is required for Windows XP</Description>
     <Description> Since software elements in a ready to run state cannot transition into  another state, the value of the phase property is restricted to  in-state for CIM_SoftwareElement objects in a ready to run state. </Description>
   </WMI>
   <WMI>
+    <Name>MSFT_PlatformIdentifier</Name>
+    <Description>&lt;200&gt;</Description>
+  </WMI>
+  <WMI>
     <Name>CIM_Component</Name>
     <Description>CIM_Component is a generic association used to establish 'part of' relationships between Managed System Elements. For example, the SystemComponent association defines parts of a System.</Description>
   </WMI>
@@ -38231,10 +37521,6 @@ Note:  The SE_CREATE_PAGEFILE privilege is required for Windows XP</Description>
     <Description />
   </WMI>
   <WMI>
-    <Name>Win32Reg_SMSAdvancedClientSSLConfiguration</Name>
-    <Description />
-  </WMI>
-  <WMI>
     <Name>CIM_StatisticalInformation</Name>
     <Description>CIM_StatisticalInformation is a root class for any arbitrary collection of statistical data and/or metrics applicable to one or more managed system elements.</Description>
   </WMI>
@@ -38255,6 +37541,14 @@ Note:  The SE_CREATE_PAGEFILE privilege is required for Windows XP</Description>
     <Description />
   </WMI>
   <WMI>
+    <Name>Win32_PerfRawData_vmGuestLib_VCPU</Name>
+    <Description>Processor statistics for this Virtual Machine.</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfRawData_vmGuestLib_VMEM</Name>
+    <Description>Memory statistics for this Virtual Machine.</Description>
+  </WMI>
+  <WMI>
     <Name>Win32_PerfFormattedData</Name>
     <Description />
   </WMI>
@@ -38265,10 +37559,6 @@ Note:  The SE_CREATE_PAGEFILE privilege is required for Windows XP</Description>
   <WMI>
     <Name>Win32_LogicalFileGroup</Name>
     <Description>Association between the security settings of a file/directory and its group</Description>
-  </WMI>
-  <WMI>
-    <Name>SMS_AI_Office14ProductMapping</Name>
-    <Description />
   </WMI>
   <WMI>
     <Name>Win32_DCOMApplicationLaunchAllowedSetting</Name>
@@ -38289,6 +37579,26 @@ Note:  The SE_CREATE_PAGEFILE privilege is required for Windows XP</Description>
   <WMI>
     <Name>SoftwareLicensingProduct</Name>
     <Description>This class exposes product-specific properties and methods of the Software Licensing service.</Description>
+  </WMI>
+  <WMI>
+    <Name>CIM_ManagedElement</Name>
+    <Description>ManagedElement is an abstract class that provides a common superclass (or top of the inheritance tree) for the non-association classes in the CIM Schema.</Description>
+  </WMI>
+  <WMI>
+    <Name>CIM_Product</Name>
+    <Description>CIM_Product is a concrete class that is a collection of physical elements, software features and/or other products, acquired as a unit. Acquisition implies an agreement between supplier and consumer which may have implications to product licensing, support and warranty.</Description>
+  </WMI>
+  <WMI>
+    <Name>MSFT_VSInstance</Name>
+    <Description>CIM_Product is a concrete class that is a collection of physical elements, software features and/or other products, acquired as a unit. Acquisition implies an agreement between supplier and consumer which may have implications to product licensing, support and warranty.</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_Product</Name>
+    <Description>Instances of this class represent products as they are installed by MSI.  A product generally correlates to a single installation package.</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_ComputerSystemProduct</Name>
+    <Description>The Win32_ComputerSystemProduct class represents a product. This includes software and hardware used on this computer system.</Description>
   </WMI>
   <WMI>
     <Name>Win32_PnPDeviceProperty</Name>
@@ -38812,22 +38122,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>A laptop, a type of chassis, may be docked in another type of chassis, a docking station. This is the relationship represented by the CIM_Docked association. Because this is such a typical relationship, it is explicitly described.</Description>
   </WMI>
   <WMI>
-    <Name>CIM_Product</Name>
-    <Description>CIM_Product is a concrete class that is a collection of physical elements, software features and/or other products, acquired as a unit. Acquisition implies an agreement between supplier and consumer which may have implications to product licensing, support and warranty.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_Product</Name>
-    <Description>Instances of this class represent products as they are installed by MSI.  A product generally correlates to a single installation package.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_ComputerSystemProduct</Name>
-    <Description>The Win32_ComputerSystemProduct class represents a product. This includes software and hardware used on this computer system.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32Reg_SMSGuestVirtualMachine</Name>
-    <Description />
-  </WMI>
-  <WMI>
     <Name>CIM_ActionSequence</Name>
     <Description> The CIM_ActionSequence association is used to define a series of  operations that either transitions the software element, referenced  by the CIM_SoftwareElementActions association, to its next state or  removes the software element from its current environment. The CIM_Action classes participating in this association must have the same value for the Direction property since they are either part of a sequence to  transition a software element into its next state or to uninstall a  software element. The next-state actions and uninstall actions  associated with a particular software element must be a continuous  sequence. Since the CIM_ActionSequence is an association the loops on  the CIM_Action class with roles for the 'prior' action and 'next' action in a sequence, the need for a continuous sequence implies:  (1)Within the set of next-state or uninstall actions, there is one and only one action that does not have an instance of the CIM_ActionSequence  association referencing it in the 'next' role. This is the first action in the sequence. (2) Within the set of next-state or uninstall actions, there is one and only one action that does not have an instance of the CIM_ActionSequence association referencing it in the "prior" role. This  is the last action in the sequence. (3) All other actions within the  set of next-state and uninstall actions must participate in two  instances of the CIM_ActionSequence association, one in a  prior role and one in the next role.</Description>
   </WMI>
@@ -38936,10 +38230,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description />
   </WMI>
   <WMI>
-    <Name>SMS_AI_InstalledSoftwareSetPropertyValue</Name>
-    <Description />
-  </WMI>
-  <WMI>
     <Name>Win32_OfflineFilesDiskSpaceLimit</Name>
     <Description />
   </WMI>
@@ -38982,22 +38272,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
   <WMI>
     <Name>Win32_PerfRawData_APPPOOLCountersProvider_APPPOOLWAS</Name>
     <Description>This counter set exposes WAS related counters for IIS Application Pools.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_ASPNET2050727_ASPNETAppsv2050727</Name>
-    <Description>ASP.NET application performance counters</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_ASPNET2050727_ASPNETAppsv2050727</Name>
-    <Description>ASP.NET application performance counters</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_ASPNET2050727_ASPNETv2050727</Name>
-    <Description>ASP.NET global performance counters</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_ASPNET2050727_ASPNETv2050727</Name>
-    <Description>ASP.NET global performance counters</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_ASPNET4030319_ASPNETAppsv4030319</Name>
@@ -39048,22 +38322,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>The set of Counters for Authorization Manager application object</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryBalancer</Name>
-    <Description>This counter set represents the statistics for the Microsoft Dynamic Memory Balancer.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_BalancerStats_HyperVDynamicMemoryBalancer</Name>
-    <Description>This counter set represents the statistics for the Microsoft Dynamic Memory Balancer.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM</Name>
-    <Description>This counter set represents the memory statistics for a Virtual Machine.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_BalancerStats_HyperVDynamicMemoryVM</Name>
-    <Description>This counter set represents the memory statistics for a Virtual Machine.</Description>
-  </WMI>
-  <WMI>
     <Name>Win32_PerfFormattedData_BITS_BITSNetUtilization</Name>
     <Description>BITS Per Job Network Utilization</Description>
   </WMI>
@@ -39072,12 +38330,44 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>BITS Per Job Network Utilization</Description>
   </WMI>
   <WMI>
+    <Name>Win32_PerfFormattedData_CitrixBrokerAgent_CitrixBrokerAgent</Name>
+    <Description>Statistics related to Citrix Broker Agent</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfRawData_CitrixBrokerAgent_CitrixBrokerAgent</Name>
+    <Description>Statistics related to Citrix Broker Agent</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfFormattedData_CitrixICA_ICASession</Name>
+    <Description>This object has several counters that can be used to monitor the performance in ICA sessions</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfRawData_CitrixICA_ICASession</Name>
+    <Description>This object has several counters that can be used to monitor the performance in ICA sessions</Description>
+  </WMI>
+  <WMI>
     <Name>Win32_PerfFormattedData_Counters_AppVClientStreamedDataPercentage</Name>
     <Description>Size of data streamed to disk for each package on the system.</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfRawData_Counters_AppVClientStreamedDataPercentage</Name>
     <Description>Size of data streamed to disk for each package on the system.</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfFormattedData_Counters_BluetoothDevice</Name>
+    <Description>Counters related to a remote Bluetooth device</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfRawData_Counters_BluetoothDevice</Name>
+    <Description>Counters related to a remote Bluetooth device</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfFormattedData_Counters_BluetoothRadio</Name>
+    <Description>Counters related to a local Bluetooth radio</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfRawData_Counters_BluetoothRadio</Name>
+    <Description>Counters related to a local Bluetooth radio</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_Counters_DNS64Global</Name>
@@ -39152,36 +38442,12 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>This counter set represents the statistics for Dynamic Memory Integration Services</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_Counters_HyperVVirtualMachineBus</Name>
-    <Description>This counter set represents the statistics for the virtual machine bus.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_HyperVVirtualMachineBus</Name>
-    <Description>This counter set represents the statistics for the virtual machine bus.</Description>
-  </WMI>
-  <WMI>
     <Name>Win32_PerfFormattedData_Counters_HyperVVirtualMachineBusPipes</Name>
     <Description>Per-Pipe statistics, for performance debugging.</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfRawData_Counters_HyperVVirtualMachineBusPipes</Name>
     <Description>Per-Pipe statistics, for performance debugging.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_HyperVVirtualMachineBusProviderPipes</Name>
-    <Description>Per-Pipe statistics, for performance debugging.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_HyperVVirtualMachineBusProviderPipes</Name>
-    <Description>Per-Pipe statistics, for performance debugging.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_HyperVVirtualStorageDevice</Name>
-    <Description>This counter set represents the statistics for a virtual storage device.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_HyperVVirtualStorageDevice</Name>
-    <Description>This counter set represents the statistics for a virtual storage device.</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_Counters_IPHTTPSGlobal</Name>
@@ -39224,6 +38490,14 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>IPsec Connections is the set of Internet Protocol security (IPsec) counters that apply to IPsec encapsulated connections.</Description>
   </WMI>
   <WMI>
+    <Name>Win32_PerfFormattedData_Counters_IPsecDoSProtection</Name>
+    <Description>IPsec DoS Protection is the set of counters that apply to the traffic flowing through the IPsec DoS Protection component.</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfRawData_Counters_IPsecDoSProtection</Name>
+    <Description>IPsec DoS Protection is the set of counters that apply to the traffic flowing through the IPsec DoS Protection component.</Description>
+  </WMI>
+  <WMI>
     <Name>Win32_PerfFormattedData_Counters_IPsecDriver</Name>
     <Description>IPsec Driver is the set of Internet Protocol security (IPsec) driver counters that apply to traffic over Internet Protocol version 4 and Internet Protocol version 6.</Description>
   </WMI>
@@ -39264,6 +38538,14 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>IPsec IKEv2 IPv6 is the set of Internet Protocol security (IPsec) Internet Key Exchange version 2 (IKEv2) counters that apply to traffic and connections over Internet Protocol version 6.</Description>
   </WMI>
   <WMI>
+    <Name>Win32_PerfFormattedData_Counters_KPSSVC</Name>
+    <Description>Kerberos KDC proxy server service performance counters.</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfRawData_Counters_KPSSVC</Name>
+    <Description>Kerberos KDC proxy server service performance counters.</Description>
+  </WMI>
+  <WMI>
     <Name>Win32_PerfFormattedData_Counters_Netlogon</Name>
     <Description>Counters for measuring the performance of Netlogon.</Description>
   </WMI>
@@ -39278,14 +38560,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
   <WMI>
     <Name>Win32_PerfRawData_Counters_NetworkQoSPolicy</Name>
     <Description>This counter set consists of flow statistics specific to a network QoS policy.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_Nodejs</Name>
-    <Description>Node.js performance counters</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_Nodejs</Name>
-    <Description>Node.js performance counters</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_Counters_PacerFlow</Name>
@@ -39456,20 +38730,12 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>This counter set displays information about SMB server shares that are shared using SMB protocol version 2 or higher.</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_Counters_StorageQoSFilterFlow</Name>
-    <Description>This counter set represents the statistics for a VHD file at the balancer level.</Description>
+    <Name>Win32_PerfFormattedData_Counters_StorageSpacesDrt</Name>
+    <Description>The Storage Spaces Drt performance object consists of counters that show information about Storage Spaces dirty region tracking.</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfRawData_Counters_StorageQoSFilterFlow</Name>
-    <Description>This counter set represents the statistics for a VHD file at the balancer level.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_StorageQoSFilterVolume</Name>
-    <Description>This counter set represents the statistics for a storage device.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_StorageQoSFilterVolume</Name>
-    <Description>This counter set represents the statistics for a storage device.</Description>
+    <Name>Win32_PerfRawData_Counters_StorageSpacesDrt</Name>
+    <Description>The Storage Spaces Drt performance object consists of counters that show information about Storage Spaces dirty region tracking.</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_Counters_StorageSpacesTier</Name>
@@ -39544,86 +38810,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>The Thermal Zone Information performance counter set consists of counters that measure aspects of each thermal zone in the system.</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_Counters_VFPPortAverageInboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Average Inbound Network Traffic counter set tracks the average inbound network traffic of a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_VFPPortAverageInboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Average Inbound Network Traffic counter set tracks the average inbound network traffic of a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_VFPPortAverageOutboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Average Outbound Network Traffic counter set tracks the average outbound network traffic of a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_VFPPortAverageOutboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Average Outbound Network Traffic counter set tracks the average outbound network traffic of a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_VFPPortTotalInboundDroppedNetworkPackets</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Total Inbound Dropped Network Packets counter set tracks the total inbound dropped network packets of a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_VFPPortTotalInboundDroppedNetworkPackets</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Total Inbound Dropped Network Packets counter set tracks the total inbound dropped network packets of a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_VFPPortTotalInboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Total Inbound Network Traffic counter set tracks the total inbound network traffic of a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_VFPPortTotalInboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Total Inbound Network Traffic counter set tracks the total inbound network traffic of a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_VFPPortTotalOutboundDroppedNetworkPackets</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Total Outbound Dropped Network Packets counter set tracks the total outbound dropped network packets for a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_VFPPortTotalOutboundDroppedNetworkPackets</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Total Outbound Dropped Network Packets counter set tracks the total outbound dropped network packets for a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_VFPPortTotalOutboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Total Outbound Network Traffic counter set tracks the total outbound network traffic of a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) Port Total Outbound Network Traffic counter set tracks the total outbound network traffic of a port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_VFPQoSQueueAverageInboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) QoS Queue Average Inbound Network Traffic counter set tracks the average network traffic through an inbound QoS Queue.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_VFPQoSQueueAverageInboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) QoS Queue Average Inbound Network Traffic counter set tracks the average network traffic through an inbound QoS Queue.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) QoS Queue Average Outbound Network Traffic counter set tracks the average network traffic through an outbound QoS Queue.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) QoS Queue Average Outbound Network Traffic counter set tracks the average network traffic through an outbound QoS Queue.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_VFPQoSQueueTotalInboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) QoS Queue Total Inbound Network Traffic counter set tracks the total network traffic through an inbound QoS Queue.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_VFPQoSQueueTotalInboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) QoS Queue Total Inbound Network Traffic counter set tracks the total network traffic through an inbound QoS Queue.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_Counters_VFPQoSQueueTotalOutboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) QoS Queue Total Outbound Network Traffic counter set tracks the total network traffic through an outbound QoS Queue.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Counters_VFPQoSQueueTotalOutboundNetworkTraffic</Name>
-    <Description>The Virtual Filtering Platform (VFP) QoS Queue Total Outbound Network Traffic counter set tracks the total network traffic through an outbound QoS Queue.</Description>
-  </WMI>
-  <WMI>
     <Name>Win32_PerfFormattedData_Counters_WFP</Name>
     <Description>WFP is the set of Windows Filtering Platform counters that do not apply to any specific Internet Protocol version.</Description>
   </WMI>
@@ -39640,12 +38826,12 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>WFP Classify is the set of Windows Filtering Platform (WFP) counters that pertain to classifation calls.</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_Counters_WFPReauthentication</Name>
-    <Description>WFP Reauthentication is the set of Windows Filtering Platform (WFP) counters that pertain to connection reauthentications.</Description>
+    <Name>Win32_PerfFormattedData_Counters_WFPReauthorization</Name>
+    <Description>WFP Reauthorization is the set of Windows Filtering Platform (WFP) counters that pertain to connection reauthorizations.</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfRawData_Counters_WFPReauthentication</Name>
-    <Description>WFP Reauthentication is the set of Windows Filtering Platform (WFP) counters that pertain to connection reauthentications.</Description>
+    <Name>Win32_PerfRawData_Counters_WFPReauthorization</Name>
+    <Description>WFP Reauthorization is the set of Windows Filtering Platform (WFP) counters that pertain to connection reauthorizations.</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_Counters_WFPv4</Name>
@@ -39696,20 +38882,28 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>Consists of counters that measure aspects of a transferring of an xHCI controller.</Description>
   </WMI>
   <WMI>
+    <Name>Win32_PerfFormattedData_CpSvcexe_CitrixPrinting</Name>
+    <Description>Counters for Citrix Printing performance metrics</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfRawData_CpSvcexe_CitrixPrinting</Name>
+    <Description>Counters for Citrix Printing performance metrics</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfFormattedData_CpSvcexe_CitrixPrintingLoadBalancer</Name>
+    <Description>Counters for Citrix Universal Printing Load Balancer performance metrics</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfRawData_CpSvcexe_CitrixPrintingLoadBalancer</Name>
+    <Description>Counters for Citrix Universal Printing Load Balancer performance metrics</Description>
+  </WMI>
+  <WMI>
     <Name>Win32_PerfFormattedData_DdmCounterProvider_RAS</Name>
     <Description>VPN counters which keep track of their values since service start</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfRawData_DdmCounterProvider_RAS</Name>
     <Description>VPN counters which keep track of their values since service start</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_DistributedRoutingTablePerf_DistributedRoutingTable</Name>
-    <Description>The Distributed Routing Table (DRT) performance object consists of counters that monitor the local DRT cache as well as counters that measure the rates at which DRT protocol messages are sent and received.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_DistributedRoutingTablePerf_DistributedRoutingTable</Name>
-    <Description>The Distributed Routing Table (DRT) performance object consists of counters that monitor the local DRT cache as well as counters that measure the rates at which DRT protocol messages are sent and received.</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_ESENT_Database</Name>
@@ -39742,30 +38936,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
   <WMI>
     <Name>Win32_PerfRawData_ESENT_DatabaseTableClasses</Name>
     <Description>Statistics for the ESE high performance embedded database management system by Table Class.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_EthernetPerfProvider_HyperVLegacyNetworkAdapter</Name>
-    <Description>Performance counters for a virtual machine's Ethernet controller.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_EthernetPerfProvider_HyperVLegacyNetworkAdapter</Name>
-    <Description>Performance counters for a virtual machine's Ethernet controller.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_FaxService_FaxService</Name>
-    <Description>Fax Service Counter Set</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_FaxService_FaxService</Name>
-    <Description>Fax Service Counter Set</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore</Name>
-    <Description>Performance counters for a virtual machine's save, snapshot, and restore systems.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore</Name>
-    <Description>Performance counters for a virtual machine's save, snapshot, and restore systems.</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_GPUPerformanceCounters_GPUAdapterMemory</Name>
@@ -39824,14 +38994,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>Information on logical processors.</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_HvStats_HyperVHypervisorPartition</Name>
-    <Description>Information on virtual machines</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_HvStats_HyperVHypervisorPartition</Name>
-    <Description>Information on virtual machines</Description>
-  </WMI>
-  <WMI>
     <Name>Win32_PerfFormattedData_HvStats_HyperVHypervisorRootPartition</Name>
     <Description>Information on virtual machines</Description>
   </WMI>
@@ -39846,54 +39008,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
   <WMI>
     <Name>Win32_PerfRawData_HvStats_HyperVHypervisorRootVirtualProcessor</Name>
     <Description>Information on virtual processors</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_HvStats_HyperVHypervisorVirtualProcessor</Name>
-    <Description>Information on virtual processors</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor</Name>
-    <Description>Information on virtual processors</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_HyperVReplicaStats_HyperVReplicaVM</Name>
-    <Description>This counter set represents the Hyper-V Replica statistics for a virtual machine.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_HyperVReplicaStats_HyperVReplicaVM</Name>
-    <Description>This counter set represents the Hyper-V Replica statistics for a virtual machine.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_HyperVStorageStats_HyperVConfiguration</Name>
-    <Description>This counter set represents the statistics for HyperVStorage files.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration</Name>
-    <Description>This counter set represents the statistics for HyperVStorage files.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_IdePerfProvider_HyperVVirtualIDEControllerEmulated</Name>
-    <Description>Performance counters for a virtual machine's IDE Controller.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_IdePerfProvider_HyperVVirtualIDEControllerEmulated</Name>
-    <Description>Performance counters for a virtual machine's IDE Controller.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_InetInfo_InternetInformationServicesGlobal</Name>
-    <Description>The Internet Information Services Global object includes counters that monitor Internet Information Services (the Web service and the FTP service) as a whole.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_InetInfo_InternetInformationServicesGlobal</Name>
-    <Description>The Internet Information Services Global object includes counters that monitor Internet Information Services (the Web service and the FTP service) as a whole.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_LmPerfProvider_HyperVVMLiveMigration</Name>
-    <Description>Performance counters for a virtual machine's live migration.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration</Name>
-    <Description>Performance counters for a virtual machine's live migration.</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_LocalSessionManager_TerminalServices</Name>
@@ -39920,12 +39034,20 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>These counters track authentication performance on a per second basis.</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_MicrosoftWindowsBitLockerDriverCountersProvider_BitLocker</Name>
-    <Description>BitLocker Drive Encryption performance counters</Description>
+    <Name>Win32_PerfFormattedData_LSM_UserInputDelayperProcess</Name>
+    <Description>Process Level Statistics for User Input Delay</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfRawData_MicrosoftWindowsBitLockerDriverCountersProvider_BitLocker</Name>
-    <Description>BitLocker Drive Encryption performance counters</Description>
+    <Name>Win32_PerfRawData_LSM_UserInputDelayperProcess</Name>
+    <Description>Process Level Statistics for User Input Delay</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfFormattedData_LSM_UserInputDelayperSession</Name>
+    <Description>Session Level Statistics for User Input Delay</Description>
+  </WMI>
+  <WMI>
+    <Name>Win32_PerfRawData_LSM_UserInputDelayperSession</Name>
+    <Description>Session Level Statistics for User Input Delay</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMDevice</Name>
@@ -39942,30 +39064,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
   <WMI>
     <Name>Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel</Name>
     <Description>Microsoft RemoteFX Synth3D VSC VM Transport Channel</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsp_RemoteFXSynth3DVSP</Name>
-    <Description>Microsoft RemoteFX Synth3D VSP</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsp_RemoteFXSynth3DVSP</Name>
-    <Description>Microsoft RemoteFX Synth3D VSP</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsp_RemoteFXSynth3DVSPVMDevice</Name>
-    <Description>Microsoft RemoteFX Synth3D VSP VM Device</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsp_RemoteFXSynth3DVSPVMDevice</Name>
-    <Description>Microsoft RemoteFX Synth3D VSP VM Device</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsp_RemoteFXSynth3DVSPVMTransportChannel</Name>
-    <Description>Microsoft RemoteFX Synth3D VSP VM Transport Channel</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsp_RemoteFXSynth3DVSPVMTransportChannel</Name>
-    <Description>Microsoft RemoteFX Synth3D VSP VM Transport Channel</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_MicrosoftWindowsW32TimePerf_WindowsTimeService</Name>
@@ -39998,62 +39096,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
   <WMI>
     <Name>Win32_PerfRawData_MSDTCBridge4000_MSDTCBridge4000</Name>
     <Description>MSDTC Bridge 4.0.0.0 performance counters</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_msmq_MSMQIncomingHTTPTraffic</Name>
-    <Description>Statistics about incoming HTTP Message Queuing messages.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_msmq_MSMQIncomingHTTPTraffic</Name>
-    <Description>Statistics about incoming HTTP Message Queuing messages.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_msmq_MSMQIncomingMulticastSession</Name>
-    <Description>Statistics about active incoming multicast sessions.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_msmq_MSMQIncomingMulticastSession</Name>
-    <Description>Statistics about active incoming multicast sessions.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_msmq_MSMQOutgoingHTTPSession</Name>
-    <Description>Statistics about active HTTP sessions between this computer and other computers running Message Queuing.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_msmq_MSMQOutgoingHTTPSession</Name>
-    <Description>Statistics about active HTTP sessions between this computer and other computers running Message Queuing.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_msmq_MSMQOutgoingMulticastSession</Name>
-    <Description>Statistics about active outgoing multicast sessions.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_msmq_MSMQOutgoingMulticastSession</Name>
-    <Description>Statistics about active outgoing multicast sessions.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_msmq_MSMQQueue</Name>
-    <Description>Message statistics for the selected Message Queuing queue</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_msmq_MSMQQueue</Name>
-    <Description>Message statistics for the selected Message Queuing queue</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_msmq_MSMQService</Name>
-    <Description>Statistics for the Message Queuing service on the selected computer.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_msmq_MSMQService</Name>
-    <Description>Statistics for the Message Queuing service on the selected computer.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_msmq_MSMQSession</Name>
-    <Description>Statistics about active sessions between computers running Message Queuing</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_msmq_MSMQSession</Name>
-    <Description>Statistics about active sessions between computers running Message Queuing</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_NETCLRData_NETCLRData</Name>
@@ -40168,54 +39210,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>System.Runtime.Caching.MemoryCache Performance Counters</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons</Name>
-    <Description>This counter set represents the drop reasons statistics for the Microsoft Hyper-V network adapter.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons</Name>
-    <Description>This counter set represents the drop reasons statistics for the Microsoft Hyper-V network adapter.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_NvspNicStats_HyperVVirtualNetworkAdapter</Name>
-    <Description>This counter set represents the statistics for the Microsoft Hyper-V network adapter.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_NvspNicStats_HyperVVirtualNetworkAdapter</Name>
-    <Description>This counter set represents the statistics for the Microsoft Hyper-V network adapter.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS</Name>
-    <Description>This counter set represents the statistics for the Microsoft Hyper-V network adapter vRSS entries.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS</Name>
-    <Description>This counter set represents the statistics for the Microsoft Hyper-V network adapter vRSS entries.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_NvspPortStats_HyperVVirtualSwitchPort</Name>
-    <Description>This counter set represents the statistics for the Microsoft Hyper-V switch port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_NvspPortStats_HyperVVirtualSwitchPort</Name>
-    <Description>This counter set represents the statistics for the Microsoft Hyper-V switch port.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_NvspSwitchProcStats_HyperVVirtualSwitchProcessor</Name>
-    <Description>This counter set represents the statistics for the Microsoft Hyper-V switch processor.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_NvspSwitchProcStats_HyperVVirtualSwitchProcessor</Name>
-    <Description>This counter set represents the statistics for the Microsoft Hyper-V switch processor.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_NvspSwitchStats_HyperVVirtualSwitch</Name>
-    <Description>This counter set represents the statistics for the Microsoft Hyper-V switch.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_NvspSwitchStats_HyperVVirtualSwitch</Name>
-    <Description>This counter set represents the statistics for the Microsoft Hyper-V switch.</Description>
-  </WMI>
-  <WMI>
     <Name>Win32_PerfFormattedData_OfflineFiles_ClientSideCaching</Name>
     <Description>Performance counters for SMB BranchCache for reduced bandwidth consumption</Description>
   </WMI>
@@ -40230,22 +39224,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
   <WMI>
     <Name>Win32_PerfRawData_OfflineFiles_OfflineFiles</Name>
     <Description>Performance counters for Offline Files</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_PeerDistSvc_BranchCache</Name>
-    <Description>Counters for measuring bandwidth and latency for BranchCache.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_PeerDistSvc_BranchCache</Name>
-    <Description>Counters for measuring bandwidth and latency for BranchCache.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_PeerNameResolutionProtocolPerf_PeerNameResolutionProtocol</Name>
-    <Description>The Peer Name Resolution Protocol (PNRP) performance object consists of counters that monitor each of available PNRP clouds.  These counters monitor the local PNRP cache and measure the rates at which PNRP protocol messages are sent and received.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_PeerNameResolutionProtocolPerf_PeerNameResolutionProtocol</Name>
-    <Description>The Peer Name Resolution Protocol (PNRP) performance object consists of counters that monitor each of available PNRP clouds.  These counters monitor the local PNRP cache and measure the rates at which PNRP protocol messages are sent and received.</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_PerfDisk_LogicalDisk</Name>
@@ -40400,14 +39378,6 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>This counter set displays power metering and budgeting information</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_rdyboost_ReadyBoostCache</Name>
-    <Description>Displays performance statistics about ReadyBoost Caches.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_rdyboost_ReadyBoostCache</Name>
-    <Description>Displays performance statistics about ReadyBoost Caches.</Description>
-  </WMI>
-  <WMI>
     <Name>Win32_PerfFormattedData_RemoteAccess_RASPort</Name>
     <Description>The RAS Object Type handles individual ports of the RAS device on your system.</Description>
   </WMI>
@@ -40424,20 +39394,12 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>The RAS Object Type handles all combined ports of the RAS device on your system.</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_RemoteFXPerformanceCounterProvider_RemoteFXSoftware</Name>
-    <Description>Displays RemoteFX software per-session counters</Description>
+    <Name>Win32_PerfFormattedData_RemoteDesktopConnectionBrokerRedirectorPerformanceCounterProvider_RemoteDesktopConnectionBrokerRedirectorCounterset</Name>
+    <Description>The set of Remote Desktop Connection Broker Redirector Performance Counters</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfRawData_RemoteFXPerformanceCounterProvider_RemoteFXSoftware</Name>
-    <Description>Displays RemoteFX software per-session counters</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_RemotePerfProvider_HyperVVMRemoting</Name>
-    <Description>Performance counters for a virtual machine's remoting system.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_RemotePerfProvider_HyperVVMRemoting</Name>
-    <Description>Performance counters for a virtual machine's remoting system.</Description>
+    <Name>Win32_PerfRawData_RemoteDesktopConnectionBrokerRedirectorPerformanceCounterProvider_RemoteDesktopConnectionBrokerRedirectorCounterset</Name>
+    <Description>The set of Remote Desktop Connection Broker Redirector Performance Counters</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_ServiceModel4000_ServiceModelEndpoint4000</Name>
@@ -40512,19 +39474,11 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>Displays performance statistics about a Print Queue.</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_Synth3dVideoPerfProvider_RemoteFXRootGPUManagement</Name>
-    <Description>Displays RemoteFX Root GPU Management Counters</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_Synth3dVideoPerfProvider_RemoteFXRootGPUManagement</Name>
-    <Description>Displays RemoteFX Root GPU Management Counters</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_TapiSrv_Telephony</Name>
+    <Name>Win32_PerfFormattedData_tapisrv_Telephony</Name>
     <Description>The Telephony System</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfRawData_TapiSrv_Telephony</Name>
+    <Name>Win32_PerfRawData_tapisrv_Telephony</Name>
     <Description>The Telephony System</Description>
   </WMI>
   <WMI>
@@ -40640,60 +39594,20 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>Terminal Services per-session resource monitoring.</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_UGatherer_SearchGathererProjects</Name>
-    <Description>Counters for the Windows Search Service Gatherer Project object</Description>
+    <Name>Win32_PerfFormattedData_UpClient64dll_UniversalPrintClient</Name>
+    <Description>Counters for Citrix Universal Print Client performance metrics</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfRawData_UGatherer_SearchGathererProjects</Name>
-    <Description>Counters for the Windows Search Service Gatherer Project object</Description>
+    <Name>Win32_PerfRawData_UpClient64dll_UniversalPrintClient</Name>
+    <Description>Counters for Citrix Universal Print Client performance metrics</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_UGTHRSVC_SearchGatherer</Name>
-    <Description>Counters for the Windows Search Service Gathering service object</Description>
+    <Name>Win32_PerfFormattedData_usbhub_USB</Name>
+    <Description>USB I/O Counters</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfRawData_UGTHRSVC_SearchGatherer</Name>
-    <Description>Counters for the Windows Search Service Gathering service object</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_VidPerfProvider_HyperVVMVidNumaNode</Name>
-    <Description>The perf counters for a numa node.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_VidPerfProvider_HyperVVMVidNumaNode</Name>
-    <Description>The perf counters for a numa node.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_VidPerfProvider_HyperVVMVidPartition</Name>
-    <Description>These are the perf counters for a VID partition object.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_VidPerfProvider_HyperVVMVidPartition</Name>
-    <Description>These are the perf counters for a VID partition object.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualDevicePipeIO</Name>
-    <Description>Worker process per-pipe statistics, for performance debugging.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_VMBusPipeIOPerfProvider_HyperVVMVirtualDevicePipeIO</Name>
-    <Description>Worker process per-pipe statistics, for performance debugging.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_VmmsVirtualMachineStats_HyperVVirtualMachineHealthSummary</Name>
-    <Description>This counter set represents the health summary statistics for the Virtual Machine Management Service.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_VmmsVirtualMachineStats_HyperVVirtualMachineHealthSummary</Name>
-    <Description>This counter set represents the health summary statistics for the Virtual Machine Management Service.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB</Name>
-    <Description>Performance counters for Virtual SMB</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_VSmbPerfProvider_HyperVVirtualSMB</Name>
-    <Description>Performance counters for Virtual SMB</Description>
+    <Name>Win32_PerfRawData_usbhub_USB</Name>
+    <Description>USB I/O Counters</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfFormattedData_W3SVC_WebService</Name>
@@ -40792,35 +39706,11 @@ Note: In order to receive all possible instances of this class, the SE_DEBUG_PRI
     <Description>WinNat UDP counter set measures network activity for network address translated UDP packets.</Description>
   </WMI>
   <WMI>
-    <Name>Win32_PerfFormattedData_WnvCounters_NetworkVirtualization</Name>
-    <Description>Network Virtualization counter set measures network activity for packets matching network virtualization policies.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_WnvCounters_NetworkVirtualization</Name>
-    <Description>Network Virtualization counter set measures network activity for packets matching network virtualization policies.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_WorkerVpProvider_HyperVWorkerVirtualProcessor</Name>
-    <Description>Performance counters for the virtual processor of a virtual machine.</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_WorkerVpProvider_HyperVWorkerVirtualProcessor</Name>
-    <Description>Performance counters for the virtual processor of a virtual machine.</Description>
-  </WMI>
-  <WMI>
     <Name>Win32_PerfFormattedData_WorkflowServiceHost4000_WorkflowServiceHost4000</Name>
     <Description>WorkflowServiceHost performance counters for workflow service</Description>
   </WMI>
   <WMI>
     <Name>Win32_PerfRawData_WorkflowServiceHost4000_WorkflowServiceHost4000</Name>
     <Description>WorkflowServiceHost performance counters for workflow service</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfFormattedData_WSearchIdxPi_SearchIndexer</Name>
-    <Description>Indexer PlugIn statistics</Description>
-  </WMI>
-  <WMI>
-    <Name>Win32_PerfRawData_WSearchIdxPi_SearchIndexer</Name>
-    <Description>Indexer PlugIn statistics</Description>
   </WMI>
 </NewDataSet>

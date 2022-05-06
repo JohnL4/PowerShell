@@ -45,7 +45,7 @@ function datefn()
         $timeFormat = "%Y-%m-%d"
     }
     else {
-        $timeFormat = "%Y-%m-%d_%H%M"
+        $timeFormat = "%Y-%m-%d-%H%M"
     }
 
 	$date = $Null
