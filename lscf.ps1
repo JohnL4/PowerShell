@@ -12,6 +12,10 @@ New-Variable -name ARCHIVE_REGEX -option ReadOnly `
         -description "Regular expression that recognizes archive files by their suffix" `
         -value (New-Object System.Text.RegularExpressions.Regex( '\.(zip|gz|gzip|bz2|7z)$', $regex_opts))
 
+New-Variable -name ENCRYPTED_REGEX -option ReadOnly `
+        -description "Regular expression that recognizes encrypted files by their suffix" `
+        -value (New-Object System.Text.RegularExpressions.Regex( '\.(gpg|pgp)$', $regex_opts))
+
 New-Variable -name IMAGE_REGEX -option ReadOnly `
         -description "Regular expression that recognizes image files by their suffix" `
         -value (New-Object System.Text.RegularExpressions.Regex( '\.(bmp|gif|ico|jpe?g|png|svg|wmv|xcf)$', $regex_opts))
@@ -79,6 +83,7 @@ function lscf {
                     elseif ($args[1].Name -match '~$') {'DarkGray'} 
                     elseif ($EXECUTABLE_REGEX.IsMatch( $args[1].Name)) {'Green'} 
                     elseif ($ARCHIVE_REGEX.IsMatch( $args[1].Name)) {'Red'}
+                    elseif ($ENCRYPTED_REGEX.IsMatch( $args[1].Name)) {'DarkCyan'}
                     elseif ($IMAGE_REGEX.IsMatch( $args[1].Name)) {'Magenta'}
                     else {
                                 'white'
@@ -95,6 +100,7 @@ function lscf {
                     elseif ($args[1].Name -match '~$') {'DarkGray'}
                     elseif ($EXECUTABLE_REGEX.IsMatch( $args[1].Name)) {'Green'} 
                     elseif ($ARCHIVE_REGEX.IsMatch( $args[1].Name)) {'Red'}
+                    elseif ($ENCRYPTED_REGEX.IsMatch( $args[1].Name)) {'DarkCyan'}
                     elseif ($IMAGE_REGEX.IsMatch( $args[1].Name)) {'Magenta'}
                     else {
                                 'white'
