@@ -43,7 +43,7 @@ switch ($PsVersionTable.PSVersion.Major)
 {
     2 {Import-Module Pscx -version 2.0 -arg ~\Pscx.UserPreferences-2.0.ps1 -pass `
             | % {"{0} {1}" -f $_.Name,$_.Version}}
-    {$_ -in (3,4,5)} {Import-Module Pscx -MinimumVersion 3.2.0.0 -arg ~\Pscx.UserPreferences-3.2.ps1 -pass `
+    {$_ -in (3,4,5,6,7)} {Import-Module Pscx -MinimumVersion 3.2.0.0 -arg ~\Pscx.UserPreferences-3.2.ps1 -pass `
             | % {"{0} {1}" -f $_.Name,$_.Version}}
     default {Write-Warning ("Unexpected PowerShell version ({0}); PSCX not loaded" -f ($PsVersionTable.PSVersion -join '.'))}
 }
@@ -158,6 +158,7 @@ $env:LESS = "-Mi -j10 -z-3"
 
 # -----------------------------------------------------  Aliases  ------------------------------------------------------
 
+Find-Alias      7z      "C:\Program Files\7-Zip\7z.exe"
 new-alias 		cols	Format-Columns
 Find-Alias      ec 		"C:\usr\local\emacs\26.3\bin\emacsclientw.exe"
 Find-Alias      entlibconfig "c:\usr\local\EnterpriseLibrary6.0\EntLibConfig.exe"
@@ -174,6 +175,7 @@ Find-Alias      mvn     @("c:\usr\local\apache-maven-3.5.2\bin\mvn.cmd")
 Find-Alias      np		@('C:\Program Files\Notepad++\notepad++.exe',
                           'C:\Program Files (x86)\Notepad++\notepad++.exe')
 new-alias 		os		Out-String
+Find-Alias      procexp @('C:\usr\local\bin\procexp64.exe')
 New-Alias       rsf     Remove-Suffix
 new-alias       sel     Select-Object # 'select' is still too long
 new-alias 		sum		Get-Checksum
