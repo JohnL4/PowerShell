@@ -6,3 +6,4 @@ Modules
 *.broken
 *.backup
 /PowerTabConfig.xml.old
+/Help/
