@@ -29,7 +29,18 @@ if (Test-Path "C:\Users\j6l")
 
 # $VerbosePreference = "SilentlyContinue"
 
-Import-Module PowerTab -ArgumentList "$ProfileParent\PowerTabConfig.xml"
+switch ($PsVersionTable.PSVersion.Major)
+{
+    {$_ -lt 6} {
+        Import-Module PowerTab -ArgumentList "$ProfileParent\PowerTabConfig.xml"
+    }
+    default {
+        Write-Warning ("For this version of PowerShell ({0}), not sure PowerTab is actually useful.  Use ctrl-space instead." `
+            -f ($PsVersionTable.PSVersion -join '.'))
+    }
+}
+
+. $ScriptDir\dotnet-suggest-shim.ps1
 
 #------------------------------------------------  Amazon Web Services  ------------------------------------------------
 # See http://docs.aws.amazon.com/powershell/latest/userguide/pstools-getting-started.html
@@ -43,7 +54,7 @@ switch ($PsVersionTable.PSVersion.Major)
 {
     2 {Import-Module Pscx -version 2.0 -arg ~\Pscx.UserPreferences-2.0.ps1 -pass `
             | % {"{0} {1}" -f $_.Name,$_.Version}}
-    {$_ -in (3,4,5)} {Import-Module Pscx -MinimumVersion 3.2.0.0 -arg ~\Pscx.UserPreferences-3.2.ps1 -pass `
+    {$_ -in (3,4,5,6,7)} {Import-Module Pscx -MinimumVersion 3.2.0.0 -arg ~\Pscx.UserPreferences-3.2.ps1 -pass `
             | % {"{0} {1}" -f $_.Name,$_.Version}}
     default {Write-Warning ("Unexpected PowerShell version ({0}); PSCX not loaded" -f ($PsVersionTable.PSVersion -join '.'))}
 }
@@ -82,12 +93,20 @@ function Find-Alias
 
         [string[]]
         # The list of paths to be tested
-        $paths
+        $paths,
+
+        [switch]
+        # Sort list by LastWriteTime descending before traversing.  (JetBrains Toolbox does strange things when installing
+        # updates.)
+        $ByDate
         )
 
     # $DebugPreference = [System.Management.Automation.ActionPreference]::Continue
     write-debug "alias: $alias; paths: $paths"
     
+    if ($ByDate) {
+        $paths = Get-ChildItem $paths -ea SilentlyContinue | Sort-Object LastWriteTime -desc
+    }
     $found = $False
     foreach ($path in $paths)
     {
@@ -158,7 +177,11 @@ $env:LESS = "-Mi -j10 -z-3"
 
 # -----------------------------------------------------  Aliases  ------------------------------------------------------
 
+Find-Alias      7z      "C:\Program Files\7-Zip\7z.exe"
 new-alias 		cols	Format-Columns
+Find-Alias      dg      @("C:\Users\j6l\AppData\Local\JetBrains\Toolbox\scripts\datagrip.cmd",
+                            "C:\Users\j6l\AppData\Local\JetBrains\Toolbox\scripts\datagrip1.cmd") `
+                        -ByDate
 Find-Alias      ec 		"C:\usr\local\emacs\26.3\bin\emacsclientw.exe"
 Find-Alias      entlibconfig "c:\usr\local\EnterpriseLibrary6.0\EntLibConfig.exe"
 new-alias		ff		Find-File
@@ -174,6 +197,7 @@ Find-Alias      mvn     @("c:\usr\local\apache-maven-3.5.2\bin\mvn.cmd")
 Find-Alias      np		@('C:\Program Files\Notepad++\notepad++.exe',
                           'C:\Program Files (x86)\Notepad++\notepad++.exe')
 new-alias 		os		Out-String
+Find-Alias      procexp @('C:\usr\local\bin\procexp64.exe')
 New-Alias       rsf     Remove-Suffix
 new-alias       sel     Select-Object # 'select' is still too long
 new-alias 		sum		Get-Checksum
