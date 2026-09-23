@@ -3,6 +3,8 @@
   PowerShell scripts.  Most of these scripts should have usable documentation at the head of the script, so look there
   for info on each one.
 
+  These files should be copied to ~/Documents/PowerShell (or ~/Documents/WindowsPowerShell, if you're still using the old PowerShell).
+
 * Scripts Of Note
 
 ** =top2.ps1=

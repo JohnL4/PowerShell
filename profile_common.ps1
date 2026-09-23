@@ -56,7 +56,18 @@ if (Test-Path "C:\Users\j6l")
 
 # $VerbosePreference = "SilentlyContinue"
 
-Import-Module PowerTab -ArgumentList "$ProfileParent\PowerTabConfig.xml"
+switch ($PsVersionTable.PSVersion.Major)
+{
+    {$_ -lt 6} {
+        Import-Module PowerTab -ArgumentList "$ProfileParent\PowerTabConfig.xml"
+    }
+    default {
+        Write-Warning ("For this version of PowerShell ({0}), not sure PowerTab is actually useful.  Use ctrl-space instead." `
+            -f ($PsVersionTable.PSVersion -join '.'))
+    }
+}
+
+. $ScriptDir\dotnet-suggest-shim.ps1
 
 #------------------------------------------------  Amazon Web Services  ------------------------------------------------
 # See http://docs.aws.amazon.com/powershell/latest/userguide/pstools-getting-started.html
@@ -109,12 +120,20 @@ function Find-Alias
 
         [string[]]
         # The list of paths to be tested
-        $paths
+        $paths,
+
+        [switch]
+        # Sort list by LastWriteTime descending before traversing.  (JetBrains Toolbox does strange things when installing
+        # updates.)
+        $ByDate
         )
 
     # $DebugPreference = [System.Management.Automation.ActionPreference]::Continue
     write-debug "alias: $alias; paths: $paths"
     
+    if ($ByDate) {
+        $paths = Get-ChildItem $paths -ea SilentlyContinue | Sort-Object LastWriteTime -desc
+    }
     $found = $False
     foreach ($path in $paths)
     {
@@ -187,6 +206,9 @@ $env:LESS = "-Mi -j10 -z-3"
 
 Find-Alias      7z      "C:\Program Files\7-Zip\7z.exe"
 new-alias 		cols	Format-Columns
+Find-Alias      dg      @("C:\Users\j6l\AppData\Local\JetBrains\Toolbox\scripts\datagrip.cmd",
+                            "C:\Users\j6l\AppData\Local\JetBrains\Toolbox\scripts\datagrip1.cmd") `
+                        -ByDate
 Find-Alias      ec 		"C:\usr\local\emacs\26.3\bin\emacsclientw.exe"
 Find-Alias      entlibconfig "c:\usr\local\EnterpriseLibrary6.0\EntLibConfig.exe"
 new-alias		ff		Find-File
