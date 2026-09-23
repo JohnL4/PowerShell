@@ -3,6 +3,33 @@
 
 # $VerbosePreference="Inquire"
 
+# ls env:
+
+# Define the environment variables that AI tools use to spawn non-interactive terminals
+$AiVariables = @(
+    'CURSOR_AGENT',
+    'CURSOR_ENVIRONMENT',
+    'VSCODE_IPC_HOOK_CLI',
+    'TERM_PROGRAM' # Sometimes used by AI IDEs to track active terminals
+)
+
+$IsAiSession = $false
+
+foreach ($var in $AiVariables) {
+    if (-not [string]::IsNullOrWhiteSpace((Get-ChildItem Env: | Where-Object Name -eq $var).Value)) {
+        Write-Host ("AI environment detected ({0}): skipping full profile load." -f $var) -ForegroundColor Yellow
+        $IsAiSession = $true
+        break
+    }
+}
+
+# Skip the rest of the profile if an AI agent is running
+if ($IsAiSession) {
+    return
+}
+
+# ---------------------------------------------------------    ---------------------------------------------------------
+
 <#
 .SYNOPSIS
     Returns true iff current PowerShell session is running with elevated privileges (i.e., "As Administrator").
