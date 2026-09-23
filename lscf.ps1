@@ -4,9 +4,6 @@ $regex_opts = ([System.Text.RegularExpressions.RegexOptions]::IgnoreCase `
 # We create some variables once, globally, so we don't have to recreate it (regex construction/parsing is expensive?)
 # every time we run 'lscf' (defined below), which I expect to be frequent.
 
-New-Variable -name EXECUTABLE_REGEX -option ReadOnly `
-        -description "Regular expression that recognizes executable files by their suffix" `
-        -value (New-Object System.Text.RegularExpressions.Regex( '\.(exe|bat|cmd|py|pl|ps1|psm1|vbs|rb|reg)$', $regex_opts))
 
 New-Variable -name ARCHIVE_REGEX -option ReadOnly `
         -description "Regular expression that recognizes archive files by their suffix" `
@@ -51,6 +48,121 @@ function lscf {
            $Property
            )
 
+    $supportsPsStyleFileInfo = ($PSVersionTable.PSVersion.Major -ge 7) -and
+                               ($null -ne $PSStyle) -and
+                               ($null -ne $PSStyle.FileInfo)
+
+    function Test-LscfSymbolicLink {
+        param([object]$Item)
+
+        # LinkType exists for links in newer PowerShell versions.
+        if (($Item.PSObject.Properties.Name -contains 'LinkType') -and
+            ($null -ne $Item.LinkType) -and
+            ($Item.LinkType -ne ''))
+        {
+            return $true
+        }
+
+        # Reparse points include symlinks/junctions on Windows.
+        return ($Item.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0
+    }
+
+    function Test-LscfExecutable {
+        param([string]$ItemExt)
+
+        if (-not $ItemExt)
+        {
+            return $false
+        }
+
+        $normalizedExt = $ItemExt.ToLowerInvariant()
+        $pathExtRaw = [Environment]::GetEnvironmentVariable('PATHEXT')
+        $pathExtList = @()
+
+        if ([string]::IsNullOrWhiteSpace($pathExtRaw))
+        {
+            $pathExtList = @('.exe', '.com', '.bat', '.cmd')
+        }
+        else
+        {
+            foreach ($ext in $pathExtRaw.Split(';'))
+            {
+                if (-not [string]::IsNullOrWhiteSpace($ext))
+                {
+                    $trimmedExt = $ext.Trim().ToLowerInvariant()
+                    if ($trimmedExt[0] -ne '.')
+                    {
+                        $trimmedExt = '.' + $trimmedExt
+                    }
+                    $pathExtList += $trimmedExt
+                }
+            }
+        }
+
+        return $pathExtList -contains $normalizedExt
+    }
+
+    function Get-LscfColorSpec {
+        param([object]$Item)
+
+        $itemName = [string]$Item.Name
+        $itemExt = [IO.Path]::GetExtension($itemName).ToLowerInvariant()
+
+        if ($supportsPsStyleFileInfo)
+        {
+            if ($Item.PSIsContainer -and $PSStyle.FileInfo.Directory)
+            {
+                return @{ UseAnsi = $true; Style = $PSStyle.FileInfo.Directory }
+            }
+
+            if ((Test-LscfSymbolicLink -Item $Item) -and $PSStyle.FileInfo.SymbolicLink)
+            {
+                return @{ UseAnsi = $true; Style = $PSStyle.FileInfo.SymbolicLink }
+            }
+
+            if ($itemExt -and $PSStyle.FileInfo.Extension.ContainsKey($itemExt))
+            {
+                $extensionStyle = $PSStyle.FileInfo.Extension[$itemExt]
+                if ($extensionStyle)
+                {
+                    return @{ UseAnsi = $true; Style = $extensionStyle }
+                }
+            }
+
+            if ((Test-LscfExecutable -ItemExt $itemExt) -and $PSStyle.FileInfo.Executable)
+            {
+                return @{ UseAnsi = $true; Style = $PSStyle.FileInfo.Executable }
+            }
+        }
+
+        $fallbackColor = if ($Item.PSIsContainer) {'yellow'}
+                         elseif ($itemName -match '~$') {'DarkGray'}
+                         elseif (Test-LscfExecutable -ItemExt $itemExt) {'Green'}
+                         elseif ($ARCHIVE_REGEX.IsMatch($itemName)) {'Red'}
+                         elseif ($ENCRYPTED_REGEX.IsMatch($itemName)) {'DarkCyan'}
+                         elseif ($IMAGE_REGEX.IsMatch($itemName)) {'Magenta'}
+                         else {'white'}
+
+        return @{ UseAnsi = $false; Color = $fallbackColor }
+    }
+
+    function Write-LscfItem {
+        param(
+            [string]$Text,
+            [object]$Item
+        )
+
+        $colorSpec = Get-LscfColorSpec -Item $Item
+        if ($colorSpec.UseAnsi)
+        {
+            Write-Host ($colorSpec.Style + $Text + $PSStyle.Reset) -NoNewline
+        }
+        else
+        {
+            Write-Host $Text -ForegroundColor $colorSpec.Color -NoNewline
+        }
+    }
+
     # The following doesn't work too well.  Format-High needs to be taught the trick of stripping a common prefix (or
     # doing it automatically). 
 #    if ($recurse) {
@@ -73,22 +185,13 @@ function lscf {
     if ($recurse -or ($paths.Length -gt 1))
     {
         Write-Debug "recurse"
-        if ($Property -eq $Null)
+        if ($null -eq $Property)
         {
             $Property = "FullName"
         }
         ls -recurse:$recurse -force:$force $paths `
                 | Format-High -StripCommonPrefixDelimiter:$StripCommonPrefixDelimiter -Property:$Property -Print {
-                    $c = if ($args[1].PSIsContainer) {'yellow'} 
-                    elseif ($args[1].Name -match '~$') {'DarkGray'} 
-                    elseif ($EXECUTABLE_REGEX.IsMatch( $args[1].Name)) {'Green'} 
-                    elseif ($ARCHIVE_REGEX.IsMatch( $args[1].Name)) {'Red'}
-                    elseif ($ENCRYPTED_REGEX.IsMatch( $args[1].Name)) {'DarkCyan'}
-                    elseif ($IMAGE_REGEX.IsMatch( $args[1].Name)) {'Magenta'}
-                    else {
-                                'white'
-                            }
-                    Write-Host $args[0] -ForegroundColor $c -NoNewline
+                    Write-LscfItem -Text $args[0] -Item $args[1]
                 }
     }
     else
@@ -96,16 +199,7 @@ function lscf {
         Write-Debug "no recurse"
         ls -force:$force $paths | 
                 Format-High -StripCommonPrefixDelimiter:$StripCommonPrefixDelimiter -Property:$Property -Print {
-                    $c = if ($args[1].PSIsContainer) {'yellow'}
-                    elseif ($args[1].Name -match '~$') {'DarkGray'}
-                    elseif ($EXECUTABLE_REGEX.IsMatch( $args[1].Name)) {'Green'} 
-                    elseif ($ARCHIVE_REGEX.IsMatch( $args[1].Name)) {'Red'}
-                    elseif ($ENCRYPTED_REGEX.IsMatch( $args[1].Name)) {'DarkCyan'}
-                    elseif ($IMAGE_REGEX.IsMatch( $args[1].Name)) {'Magenta'}
-                    else {
-                                'white'
-                            }
-                    Write-Host $args[0] -ForegroundColor $c -NoNewline
+                    Write-LscfItem -Text $args[0] -Item $args[1]
                 }
     }
 }
